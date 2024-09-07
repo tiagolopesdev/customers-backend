@@ -4,7 +4,7 @@ using Customers.Domain.SeedWork;
 
 namespace Customers.Domain.Interfaces
 {
-    public interface IUserRepository : IBaseRepository<Customer>
+    public interface ICustomerRepository : IBaseRepository<Customer>
     {
         Task<List<Customer>> GetByName(string name);
     }

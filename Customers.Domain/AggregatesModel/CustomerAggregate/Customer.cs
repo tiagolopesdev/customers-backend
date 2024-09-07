@@ -16,6 +16,7 @@ namespace Customers.Domain.AggregatesModel.CustomerAggregate
 
         public Customer(string name, List<PaymentEntity>? payment, List<BuyEntity>? buy)
         {
+            Id = Guid.NewGuid();
             Name = name;
             Payment = payment;
             Buy = buy;
