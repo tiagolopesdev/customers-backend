@@ -22,6 +22,9 @@ namespace Customers.Application.UseCases.CreateCustomer
         {
             var customer = _mapper.Map<Customer>(request);
 
+            customer.SetAmountPaid();
+            customer.SetAmountToPay();
+
             _customerRepository.Create(customer);
 
             return customer.Id;

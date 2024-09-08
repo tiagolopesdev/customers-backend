@@ -9,7 +9,7 @@ namespace Customers.Application
 {
     public static class DependencyInjection
     {
-        public static void AddAppliction(this IServiceCollection services)
+        public static void AddApplication(this IServiceCollection services)
         {
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
 

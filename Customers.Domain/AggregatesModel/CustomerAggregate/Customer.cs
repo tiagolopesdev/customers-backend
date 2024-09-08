@@ -14,20 +14,15 @@ namespace Customers.Domain.AggregatesModel.CustomerAggregate
         private double AmountPaid { get; set; }
         private double AmountToPay { get; set; }
 
-        public Customer(string name, List<PaymentEntity>? payment, List<BuyEntity>? buy)
+        public Customer()
         {
             Id = Guid.NewGuid();
-            Name = name;
-            Payment = payment;
-            Buy = buy;
             DateCreated = DateTime.Now;
-            SetAmountPaid();
-            SetAmountToPay();
         }
 
         public void SetAmountPaid()
         {
-            if (Payment != null && Payment.Count != 0)
+            if (Payment != null && Payment.Count > 0)
             {
                 foreach (var item in Payment)
                 {
@@ -37,7 +32,7 @@ namespace Customers.Domain.AggregatesModel.CustomerAggregate
         }
         public void SetAmountToPay()
         {
-            if (Buy != null && Buy.Count != 0)
+            if (Buy != null && Buy.Count > 0)
             {
                 foreach (var item in Buy)
                 {
