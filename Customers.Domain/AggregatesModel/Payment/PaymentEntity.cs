@@ -8,6 +8,7 @@ namespace Customers.Domain.AggregatesModel.Payment
 
         public PaymentEntity(double value)
         {
+            Id = Guid.NewGuid();
             Value = value;
             DateCreated = DateTime.Now;
         }

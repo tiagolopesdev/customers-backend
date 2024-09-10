@@ -10,6 +10,7 @@ namespace Customers.Domain.AggregatesModel.Buy
 
         public BuyEntity(double price, int quantity)
         {
+            Id = Guid.NewGuid();
             Price = price;
             Quantity = quantity;
             Total = price * quantity;

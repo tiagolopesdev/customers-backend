@@ -9,10 +9,10 @@ namespace Customers.Domain.AggregatesModel.CustomerAggregate
     public class Customer : Entity
     {
         public string Name { get; set; }
-        public List<PaymentEntity>? Payment { get; set; }
-        public List<BuyEntity>? Buy { get; set; }
-        private double AmountPaid { get; set; }
-        private double AmountToPay { get; set; }
+        public List<PaymentEntity>? Payments { get; set; }
+        public List<BuyEntity>? Buys { get; set; }
+        public double AmountPaid { get; set; }
+        public double AmountToPay { get; set; }
 
         public Customer()
         {
@@ -22,9 +22,9 @@ namespace Customers.Domain.AggregatesModel.CustomerAggregate
 
         public void SetAmountPaid()
         {
-            if (Payment != null && Payment.Count > 0)
+            if (Payments != null && Payments.Count > 0)
             {
-                foreach (var item in Payment)
+                foreach (var item in Payments)
                 {
                     AmountPaid += item.Value;
                 }
@@ -32,9 +32,9 @@ namespace Customers.Domain.AggregatesModel.CustomerAggregate
         }
         public void SetAmountToPay()
         {
-            if (Buy != null && Buy.Count > 0)
+            if (Buys != null && Buys.Count > 0)
             {
-                foreach (var item in Buy)
+                foreach (var item in Buys)
                 {
                     AmountToPay += item.Total;
                 }

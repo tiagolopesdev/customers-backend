@@ -1,4 +1,5 @@
 ﻿using Customers.Application.UseCases.CreateUser;
+using Customers.Application.UseCases.GetAllCustomer;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
@@ -25,6 +26,24 @@ namespace Customers.Api.Controllers
             try
             {
                 var response = await _mediator.Send(request);
+
+                return Ok(response);
+            } 
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+        
+        [HttpGet("GetAllCustomer")]
+        [Produces("application/json")]
+        [ProducesResponseType((int)HttpStatusCode.OK)]
+        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
+        public async Task<ActionResult<Guid>> GetAllCustomer()
+        {
+            try
+            {
+                var response = await _mediator.Send(new GetAllCustomerRequest());
 
                 return Ok(response);
             } 

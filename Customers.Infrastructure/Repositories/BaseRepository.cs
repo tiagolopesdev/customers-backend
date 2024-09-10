@@ -1,5 +1,6 @@
 ﻿using Customers.Domain.SeedWork;
 using Microsoft.Extensions.Configuration;
+using MongoDB.Bson;
 using MongoDB.Driver;
 
 namespace Customers.Infrastructure.Repositories
@@ -28,9 +29,18 @@ namespace Customers.Infrastructure.Repositories
             throw new NotImplementedException();
         }
 
-        public Task<List<T>> GetAll()
+        public async Task<List<T>> GetAll()
         {
-            throw new NotImplementedException();
+            try
+            {
+                var result = await _collection.FindSync(filter => filter.DateDeleted == null).ToListAsync(); //Sync(option => option.DateDeleted == null).ToListAsync();
+
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
 
         public Task<T> GetById(Guid id)
