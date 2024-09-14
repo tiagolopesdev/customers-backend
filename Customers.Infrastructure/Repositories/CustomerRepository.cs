@@ -20,9 +20,18 @@ namespace Customers.Infrastructure.Repositories
             _collection = _client.GetDatabase("mini-market-database").GetCollection<Customer>("customers");
         }
 
-        public Task<List<Customer>> GetByName(string name)
+        public async Task<List<Customer>> GetByName(string name)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var result = await _collection.FindSync(filter => filter.Name.Contains(name)).ToListAsync();
+
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
 
         public async Task<Guid> UpdateCustomer(Customer entity)

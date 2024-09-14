@@ -1,5 +1,7 @@
 ﻿using Customers.Application.UseCases.CreateUser;
 using Customers.Application.UseCases.GetAllCustomer;
+using Customers.Application.UseCases.GetByIdCustomer;
+using Customers.Application.UseCases.GetByNameCustomer;
 using Customers.Application.UseCases.UpdateCustomer;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -47,13 +49,13 @@ namespace Customers.Api.Controllers
                 var response = await _mediator.Send(request);
 
                 return Ok(response);
-            } 
+            }
             catch (Exception ex)
             {
                 return BadRequest(ex.Message);
             }
         }
-        
+
         [HttpGet("GetAllCustomer")]
         [Produces("application/json")]
         [ProducesResponseType((int)HttpStatusCode.OK)]
@@ -65,7 +67,45 @@ namespace Customers.Api.Controllers
                 var response = await _mediator.Send(new GetAllCustomerRequest());
 
                 return Ok(response);
-            } 
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpGet("GetByNameCustomer")]
+        [Produces("application/json")]
+        [ProducesResponseType((int)HttpStatusCode.OK)]
+        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
+        public async Task<ActionResult<Guid>> GetByNameCustomer([FromQuery] string Name)
+        {
+            try
+            {
+                var response = await _mediator.Send(new GetByNameCustomerRequest(Name));
+
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpGet("GetByIdCustomer/{id}")]
+        [Produces("application/json")]
+        [ProducesResponseType((int)HttpStatusCode.OK)]
+        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
+        public async Task<ActionResult<Guid>> GetByNameCustomer(Guid id)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(id.ToString())) return BadRequest("Parametro id inválido");
+
+                var response = await _mediator.Send(new GetByIdCustomerRequest(id));
+
+                return Ok(response);
+            }
             catch (Exception ex)
             {
                 return BadRequest(ex.Message);
