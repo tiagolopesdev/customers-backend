@@ -16,9 +16,25 @@ namespace Customers.Domain.AggregatesModel.CustomerAggregate
 
         public Customer()
         {
-            Id = Guid.NewGuid();
-            DateCreated = DateTime.Now;
         }
+
+        public static Customer NewEntity(Customer customer)
+        {
+            customer.Id = Guid.NewGuid();
+            customer.DateCreated = DateTime.Now;
+            
+            return customer;
+        }
+
+        //public void Update(Customer customerForUpdate)
+        //{
+        //    Name = customerForUpdate.Name;
+        //    Payments = customerForUpdate.Payments;
+        //    Buys = customerForUpdate.Buys;
+        //    AmountPaid = customerForUpdate.AmountPaid;
+        //    AmountToPay = customerForUpdate.AmountToPay;
+        //    DateUpdated = DateTime.Now;
+        //}
 
         public void SetAmountPaid()
         {
@@ -26,6 +42,10 @@ namespace Customers.Domain.AggregatesModel.CustomerAggregate
             {
                 foreach (var item in Payments)
                 {
+                    item.DateUpdated = DateTime.Now;
+
+                    if (item.DateDeleted != null) continue;
+
                     AmountPaid += item.Value;
                 }
             }
@@ -36,6 +56,10 @@ namespace Customers.Domain.AggregatesModel.CustomerAggregate
             {
                 foreach (var item in Buys)
                 {
+                    item.DateUpdated = DateTime.Now;
+
+                    if (item.DateDeleted != null) continue;
+
                     AmountToPay += item.Total;
                 }
             }

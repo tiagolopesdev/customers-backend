@@ -33,7 +33,7 @@ namespace Customers.Infrastructure.Repositories
         {
             try
             {
-                var result = await _collection.FindSync(filter => filter.DateDeleted == null).ToListAsync(); //Sync(option => option.DateDeleted == null).ToListAsync();
+                var result = await _collection.FindSync(filter => filter.DateDeleted == null).ToListAsync();
 
                 return result;
             }
@@ -43,14 +43,40 @@ namespace Customers.Infrastructure.Repositories
             }
         }
 
-        public Task<T> GetById(Guid id)
+        public async Task<T> GetById(Guid id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var result = await _collection.FindSync(filter => filter.Id == id).ToListAsync();
+
+                return result.First();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
 
-        public Task<Guid> Update(T entity)
+        public async Task<Guid> Update(T entity)
         {
-            throw new NotImplementedException();
+            try
+            {
+                throw new NotImplementedException();
+                //var filter = Builders<T>.Filter
+                //    .Eq(entityOpt => entityOpt.Id, entity.Id);
+
+                //var update = Builders<T>.Update
+                //    .Set(entityOpt => entityOpt., DateTime.Now)
+                //    .Set(entityOpt => entityOpt.DateUpdated, DateTime.Now);
+
+                //var result = await _collection.UpdateOneAsync(filter, update);
+
+                //return result.First();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
     }
 }

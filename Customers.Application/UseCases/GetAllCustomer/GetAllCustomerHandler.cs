@@ -21,6 +21,18 @@ namespace Customers.Application.UseCases.GetAllCustomer
         {
             List<Customer> result = await _customerRepository.GetAll();
 
+            foreach (var customerItem in result)
+            {
+                if (customerItem.Payments != null && customerItem.Payments.Count > 0)
+                {
+                    customerItem.Payments = customerItem.Payments.Where(filter => filter.DateDeleted == null).ToList();
+                }
+                if (customerItem.Buys != null && customerItem.Buys.Count > 0)
+                {
+                    customerItem.Buys = customerItem.Buys.Where(filter => filter.DateDeleted == null).ToList();
+                }
+            }
+
             var customer = _mapper.Map<List<CustomerDTO>>(result);
 
             return customer;

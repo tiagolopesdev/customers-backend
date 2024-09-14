@@ -23,8 +23,34 @@ namespace Customers.Infrastructure.Repositories
         public Task<List<Customer>> GetByName(string name)
         {
             throw new NotImplementedException();
-            //_collection.Find();
-            //return new List<Customer>();
+        }
+
+        public async Task<Guid> UpdateCustomer(Customer entity)
+        {
+            try
+            {
+                var filter = Builders<Customer>.Filter
+                    .Eq(entityOpt => entityOpt.Id, entity.Id);
+
+
+
+                var update = Builders<Customer>.Update
+                    .Set(entityOpt => entityOpt.Name, entity.Name)
+                    .Set(entityOpt => entityOpt.Payments, entity.Payments)
+                    .Set(entityOpt => entityOpt.Buys, entity.Buys)
+                    .Set(entityOpt => entityOpt.AmountPaid, entity.AmountPaid)
+                    .Set(entityOpt => entityOpt.AmountToPay, entity.AmountToPay)
+                    .Set(entityOpt => entityOpt.DateDeleted, entity.DateDeleted)
+                    .Set(entityOpt => entityOpt.DateUpdated, DateTime.Now);
+
+                var result = await _collection.UpdateOneAsync(filter, update);
+
+                return entity.Id;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
     }
 }

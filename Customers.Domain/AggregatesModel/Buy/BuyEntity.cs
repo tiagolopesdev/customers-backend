@@ -10,11 +10,17 @@ namespace Customers.Domain.AggregatesModel.Buy
 
         public BuyEntity(double price, int quantity)
         {
-            Id = Guid.NewGuid();
             Price = price;
             Quantity = quantity;
             Total = price * quantity;
-            DateCreated = DateTime.Now;
+        }
+
+        public static BuyEntity NewEntity(BuyEntity buy)
+        {
+            buy.Id = Guid.NewGuid();
+            buy.DateCreated = DateTime.Now;
+
+            return buy;
         }
     }
 }
