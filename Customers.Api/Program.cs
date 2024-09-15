@@ -22,6 +22,8 @@ app.UseSwaggerUI(option =>
     option.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
 });
 
+app.UseCors();
+
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
