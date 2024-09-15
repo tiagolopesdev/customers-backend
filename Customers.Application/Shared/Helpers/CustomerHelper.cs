@@ -8,23 +8,20 @@ namespace Customers.Application.Shared.Helpers
     {
         public static List<Customer> FilterPropertyListNotDeleted(List<Customer> customer)
         {
+            List<Customer> customerList = new();
+
             foreach (var customerItem in customer)
             {
-
-                if (customerItem.Payments != null && customerItem.Payments.Count > 0)
-                {
-                    customerItem.Payments = FilterEntity(customerItem.Payments);
-                }
-                if (customerItem.Buys != null && customerItem.Buys.Count > 0)
-                {
-                    customerItem.Buys = FilterEntity(customerItem.Buys);
-                }
+                customerList.Add(FilterPropertyNotDeleted(customerItem));
             }
-            return customer;
+            return customerList;
         }
 
         public static Customer FilterPropertyNotDeleted(Customer customer)
         {
+            customer.AmountPaid = PrecisionDecimalPlace(customer.AmountPaid);
+            customer.AmountToPay = PrecisionDecimalPlace(customer.AmountToPay);
+
             if (customer.Payments != null && customer.Payments.Count > 0)
             {
                 customer.Payments = FilterEntity(customer.Payments);
@@ -38,6 +35,11 @@ namespace Customers.Application.Shared.Helpers
         public static List<T>? FilterEntity<T>(List<T> entity) where T : Entity
         {
             return entity.Where(filter => filter.DateDeleted == null).ToList();
+        }
+
+        public static double PrecisionDecimalPlace(double value, int? precision = 2)
+        {
+            return Math.Round(value, (int)precision, MidpointRounding.AwayFromZero);
         }
     }
 }
