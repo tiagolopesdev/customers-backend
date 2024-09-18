@@ -6,6 +6,28 @@ namespace Customers.Application.Shared.Helpers
 {
     public static class CustomerHelper
     {
+        public static Customer PrecisionDecimalValues(Customer customer)
+        {
+            if (customer.Buys != null && customer.Buys.Count > 0)
+            {
+                customer.Buys.ForEach(item =>
+                {
+                    item.Price = CalculatePrecision(item.Price); // Math.Round(item.Price, 2, MidpointRounding.AwayFromZero);
+                    item.Total = CalculatePrecision(item.Total); // Math.Round(item.Total, 2, MidpointRounding.AwayFromZero);
+                });
+            }
+
+            if (customer.Payments != null && customer.Payments.Count > 0)
+            {
+                customer.Payments.ForEach(item =>
+                {
+                    item.Value = CalculatePrecision(item.Value); // Math.Round(item.Value, 2, MidpointRounding.AwayFromZero);
+                });
+            }
+
+            return customer;
+        }
+
         public static List<Customer> FilterPropertyListNotDeleted(List<Customer> customer)
         {
             List<Customer> customerList = new();
@@ -19,8 +41,8 @@ namespace Customers.Application.Shared.Helpers
 
         public static Customer FilterPropertyNotDeleted(Customer customer)
         {
-            customer.AmountPaid = PrecisionDecimalPlace(customer.AmountPaid);
-            customer.AmountToPay = PrecisionDecimalPlace(customer.AmountToPay);
+            //customer.AmountPaid = PrecisionDecimalPlace(customer.AmountPaid);
+            //customer.AmountToPay = PrecisionDecimalPlace(customer.AmountToPay);
 
             if (customer.Payments != null && customer.Payments.Count > 0)
             {
@@ -37,7 +59,7 @@ namespace Customers.Application.Shared.Helpers
             return entity.Where(filter => filter.DateDeleted == null).ToList();
         }
 
-        public static double PrecisionDecimalPlace(double value, int? precision = 2)
+        public static double CalculatePrecision(double value, int? precision = 2)
         {
             return Math.Round(value, (int)precision, MidpointRounding.AwayFromZero);
         }

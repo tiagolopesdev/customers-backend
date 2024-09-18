@@ -1,5 +1,6 @@
 ﻿
 using AutoMapper;
+using Customers.Application.Shared.Helpers;
 using Customers.Application.UseCases.CreateUser;
 using Customers.Domain.AggregatesModel.Buy;
 using Customers.Domain.AggregatesModel.CustomerAggregate;
@@ -26,12 +27,16 @@ namespace Customers.Application.UseCases.CreateCustomer
 
             customer = Customer.NewEntity(customer);
 
-            customer = Customer.NewEntity(customer);
             customer = DefinePaymentEqualsNew(customer);
             customer = DefineBuyEqualsNew(customer);
 
             customer.SetAmountToPay();
             customer.SetAmountPaid();
+
+            customer = CustomerHelper.PrecisionDecimalValues(customer);
+
+            customer.AmountPaid = CustomerHelper.CalculatePrecision(customer.AmountPaid);
+            customer.AmountToPay = CustomerHelper.CalculatePrecision(customer.AmountToPay);
 
             _customerRepository.Create(customer);
 

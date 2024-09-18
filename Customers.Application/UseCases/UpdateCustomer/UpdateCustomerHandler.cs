@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Customers.Application.Shared.Helpers;
 using Customers.Domain.AggregatesModel.CustomerAggregate;
 using Customers.Domain.Interfaces;
 using Customers.Domain.SeedWork;
@@ -41,6 +42,11 @@ namespace Customers.Application.UseCases.UpdateCustomer
 
             customerToSave.SetAmountPaid();
             customerToSave.SetAmountToPay();
+
+            customerToSave = CustomerHelper.PrecisionDecimalValues(customerToSave);
+
+            customerToSave.AmountPaid = CustomerHelper.CalculatePrecision(customerToSave.AmountPaid);
+            customerToSave.AmountToPay = CustomerHelper.CalculatePrecision(customerToSave.AmountToPay);
 
             await _customerRepository.UpdateCustomer(customerToSave);
 
