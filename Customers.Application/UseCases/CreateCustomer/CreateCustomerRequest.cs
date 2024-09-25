@@ -9,6 +9,7 @@ namespace Customers.Application.UseCases.CreateUser
 
     public sealed class CreateBuyRequest
     {
+        public string Name { get; set; }
         public double Price { get; set; }
         public int Quantity { get; set; }
     }

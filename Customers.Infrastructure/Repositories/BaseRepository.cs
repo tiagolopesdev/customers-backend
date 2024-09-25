@@ -1,6 +1,5 @@
 ﻿using Customers.Domain.SeedWork;
 using Microsoft.Extensions.Configuration;
-using MongoDB.Bson;
 using MongoDB.Driver;
 
 namespace Customers.Infrastructure.Repositories
@@ -62,16 +61,6 @@ namespace Customers.Infrastructure.Repositories
             try
             {
                 throw new NotImplementedException();
-                //var filter = Builders<T>.Filter
-                //    .Eq(entityOpt => entityOpt.Id, entity.Id);
-
-                //var update = Builders<T>.Update
-                //    .Set(entityOpt => entityOpt., DateTime.Now)
-                //    .Set(entityOpt => entityOpt.DateUpdated, DateTime.Now);
-
-                //var result = await _collection.UpdateOneAsync(filter, update);
-
-                //return result.First();
             }
             catch (Exception ex)
             {

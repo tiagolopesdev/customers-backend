@@ -25,17 +25,6 @@ namespace Customers.Domain.AggregatesModel.CustomerAggregate
             
             return customer;
         }
-
-        //public void Update(Customer customerForUpdate)
-        //{
-        //    Name = customerForUpdate.Name;
-        //    Payments = customerForUpdate.Payments;
-        //    Buys = customerForUpdate.Buys;
-        //    AmountPaid = customerForUpdate.AmountPaid;
-        //    AmountToPay = customerForUpdate.AmountToPay;
-        //    DateUpdated = DateTime.Now;
-        //}
-
         public void SetAmountPaid()
         {
             if (Payments != null && Payments.Count > 0)

@@ -49,7 +49,7 @@ namespace Customers.Application.UseCases.CreateCustomer
 
             if (customer.Buys != null && customer.Buys.Count > 0)
             {
-                var paymentForAssign = new BuyEntity(0.0, 0);
+                var paymentForAssign = new BuyEntity(0.0, 0, "");
 
                 foreach (var item in customer.Buys)
                 {
