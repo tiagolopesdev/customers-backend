@@ -12,12 +12,8 @@ namespace Customers.Application.UseCases.UpdateCustomer
         {
             CreateMap<UpdateBuyRequest, BuyEntity>()
                 .ForMember(dest => dest.Total, opt => opt.Ignore());
-                //.ForMember(dest => dest.Id, opt => opt.Ignore())
-                //.ForMember(dest => dest.DateCreated, opt => opt.Ignore());
 
             CreateMap<UpdatePaymentRequest, PaymentEntity>();
-                //.ForMember(dest => dest.Id, opt => opt.Ignore())
-                //.ForMember(dest => dest.DateCreated, opt => opt.Ignore());
 
             CreateMap<UpdateCustomerRequest, Customer>()
                 .ForMember(dest => dest.Buys, opt => opt.MapFrom(src => src.Buys))
