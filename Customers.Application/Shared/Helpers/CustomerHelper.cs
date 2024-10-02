@@ -41,9 +41,6 @@ namespace Customers.Application.Shared.Helpers
 
         public static Customer FilterPropertyNotDeleted(Customer customer)
         {
-            //customer.AmountPaid = PrecisionDecimalPlace(customer.AmountPaid);
-            //customer.AmountToPay = PrecisionDecimalPlace(customer.AmountToPay);
-
             if (customer.Payments != null && customer.Payments.Count > 0)
             {
                 customer.Payments = FilterEntity(customer.Payments);

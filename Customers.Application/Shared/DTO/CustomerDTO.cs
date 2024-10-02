@@ -11,6 +11,6 @@ namespace Customers.Application.Shared.DTO
         public List<BuyDTO>? Buys { get; set; }
         public double AmountPaid { get; set; }
         public double AmountToPay { get; set; }
-        public DateTime? DateCreated { get; set; }
+        public DateTime? DateCreated { get; set; }        
     }
 }
