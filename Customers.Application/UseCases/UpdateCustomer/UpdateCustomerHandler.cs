@@ -31,11 +31,37 @@ namespace Customers.Application.UseCases.UpdateCustomer
                 request.Payments,
                 customerFounded.Payments
                 );
+
+            customerToSave.Payments.ForEach(item =>
+            {
+                if (item.Id == null || item.Id == Guid.Empty)
+                {
+                    item.Id = Guid.NewGuid();
+                    item.DateCreated = DateTime.Now;
+                } else
+                {
+                    item.DateUpdated = DateTime.Now;
+                }
+            });
+
             customerToSave.Buys = AssignDateActions(
                 customerToSave.Buys,
                 request.Buys,
                 customerFounded.Buys
                 );
+
+            customerToSave.Buys.ForEach(item =>
+            {
+                if (item.Id == null || item.Id == Guid.Empty)
+                {
+                    item.Id = Guid.NewGuid();
+                    item.DateCreated = DateTime.Now;
+                }
+                else
+                {
+                    item.DateUpdated = DateTime.Now;
+                }
+            });
 
             customerToSave.Id = customerFounded.Id;
             customerToSave.DateCreated = customerFounded.DateCreated;
@@ -43,12 +69,14 @@ namespace Customers.Application.UseCases.UpdateCustomer
             customerToSave.SetAmountPaid();
             customerToSave.SetAmountToPay();
 
+            customerToSave.DateUpdated = DateTime.Now;
+
             customerToSave = CustomerHelper.PrecisionDecimalValues(customerToSave);
 
             customerToSave.AmountPaid = CustomerHelper.CalculatePrecision(customerToSave.AmountPaid);
             customerToSave.AmountToPay = CustomerHelper.CalculatePrecision(customerToSave.AmountToPay);
 
-            await _customerRepository.UpdateCustomer(customerToSave);
+            await _customerRepository.Update(customerToSave);
 
             return customerFounded.Id;
         }
@@ -64,15 +92,17 @@ namespace Customers.Application.UseCases.UpdateCustomer
         {
             foreach (var item in request)
             {
-                T? entity = LogicFindEntity(customer, item.Id);
+                if (item.Id == null || item.Id == Guid.Empty) continue;
 
-                entity.DateCreated = LogicFindEntity(customerFounded, item.Id).DateCreated;
+                T? entity = LogicFindEntity(customer, (Guid)item.Id);
+
+                entity.DateCreated = LogicFindEntity(customerFounded, (Guid)item.Id).DateCreated;
 
                 if (item.IsEnable is true && customer != null && customer.Count > 0)
                 {
-                    LogicFindEntity(customer, item.Id).DateDeleted = DateTime.Now;
+                    LogicFindEntity(customer, (Guid)item.Id).DateDeleted = DateTime.Now;
                 }
-                LogicFindEntity(customer, item.Id).DateUpdated = DateTime.Now;
+                LogicFindEntity(customer, (Guid)item.Id).DateUpdated = DateTime.Now;
             }
             return customer;
         }

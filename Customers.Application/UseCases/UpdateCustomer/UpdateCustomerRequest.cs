@@ -4,7 +4,21 @@ namespace Customers.Application.UseCases.UpdateCustomer
 {
     public abstract class CustomerActionsResponse
     {
-        public Guid Id { get; set; }
+        public Guid? Id { get; set; }
+        //public Guid? Id
+        //{
+        //    get
+        //    {
+        //        return Id;
+        //    }
+        //    set
+        //    {
+        //        if (Id == null)
+        //        {
+        //            Id = null;
+        //        }
+        //    }
+        //}
         public bool IsEnable { get; set; }
     }
     public sealed record class UpdateCustomerRequest() : IRequest<Guid>
@@ -20,7 +34,7 @@ namespace Customers.Application.UseCases.UpdateCustomer
     {
         public string Name { get; set; }
         public double Price { get; set; }
-        public int Quantity { get; set; }   
+        public int Quantity { get; set; }
     }
 
     public sealed class UpdatePaymentRequest : CustomerActionsResponse

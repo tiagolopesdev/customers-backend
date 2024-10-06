@@ -60,7 +60,11 @@ namespace Customers.Infrastructure.Repositories
         {
             try
             {
-                throw new NotImplementedException();
+                await _collection.DeleteOneAsync(element => element.Id == entity.Id);
+
+                await _collection.InsertOneAsync(entity);
+
+                return entity.Id;
             }
             catch (Exception ex)
             {

@@ -31,8 +31,6 @@ namespace Customers.Domain.AggregatesModel.CustomerAggregate
             {
                 foreach (var item in Payments)
                 {
-                    item.DateUpdated = DateTime.Now;
-
                     if (item.DateDeleted != null) continue;
 
                     AmountPaid += item.Value;
@@ -45,8 +43,6 @@ namespace Customers.Domain.AggregatesModel.CustomerAggregate
             {
                 foreach (var item in Buys)
                 {
-                    item.DateUpdated = DateTime.Now;
-
                     if (item.DateDeleted != null) continue;
 
                     AmountToPay += item.Total;
