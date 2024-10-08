@@ -1,4 +1,5 @@
-﻿using Customers.Application.UseCases.CreateUser;
+﻿using Customers.Application.UseCases.CreateExcel;
+using Customers.Application.UseCases.CreateUser;
 using Customers.Application.UseCases.GetAllCustomer;
 using Customers.Application.UseCases.GetByIdCustomer;
 using Customers.Application.UseCases.GetByNameCustomer;
@@ -47,6 +48,24 @@ namespace Customers.Api.Controllers
             try
             {
                 var response = await _mediator.Send(request);
+
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+        
+        [HttpPost("CreateExcel")]
+        [Produces("application/json")]
+        [ProducesResponseType((int)HttpStatusCode.OK)]
+        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
+        public async Task<ActionResult<Guid>> CreateExcel()
+        {
+            try
+            {
+                var response = await _mediator.Send(new CreateExcelRequest());
 
                 return Ok(response);
             }

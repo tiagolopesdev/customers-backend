@@ -5,20 +5,6 @@ namespace Customers.Application.UseCases.UpdateCustomer
     public abstract class CustomerActionsResponse
     {
         public Guid? Id { get; set; }
-        //public Guid? Id
-        //{
-        //    get
-        //    {
-        //        return Id;
-        //    }
-        //    set
-        //    {
-        //        if (Id == null)
-        //        {
-        //            Id = null;
-        //        }
-        //    }
-        //}
         public bool IsEnable { get; set; }
     }
     public sealed record class UpdateCustomerRequest() : IRequest<Guid>
