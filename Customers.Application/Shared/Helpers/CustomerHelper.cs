@@ -6,14 +6,32 @@ namespace Customers.Application.Shared.Helpers
 {
     public static class CustomerHelper
     {
+        public static Customer AssignAmountToPay(Customer customer)
+        {
+            if (customer.Payments != null && customer.Payments.Count > 0)
+            {
+                customer.AmountToPay -= customer.Payments.Sum(payment => payment.Value);
+            }
+
+            return customer;
+        }
+        public static List<Customer> AssignAmountToPayList(List<Customer> customers)
+        {
+            customers.ForEach(item =>
+            {
+                item = AssignAmountToPay(item);
+            });
+
+            return customers;
+        }
         public static Customer PrecisionDecimalValues(Customer customer)
         {
             if (customer.Buys != null && customer.Buys.Count > 0)
             {
                 customer.Buys.ForEach(item =>
                 {
-                    item.Price = CalculatePrecision(item.Price); // Math.Round(item.Price, 2, MidpointRounding.AwayFromZero);
-                    item.Total = CalculatePrecision(item.Total); // Math.Round(item.Total, 2, MidpointRounding.AwayFromZero);
+                    item.Price = CalculatePrecision(item.Price); 
+                    item.Total = CalculatePrecision(item.Total);
                 });
             }
 
@@ -21,7 +39,7 @@ namespace Customers.Application.Shared.Helpers
             {
                 customer.Payments.ForEach(item =>
                 {
-                    item.Value = CalculatePrecision(item.Value); // Math.Round(item.Value, 2, MidpointRounding.AwayFromZero);
+                    item.Value = CalculatePrecision(item.Value);
                 });
             }
 

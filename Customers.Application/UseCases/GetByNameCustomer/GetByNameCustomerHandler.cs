@@ -25,6 +25,8 @@ namespace Customers.Application.UseCases.GetByNameCustomer
 
             result = CustomerHelper.FilterPropertyListNotDeleted(result);
 
+            result = CustomerHelper.AssignAmountToPayList(result);
+
             var customer = _mapper.Map<List<CustomerDTO>>(result);
 
             return customer;

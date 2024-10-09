@@ -23,6 +23,8 @@ namespace Customers.Application.UseCases.GetAllCustomer
             List<Customer> result = await _customerRepository.GetAll();
 
             result = CustomerHelper.FilterPropertyListNotDeleted(result);
+            
+            result = CustomerHelper.AssignAmountToPayList(result);
 
             var customer = _mapper.Map<List<CustomerDTO>>(result);
 

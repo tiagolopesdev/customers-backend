@@ -25,6 +25,7 @@ namespace Customers.Application.UseCases.GetByIdCustomer
             Customer result = await _customerRepository.GetById(request.Id);
 
             result = CustomerHelper.FilterPropertyNotDeleted(result);
+            result = CustomerHelper.AssignAmountToPay(result);
 
             var customer = _mapper.Map<CustomerDTO>(result);
 
