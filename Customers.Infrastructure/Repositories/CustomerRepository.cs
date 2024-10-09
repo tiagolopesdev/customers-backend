@@ -24,7 +24,7 @@ namespace Customers.Infrastructure.Repositories
         {
             try
             {
-                var result = await _collection.FindSync(filter => filter.Name.Contains(name)).ToListAsync();
+                var result = await _collection.FindSync(filter => filter.Name == name).ToListAsync();
 
                 return result;
             }
