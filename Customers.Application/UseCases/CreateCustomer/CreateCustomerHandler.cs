@@ -35,8 +35,8 @@ namespace Customers.Application.UseCases.CreateCustomer
 
             customer = CustomerHelper.PrecisionDecimalValues(customer);
 
-            customer.AmountPaid = CustomerHelper.CalculatePrecision(customer.AmountPaid);
-            customer.AmountToPay = CustomerHelper.CalculatePrecision(customer.AmountToPay);
+            customer.AmountPaid = Utilities.CalculatePrecision(customer.AmountPaid);
+            customer.AmountToPay = Utilities.CalculatePrecision(customer.AmountToPay);
 
             _customerRepository.Create(customer);
 

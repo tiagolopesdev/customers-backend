@@ -1,6 +1,4 @@
 ﻿
-using Customers.Domain.AggregatesModel.CustomerAggregate;
-
 namespace Customers.Application.Shared.DTO
 {
     public class CustomerDTO

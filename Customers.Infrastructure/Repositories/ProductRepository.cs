@@ -20,5 +20,19 @@ namespace Customers.Infrastructure.Repositories
             _client = new MongoClient(ConnectionString);
             _collection = _client.GetDatabase("mini-market-database").GetCollection<Product>("product");
         }
+
+        public async Task<List<Product>> GetByName(string name)
+        {
+            try
+            {
+                var result = await _collection.FindSync(filter => filter.Name.Contains(name)).ToListAsync();
+
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }

@@ -73,8 +73,8 @@ namespace Customers.Application.UseCases.UpdateCustomer
 
             customerToSave = CustomerHelper.PrecisionDecimalValues(customerToSave);
 
-            customerToSave.AmountPaid = CustomerHelper.CalculatePrecision(customerToSave.AmountPaid);
-            customerToSave.AmountToPay = CustomerHelper.CalculatePrecision(customerToSave.AmountToPay);
+            customerToSave.AmountPaid = Utilities.CalculatePrecision(customerToSave.AmountPaid);
+            customerToSave.AmountToPay = Utilities.CalculatePrecision(customerToSave.AmountToPay);
 
             await _customerRepository.Update(customerToSave);
 

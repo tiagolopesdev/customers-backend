@@ -1,6 +1,5 @@
 ﻿
 using Customers.Domain.AggregatesModel.CustomerAggregate;
-using Customers.Domain.SeedWork;
 
 namespace Customers.Application.Shared.Helpers
 {
@@ -30,8 +29,8 @@ namespace Customers.Application.Shared.Helpers
             {
                 customer.Buys.ForEach(item =>
                 {
-                    item.Price = CalculatePrecision(item.Price); 
-                    item.Total = CalculatePrecision(item.Total);
+                    item.Price = Utilities.CalculatePrecision(item.Price); 
+                    item.Total = Utilities.CalculatePrecision(item.Total);
                 });
             }
 
@@ -39,7 +38,7 @@ namespace Customers.Application.Shared.Helpers
             {
                 customer.Payments.ForEach(item =>
                 {
-                    item.Value = CalculatePrecision(item.Value);
+                    item.Value = Utilities.CalculatePrecision(item.Value);
                 });
             }
 
@@ -61,22 +60,13 @@ namespace Customers.Application.Shared.Helpers
         {
             if (customer.Payments != null && customer.Payments.Count > 0)
             {
-                customer.Payments = FilterEntity(customer.Payments);
+                customer.Payments = Utilities.FilterNotDeleteEntity(customer.Payments);
             }
             if (customer.Buys != null && customer.Buys.Count > 0)
             {
-                customer.Buys = FilterEntity(customer.Buys);
+                customer.Buys = Utilities.FilterNotDeleteEntity(customer.Buys);
             }
             return customer;
-        }
-        public static List<T>? FilterEntity<T>(List<T> entity) where T : Entity
-        {
-            return entity.Where(filter => filter.DateDeleted == null).ToList();
-        }
-
-        public static double CalculatePrecision(double value, int? precision = 2)
-        {
-            return Math.Round(value, (int)precision, MidpointRounding.AwayFromZero);
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Customers.Application.UseCases.CreateExcel;
+﻿using Customers.Application.Shared.DTO;
+using Customers.Application.UseCases.CreateExcel;
 using Customers.Application.UseCases.CreateUser;
 using Customers.Application.UseCases.GetAllCustomer;
 using Customers.Application.UseCases.GetByIdCustomer;
@@ -97,7 +98,7 @@ namespace Customers.Api.Controllers
         [Produces("application/json")]
         [ProducesResponseType((int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
-        public async Task<ActionResult<Guid>> GetByNameCustomer([FromQuery] string Name)
+        public async Task<ActionResult<List<CustomerDTO>>> GetByNameCustomer([FromQuery] string Name)
         {
             try
             {
