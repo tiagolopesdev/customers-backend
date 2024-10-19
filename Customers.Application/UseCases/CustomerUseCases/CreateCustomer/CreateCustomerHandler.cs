@@ -1,14 +1,13 @@
 ﻿
 using AutoMapper;
 using Customers.Application.Shared.Helpers;
-using Customers.Application.UseCases.CreateUser;
 using Customers.Domain.AggregatesModel.Buy;
 using Customers.Domain.AggregatesModel.CustomerAggregate;
 using Customers.Domain.AggregatesModel.Payment;
 using Customers.Domain.Interfaces;
 using MediatR;
 
-namespace Customers.Application.UseCases.CreateCustomer
+namespace Customers.Application.UseCases.CustomerUseCases.CreateCustomer
 {
     public sealed class CreateCustomerHandler : IRequestHandler<CreateCustomerRequest, Guid>
     {

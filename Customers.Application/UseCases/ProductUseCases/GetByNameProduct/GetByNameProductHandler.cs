@@ -4,7 +4,7 @@ using Customers.Domain.AggregatesModel.Products;
 using Customers.Domain.Interfaces;
 using MediatR;
 
-namespace Customers.Application.UseCases.GetByNameProduct
+namespace Customers.Application.UseCases.ProductUseCases.GetByNameProduct
 {
     public class GetByNameProductHandler : IRequestHandler<GetByNameProductRequest, List<GetByNameProductResponse>>
     {
@@ -19,7 +19,9 @@ namespace Customers.Application.UseCases.GetByNameProduct
 
         public async Task<List<GetByNameProductResponse>> Handle(GetByNameProductRequest request, CancellationToken cancellationToken)
         {
-            List<Product> products = await _productRepository.GetByName(request.Name);
+            List<Product> products = string.IsNullOrEmpty(request.Name) ?
+                await _productRepository.GetAll() :
+                await _productRepository.GetByName(request.Name);
 
             products = Utilities.FilterNotDeleteEntity(products);
 

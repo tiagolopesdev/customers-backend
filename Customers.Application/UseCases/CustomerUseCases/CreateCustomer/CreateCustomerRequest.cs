@@ -1,7 +1,6 @@
-﻿
-using MediatR;
+﻿using MediatR;
 
-namespace Customers.Application.UseCases.CreateUser
+namespace Customers.Application.UseCases.CustomerUseCases.CreateCustomer
 {
     public sealed record class CreateCustomerRequest(string Name, List<CreatePaymentRequest> Payments, List<CreateBuyRequest> Buys) : IRequest<Guid>
     {

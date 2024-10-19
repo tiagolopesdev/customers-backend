@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace Customers.Application.UseCases.UpdateCustomer
+namespace Customers.Application.UseCases.CustomerUseCases.UpdateCustomer
 {
     public abstract class CustomerActionsResponse
     {

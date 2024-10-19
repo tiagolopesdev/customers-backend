@@ -4,7 +4,7 @@ using Customers.Domain.AggregatesModel.Products;
 using Customers.Domain.Interfaces;
 using MediatR;
 
-namespace Customers.Application.UseCases.CreateProduct
+namespace Customers.Application.UseCases.ProductUseCases.CreateProduct
 {
     public class CreateProductHandler : IRequestHandler<CreateProductRequest, Guid>
     {

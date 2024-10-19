@@ -7,7 +7,7 @@ using Customers.Domain.AggregatesModel.CustomerAggregate;
 using Customers.Domain.Interfaces;
 using MediatR;
 
-namespace Customers.Application.UseCases.GetByIdCustomer
+namespace Customers.Application.UseCases.CustomerUseCases.GetByIdCustomer
 {
     public class GetByIdCustomerHandler : IRequestHandler<GetByIdCustomerRequest, CustomerDTO>
     {

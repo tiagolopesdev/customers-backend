@@ -1,10 +1,10 @@
 ﻿using Customers.Application.Shared.DTO;
 using Customers.Application.UseCases.CreateExcel;
-using Customers.Application.UseCases.CreateUser;
-using Customers.Application.UseCases.GetAllCustomer;
-using Customers.Application.UseCases.GetByIdCustomer;
-using Customers.Application.UseCases.GetByNameCustomer;
-using Customers.Application.UseCases.UpdateCustomer;
+using Customers.Application.UseCases.CustomerUseCases.CreateCustomer;
+using Customers.Application.UseCases.CustomerUseCases.GetAllCustomer;
+using Customers.Application.UseCases.CustomerUseCases.GetByIdCustomer;
+using Customers.Application.UseCases.CustomerUseCases.GetByNameCustomer;
+using Customers.Application.UseCases.CustomerUseCases.UpdateCustomer;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;

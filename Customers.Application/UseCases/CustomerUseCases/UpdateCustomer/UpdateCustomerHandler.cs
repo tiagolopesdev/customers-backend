@@ -5,7 +5,7 @@ using Customers.Domain.Interfaces;
 using Customers.Domain.SeedWork;
 using MediatR;
 
-namespace Customers.Application.UseCases.UpdateCustomer
+namespace Customers.Application.UseCases.CustomerUseCases.UpdateCustomer
 {
     public class UpdateCustomerHandler : IRequestHandler<UpdateCustomerRequest, Guid>
     {
@@ -38,7 +38,8 @@ namespace Customers.Application.UseCases.UpdateCustomer
                 {
                     item.Id = Guid.NewGuid();
                     item.DateCreated = DateTime.Now;
-                } else
+                }
+                else
                 {
                     item.DateUpdated = DateTime.Now;
                 }

@@ -1,7 +1,6 @@
-﻿using Customers.Application.UseCases.CreateUser;
-using FluentValidation;
+﻿using FluentValidation;
 
-namespace Customers.Application.UseCases.CreateCustomer
+namespace Customers.Application.UseCases.CustomerUseCases.CreateCustomer
 {
     public sealed class CreateCustomerValidator : AbstractValidator<CreateCustomerRequest>
     {

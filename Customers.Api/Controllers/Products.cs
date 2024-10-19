@@ -1,6 +1,6 @@
-﻿using Customers.Application.UseCases.CreateProduct;
-using Customers.Application.UseCases.GetByNameCustomer;
-using Customers.Application.UseCases.GetByNameProduct;
+﻿using Customers.Application.UseCases.ProductUseCases.CreateProduct;
+using Customers.Application.UseCases.ProductUseCases.GetByNameProduct;
+using Customers.Application.UseCases.ProductUseCases.HasStockProduct;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
@@ -18,11 +18,29 @@ namespace Customers.Api.Controllers
             _mediator = mediator;
         }
 
+        [HttpGet("HasStockProduct/{id}")]
+        [Produces("application/json")]
+        [ProducesResponseType((int)HttpStatusCode.OK)]
+        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
+        public async Task<ActionResult<Guid>> GetByNameProduct(Guid id)
+        {
+            try
+            {
+                var response = await _mediator.Send(new HasStockProductRequest(id));
+
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
         [HttpGet("GetByNameProduct")]
         [Produces("application/json")]
         [ProducesResponseType((int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
-        public async Task<ActionResult<Guid>> GetByNameProduct([FromQuery] string name)
+        public async Task<ActionResult<Guid>> GetByNameProduct([FromQuery] string? name)
         {
             try
             {

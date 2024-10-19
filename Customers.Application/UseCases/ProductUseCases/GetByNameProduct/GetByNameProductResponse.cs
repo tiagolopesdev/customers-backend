@@ -1,5 +1,4 @@
-﻿
-namespace Customers.Application.UseCases.GetByNameProduct
+﻿namespace Customers.Application.UseCases.ProductUseCases.GetByNameProduct
 {
     public class GetByNameProductResponse
     {
