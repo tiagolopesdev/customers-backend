@@ -11,11 +11,11 @@ namespace Customers.Infrastructure.Repositories
         private IConfiguration _configuration;
         private string ConnectionString { get { return _configuration.GetConnectionString("MONGODB_URI");  } }
 
-        public BaseRepository(IConfiguration configuration)
+        public BaseRepository(IConfiguration configuration, string collection)
         {
             _configuration = configuration;
             _client = new MongoClient(ConnectionString);
-            _collection = _client.GetDatabase("mini-market-database").GetCollection<T>("customers");
+            _collection = _client.GetDatabase("mini-market-database").GetCollection<T>(collection);
         }
 
         public void Create(T entity)

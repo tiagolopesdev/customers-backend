@@ -13,7 +13,7 @@ namespace Customers.Infrastructure.Repositories
         private IConfiguration _configuration;
         private string ConnectionString { get { return _configuration.GetConnectionString("MONGODB_URI"); } }
 
-        public CustomerRepository(IConfiguration configuration) : base(configuration)
+        public CustomerRepository(IConfiguration configuration) : base(configuration, "customers")
         {
             _configuration = configuration;
             _client = new MongoClient(ConnectionString);

@@ -10,6 +10,7 @@ namespace Customers.Infrastructure
         public static void AddInfrastructure(this IServiceCollection services)
         {
             services.AddScoped<ICustomerRepository, CustomerRepository>();
+            services.AddScoped<IProductRepository, ProductRepository>();
         }
     }
 }
