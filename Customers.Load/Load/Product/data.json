@@ -1,0 +1,122 @@
+[
+  {
+    "name": "Refrigerante",
+    "description": "Bebida gaseificada e refrescante",
+    "value": 4.5,
+    "quantity": 10
+  },
+  {
+    "name": "Bolo",
+    "description": "Bolo de chocolate com cobertura",
+    "value": 15.0,
+    "quantity": 8
+  },
+  {
+    "name": "Terço",
+    "description": "Acessório religioso para orações",
+    "value": 12.0,
+    "quantity": 7
+  },
+  {
+    "name": "Livro",
+    "description": "Livro de ficção científica",
+    "value": 25.0,
+    "quantity": 12
+  },
+  {
+    "name": "Pulseira",
+    "description": "Pulseira de couro com detalhes",
+    "value": 8.5,
+    "quantity": 9
+  },
+  {
+    "name": "Bombom",
+    "description": "Chocolate recheado com creme",
+    "value": 2.0,
+    "quantity": 15
+  },
+  {
+    "name": "Caderno",
+    "description": "Caderno de 100 folhas pautadas",
+    "value": 7.0,
+    "quantity": 6
+  },
+  {
+    "name": "Caneta",
+    "description": "Caneta esferográfica azul",
+    "value": 1.2,
+    "quantity": 14
+  },
+  {
+    "name": "Chaveiro",
+    "description": "Chaveiro com formato de estrela",
+    "value": 3.5,
+    "quantity": 10
+  },
+  {
+    "name": "Relógio",
+    "description": "Relógio de pulso digital",
+    "value": 45.0,
+    "quantity": 5
+  },
+  {
+    "name": "Carteira",
+    "description": "Carteira de couro preta",
+    "value": 20.0,
+    "quantity": 8
+  },
+  {
+    "name": "Camisa",
+    "description": "Camisa de algodão tamanho M",
+    "value": 30.0,
+    "quantity": 7
+  },
+  {
+    "name": "Tênis",
+    "description": "Tênis esportivo de corrida",
+    "value": 120.0,
+    "quantity": 9
+  },
+  {
+    "name": "Mouse",
+    "description": "Mouse sem fio com bluetooth",
+    "value": 25.0,
+    "quantity": 6
+  },
+  {
+    "name": "Teclado",
+    "description": "Teclado mecânico para jogos",
+    "value": 80.0,
+    "quantity": 13
+  },
+  {
+    "name": "Fone de Ouvido",
+    "description": "Fone de ouvido com isolamento",
+    "value": 35.0,
+    "quantity": 11
+  },
+  {
+    "name": "Capa de Celular",
+    "description": "Capa protetora de silicone",
+    "value": 10.0,
+    "quantity": 15
+  },
+  {
+    "name": "Carregador",
+    "description": "Carregador rápido para celular",
+    "value": 18.0,
+    "quantity": 7
+  },
+  {
+    "name": "Pen Drive",
+    "description": "Pen drive de 32GB",
+    "value": 12.0,
+    "quantity": 8
+  },
+  {
+    "name": "Bicicleta",
+    "description": "Bicicleta de montanha com 18 marchas",
+    "value": 500.0,
+    "quantity": 5
+  }
+]
