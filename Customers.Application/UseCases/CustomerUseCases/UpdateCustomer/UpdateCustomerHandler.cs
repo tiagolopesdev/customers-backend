@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
 using Customers.Application.Shared.Helpers;
+using Customers.Application.Shared.Model;
+using Customers.Application.UseCases.ProductUseCases.UpdateStockProduct;
 using Customers.Domain.AggregatesModel.CustomerAggregate;
 using Customers.Domain.Interfaces;
 using Customers.Domain.SeedWork;
@@ -9,11 +11,13 @@ namespace Customers.Application.UseCases.CustomerUseCases.UpdateCustomer
 {
     public class UpdateCustomerHandler : IRequestHandler<UpdateCustomerRequest, Guid>
     {
+        private readonly IMediator _mediator;
         private readonly ICustomerRepository _customerRepository;
         private readonly IMapper _mapper;
 
-        public UpdateCustomerHandler(ICustomerRepository customerRepository, IMapper mapper)
+        public UpdateCustomerHandler(ICustomerRepository customerRepository, IMapper mapper, IMediator mediator)
         {
+            _mediator = mediator;
             _customerRepository = customerRepository;
             _mapper = mapper;
         }
@@ -78,6 +82,13 @@ namespace Customers.Application.UseCases.CustomerUseCases.UpdateCustomer
             customerToSave.AmountToPay = Utilities.CalculatePrecision(customerToSave.AmountToPay);
 
             await _customerRepository.Update(customerToSave);
+
+            _mediator.Publish(
+                new UpdateStockProductNotification(
+                        customerToSave.Buys.OrderBy(item => item.Name).Select(element => element.Name).ToList(),
+                        customerToSave.Buys.OrderBy(item => item.Name).Select(element => element.Quantity).ToList()
+                    )
+                );
 
             return customerFounded.Id;
         }
