@@ -14,17 +14,16 @@ namespace Customers.Application.UseCases.ProductUseCases.UpdateStockProduct
 
         public async Task Handle(UpdateStockProductNotification notification, CancellationToken cancellationToken)
         {
-            for (int i = 0; i < notification.Name.Count; i++)
+            foreach (var product in notification.Products)
             {
-                var result = await _productRepository.GetByName(notification.Name[i]);
+                var result = await _productRepository.GetById(product.ProductId);
 
-                if (result[0] == null) continue;
+                if (result == null) continue;
 
-                result[0].Quantity -= notification.Quantity[i];
+                result.Quantity -= product.Quantity;
 
-                await _productRepository.Update(result[0]);
+                await _productRepository.Update(result);
             }
-
             return;
         }
     }

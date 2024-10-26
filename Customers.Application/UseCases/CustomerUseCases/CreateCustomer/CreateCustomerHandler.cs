@@ -1,6 +1,8 @@
 ﻿
 using AutoMapper;
 using Customers.Application.Shared.Helpers;
+using Customers.Application.Shared.Model;
+using Customers.Application.UseCases.ProductUseCases.UpdateStockProduct;
 using Customers.Domain.AggregatesModel.Buy;
 using Customers.Domain.AggregatesModel.CustomerAggregate;
 using Customers.Domain.AggregatesModel.Payment;
@@ -11,13 +13,15 @@ namespace Customers.Application.UseCases.CustomerUseCases.CreateCustomer
 {
     public sealed class CreateCustomerHandler : IRequestHandler<CreateCustomerRequest, Guid>
     {
+        private readonly IMediator _mediator;
         private readonly ICustomerRepository _customerRepository;
         private readonly IMapper _mapper;
 
-        public CreateCustomerHandler(ICustomerRepository customerRepository, IMapper mapper)
+        public CreateCustomerHandler(ICustomerRepository customerRepository, IMapper mapper, IMediator mediator)
         {
             _customerRepository = customerRepository;
             _mapper = mapper;
+            _mediator = mediator;
         }
 
         public async Task<Guid> Handle(CreateCustomerRequest request, CancellationToken cancellationToken)
@@ -38,6 +42,17 @@ namespace Customers.Application.UseCases.CustomerUseCases.CreateCustomer
             customer.AmountToPay = Utilities.CalculatePrecision(customer.AmountToPay);
 
             _customerRepository.Create(customer);
+
+            _mediator.Publish(
+                new UpdateStockProductNotification(
+                        request.Buys.Select(element => new UpdateStockProductModel(
+                            element.ProductId,
+                            element.Quantity
+                            )
+                        )
+                        .ToList()
+                    )
+                );
 
             return customer.Id;
         }

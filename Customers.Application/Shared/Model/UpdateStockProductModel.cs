@@ -1,7 +1,7 @@
 ﻿
 namespace Customers.Application.Shared.Model
 {
-    public sealed record class UpdateStockProductModel(string Name, int Quantity)
+    public sealed record class UpdateStockProductModel(Guid ProductId, int Quantity)
     {
     }
 }

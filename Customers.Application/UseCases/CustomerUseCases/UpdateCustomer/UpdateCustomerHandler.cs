@@ -13,20 +13,22 @@ namespace Customers.Application.UseCases.CustomerUseCases.UpdateCustomer
     {
         private readonly IMediator _mediator;
         private readonly ICustomerRepository _customerRepository;
+        private readonly IProductRepository _productRepository;
         private readonly IMapper _mapper;
 
-        public UpdateCustomerHandler(ICustomerRepository customerRepository, IMapper mapper, IMediator mediator)
+        public UpdateCustomerHandler(ICustomerRepository customerRepository, IMapper mapper, IMediator mediator, IProductRepository productRepository)
         {
             _mediator = mediator;
             _customerRepository = customerRepository;
             _mapper = mapper;
+            _productRepository = productRepository;
         }
 
         public async Task<Guid> Handle(UpdateCustomerRequest request, CancellationToken cancellationToken)
         {
             var customerFounded = await _customerRepository.GetById(request.Id);
 
-            if (customerFounded == null) throw new Exception("Cliente não encontrado para ser atualizado");
+            if (customerFounded == null) throw new Exception("Cliente não encontrado para ser atualizado");            
 
             var customerToSave = _mapper.Map<Customer>(request);
 
@@ -81,12 +83,19 @@ namespace Customers.Application.UseCases.CustomerUseCases.UpdateCustomer
             customerToSave.AmountPaid = Utilities.CalculatePrecision(customerToSave.AmountPaid);
             customerToSave.AmountToPay = Utilities.CalculatePrecision(customerToSave.AmountToPay);
 
-            await _customerRepository.Update(customerToSave);
+            customerToSave.Buys.AddRange(customerFounded.Buys);
+            customerToSave.Payments.AddRange(customerFounded.Payments);
+
+            await _customerRepository.UpdateCustomer(customerToSave);
 
             _mediator.Publish(
                 new UpdateStockProductNotification(
-                        customerToSave.Buys.OrderBy(item => item.Name).Select(element => element.Name).ToList(),
-                        customerToSave.Buys.OrderBy(item => item.Name).Select(element => element.Quantity).ToList()
+                    request.Buys.Select(element => new UpdateStockProductModel(
+                            element.ProductId,
+                            element.Quantity
+                            )
+                        )
+                        .ToList()
                     )
                 );
 
