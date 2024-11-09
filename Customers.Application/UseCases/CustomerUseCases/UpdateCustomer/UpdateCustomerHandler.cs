@@ -83,14 +83,33 @@ namespace Customers.Application.UseCases.CustomerUseCases.UpdateCustomer
             customerToSave.AmountPaid = Utilities.CalculatePrecision(customerToSave.AmountPaid);
             customerToSave.AmountToPay = Utilities.CalculatePrecision(customerToSave.AmountToPay);
 
-            customerToSave.Buys.AddRange(customerFounded.Buys);
-            customerToSave.Payments.AddRange(customerFounded.Payments);
+            foreach (var item in customerFounded.Buys)
+            {
+                var result = customerToSave.Buys.Find(searchElement => searchElement.Id == item.Id);
+
+                if (result == null)
+                {
+                    customerToSave.Buys.Add(item);
+                }
+            }
+            
+            foreach (var item in customerFounded.Buys)
+            {
+                var result = customerToSave.Buys.Find(searchElement => searchElement.Id == item.Id);
+
+                if (result == null)
+                {
+                    customerToSave.Buys.Add(item);
+                }
+            }
 
             await _customerRepository.UpdateCustomer(customerToSave);
 
+            var products = request.Buys.Where(filter => filter.ProductId != Guid.Empty);
+
             _mediator.Publish(
                 new UpdateStockProductNotification(
-                    request.Buys.Select(element => new UpdateStockProductModel(
+                    products.Select(element => new UpdateStockProductModel(
                             element.ProductId,
                             element.Quantity
                             )
