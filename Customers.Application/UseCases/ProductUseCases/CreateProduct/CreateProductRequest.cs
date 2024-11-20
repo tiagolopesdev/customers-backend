@@ -2,7 +2,9 @@
 
 namespace Customers.Application.UseCases.ProductUseCases.CreateProduct
 {
-    public sealed record class CreateProductRequest(string Name, string Description, double value, int quantity) : IRequest<Guid>
+    public sealed record class CreateProductRequest(string Name, string Description,
+        double Value, double BasePrice, int Quantity
+        ) : IRequest<Guid>
     {
     }
 }
