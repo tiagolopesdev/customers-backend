@@ -2,6 +2,7 @@
 using Customers.Application.Shared.Helpers;
 using Customers.Application.Shared.Model;
 using Customers.Application.UseCases.ProductUseCases.UpdateStockProduct;
+using Customers.Domain.AggregatesModel.Buy;
 using Customers.Domain.AggregatesModel.CustomerAggregate;
 using Customers.Domain.Interfaces;
 using Customers.Domain.SeedWork;
@@ -93,13 +94,13 @@ namespace Customers.Application.UseCases.CustomerUseCases.UpdateCustomer
                 }
             }
             
-            foreach (var item in customerFounded.Buys)
+            foreach (var item in customerFounded.Payments)
             {
-                var result = customerToSave.Buys.Find(searchElement => searchElement.Id == item.Id);
+                var result = customerToSave.Payments.Find(searchElement => searchElement.Id == item.Id);
 
                 if (result == null)
                 {
-                    customerToSave.Buys.Add(item);
+                    customerToSave.Payments.Add(item);
                 }
             }
 

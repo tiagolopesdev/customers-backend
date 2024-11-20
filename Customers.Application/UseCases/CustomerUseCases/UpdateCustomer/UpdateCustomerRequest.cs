@@ -6,6 +6,7 @@ namespace Customers.Application.UseCases.CustomerUseCases.UpdateCustomer
     {
         public Guid? Id { get; set; }
         public bool IsEnable { get; set; }
+        public string? UpdatedBy { get; set; }
     }
     public sealed record class UpdateCustomerRequest() : IRequest<Guid>
     {
@@ -13,7 +14,7 @@ namespace Customers.Application.UseCases.CustomerUseCases.UpdateCustomer
         public string Name { get; set; }
         public List<UpdatePaymentRequest> Payments { get; set; }
         public List<UpdateBuyRequest> Buys { get; set; }
-        public bool IsEnable { get; set; }
+        public bool IsEnable { get; set; }        
     }
 
     public sealed class UpdateBuyRequest : CustomerActionsResponse
