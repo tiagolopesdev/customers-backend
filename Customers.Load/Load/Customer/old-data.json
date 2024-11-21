@@ -5,11 +5,13 @@
     "buys": [
       {
         "price": 3.5,
-        "quantity": 1
+        "quantity": 1,
+        "name": "refrigerantes lata"
       },
       {
         "price": 8.0,
-        "quantity": 5
+        "quantity": 5,
+        "name": "bombom garoto"
       }
     ]
   },
@@ -19,7 +21,8 @@
     "buys": [
       {
         "price": 2.1,
-        "quantity": 2
+        "quantity": 2,
+        "name": "refrigerantes lata"
       }
     ]
   },
@@ -29,7 +32,8 @@
     "buys": [
       {
         "price": 9.4,
-        "quantity": 4
+        "quantity": 4,
+        "name": "mousse"
       }
     ]
   },
@@ -39,7 +43,8 @@
     "buys": [
       {
         "price": 5.3,
-        "quantity": 3
+        "quantity": 3,
+        "name": "refrigerantes de 1 litro"
       }
     ]
   },
@@ -49,7 +54,8 @@
     "buys": [
       {
         "price": 10.0,
-        "quantity": 7
+        "quantity": 7,
+        "name": "bombom garoto"
       }
     ]
   },
@@ -59,11 +65,13 @@
     "buys": [
       {
         "price": 6.4,
-        "quantity": 2
+        "quantity": 2,
+        "name": "refrigerantes lata"
       },
       {
         "price": 3.1,
-        "quantity": 1
+        "quantity": 1,
+        "name": "mousse"
       }
     ]
   },
@@ -73,7 +81,8 @@
     "buys": [
       {
         "price": 1.0,
-        "quantity": 1
+        "quantity": 1,
+        "name": "mousse"
       }
     ]
   },
@@ -83,11 +92,13 @@
     "buys": [
       {
         "price": 2.3,
-        "quantity": 6
+        "quantity": 6,
+        "name": "refrigerantes de 1 litro"
       },
       {
         "price": 8.1,
-        "quantity": 3
+        "quantity": 3,
+        "name": "bombom garoto"
       }
     ]
   },
@@ -97,7 +108,8 @@
     "buys": [
       {
         "price": 4.9,
-        "quantity": 5
+        "quantity": 5,
+        "name": "refrigerantes de 1 litro"
       }
     ]
   },
@@ -107,7 +119,8 @@
     "buys": [
       {
         "price": 7.8,
-        "quantity": 2
+        "quantity": 2,
+        "name": "bombom garoto"
       }
     ]
   },
@@ -117,7 +130,8 @@
     "buys": [
       {
         "price": 9.9,
-        "quantity": 3
+        "quantity": 3,
+        "name": "refrigerantes de 1 litro"
       }
     ]
   },
@@ -127,7 +141,8 @@
     "buys": [
       {
         "price": 8.7,
-        "quantity": 4
+        "quantity": 4,
+        "name": "bombom garoto"
       }
     ]
   },
@@ -137,7 +152,8 @@
     "buys": [
       {
         "price": 5.5,
-        "quantity": 1
+        "quantity": 1,
+        "name": "mousse"
       }
     ]
   },
@@ -147,7 +163,8 @@
     "buys": [
       {
         "price": 6.0,
-        "quantity": 2
+        "quantity": 2,
+        "name": "refrigerantes de 1 litro"
       }
     ]
   },
@@ -157,7 +174,8 @@
     "buys": [
       {
         "price": 3.7,
-        "quantity": 2
+        "quantity": 2,
+        "name": "refrigerantes lata"
       }
     ]
   },
@@ -167,7 +185,8 @@
     "buys": [
       {
         "price": 10.0,
-        "quantity": 6
+        "quantity": 6,
+        "name": "bombom garoto"
       }
     ]
   },
@@ -177,7 +196,8 @@
     "buys": [
       {
         "price": 4.3,
-        "quantity": 3
+        "quantity": 3,
+        "name": "refrigerantes de 1 litro"
       }
     ]
   },
@@ -187,7 +207,8 @@
     "buys": [
       {
         "price": 7.9,
-        "quantity": 5
+        "quantity": 5,
+        "name": "refrigerantes lata"
       }
     ]
   },
@@ -197,7 +218,8 @@
     "buys": [
       {
         "price": 3.2,
-        "quantity": 2
+        "quantity": 2,
+        "name": "mousse"
       }
     ]
   },
@@ -207,7 +229,8 @@
     "buys": [
       {
         "price": 8.5,
-        "quantity": 4
+        "quantity": 4,
+        "name": "bombom garoto"
       }
     ]
   },
@@ -217,7 +240,8 @@
     "buys": [
       {
         "price": 7.1,
-        "quantity": 5
+        "quantity": 5,
+        "name": "refrigerantes lata"
       }
     ]
   },
@@ -227,7 +251,8 @@
     "buys": [
       {
         "price": 2.5,
-        "quantity": 1
+        "quantity": 1,
+        "name": "mousse"
       }
     ]
   },
@@ -237,7 +262,8 @@
     "buys": [
       {
         "price": 9.0,
-        "quantity": 3
+        "quantity": 3,
+        "name": "bombom garoto"
       }
     ]
   },
@@ -247,7 +273,8 @@
     "buys": [
       {
         "price": 4.2,
-        "quantity": 2
+        "quantity": 2,
+        "name": "refrigerantes de 1 litro"
       }
     ]
   },
@@ -257,7 +284,8 @@
     "buys": [
       {
         "price": 6.5,
-        "quantity": 5
+        "quantity": 5,
+        "name": "refrigerantes lata"
       }
     ]
   },
@@ -267,7 +295,8 @@
     "buys": [
       {
         "price": 3.9,
-        "quantity": 4
+        "quantity": 4,
+        "name": "mousse"
       }
     ]
   },
@@ -277,7 +306,8 @@
     "buys": [
       {
         "price": 2.3,
-        "quantity": 6
+        "quantity": 6,
+        "name": "refrigerantes lata"
       }
     ]
   },
@@ -287,7 +317,8 @@
     "buys": [
       {
         "price": 7.3,
-        "quantity": 2
+        "quantity": 2,
+        "name": "refrigerantes de 1 litro"
       }
     ]
   },
@@ -297,7 +328,8 @@
     "buys": [
       {
         "price": 9.4,
-        "quantity": 1
+        "quantity": 1,
+        "name": "bombom garoto"
       }
     ]
   },
@@ -307,7 +339,8 @@
     "buys": [
       {
         "price": 5.5,
-        "quantity": 3
+        "quantity": 3,
+        "name": "refrigerantes de 1 litro"
       }
     ]
   },
@@ -317,7 +350,8 @@
     "buys": [
       {
         "price": 3.1,
-        "quantity": 2
+        "quantity": 2,
+        "name": "mousse"
       }
     ]
   },
@@ -327,7 +361,8 @@
     "buys": [
       {
         "price": 6.8,
-        "quantity": 4
+        "quantity": 4,
+        "name": "refrigerantes de 1 litro"
       }
     ]
   },
@@ -337,7 +372,8 @@
     "buys": [
       {
         "price": 2.7,
-        "quantity": 3
+        "quantity": 3,
+        "name": "refrigerantes lata"
       }
     ]
   },
@@ -346,108 +382,9 @@
     "payments": [],
     "buys": [
       {
-        "price": 8.4,
-        "quantity": 1
-      }
-    ]
-  },
-  {
-    "name": "Nicole Dias",
-    "payments": [],
-    "buys": [
-      {
-        "price": 4.3,
-        "quantity": 2
-      }
-    ]
-  },
-  {
-    "name": "Otávio Campos",
-    "payments": [],
-    "buys": [
-      {
-        "price": 9.2,
-        "quantity": 5
-      }
-    ]
-  },
-  {
-    "name": "Patrícia Lima",
-    "payments": [],
-    "buys": [
-      {
-        "price": 2.6,
-        "quantity": 1
-      }
-    ]
-  },
-  {
-    "name": "Renata Ferreira",
-    "payments": [],
-    "buys": [
-      {
-        "price": 6.1,
-        "quantity": 3
-      }
-    ]
-  },
-  {
-    "name": "Rodrigo Costa",
-    "payments": [],
-    "buys": [
-      {
-        "price": 8.6,
-        "quantity": 6
-      }
-    ]
-  },
-  {
-    "name": "Samuel Souza",
-    "payments": [],
-    "buys": [
-      {
-        "price": 5.7,
-        "quantity": 4
-      }
-    ]
-  },
-  {
-    "name": "Vanessa Oliveira",
-    "payments": [],
-    "buys": [
-      {
-        "price": 3.4,
-        "quantity": 2
-      }
-    ]
-  },
-  {
-    "name": "Yasmin Melo",
-    "payments": [],
-    "buys": [
-      {
-        "price": 9.9,
-        "quantity": 1
-      }
-    ]
-  },
-  {
-    "name": "André Barbosa",
-    "payments": [],
-    "buys": [
-      {
-        "price": 8.1,
-        "quantity": 4
-      }
-    ]
-  },
-  {
-    "name": "Bianca Reis",
-    "payments": [],
-    "buys": [
-      {
-        "price": 2.9,
-        "quantity": 2
+        "price": 2.7,
+        "quantity": 5,
+        "name": "refrigerantes lata"
       }
     ]
   }

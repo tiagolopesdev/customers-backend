@@ -1,23 +1,24 @@
 ﻿using MediatR;
 using OfficeOpenXml;
 using Customers.Domain.Interfaces;
-using System.Drawing;
 
 namespace Customers.Application.UseCases.CreateExcel
 {
     public class CreateExcelHandler : IRequestHandler<CreateExcelRequest, string>
     {
         private readonly ICustomerRepository _customerRepository;
+        private readonly IProductRepository _productRepository;
 
-        public CreateExcelHandler(ICustomerRepository customerRepository)
+        public CreateExcelHandler(ICustomerRepository customerRepository, IProductRepository productRepository)
         {
             _customerRepository = customerRepository;
+            _productRepository = productRepository;
         }
 
         public async Task<string> Handle(CreateExcelRequest request, CancellationToken cancellationToken)
         {
             ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
-            var file = new FileInfo("D:\\Documentos\\mini market\\backend\\mini-market-customers\\testexcel.xlsx");
+            var file = new FileInfo("D:\\Documentos\\mini market\\backend\\mini-market-customers-backend\\testexcel.xlsx");
 
             using var package = new ExcelPackage(file);
 
@@ -60,18 +61,32 @@ namespace Customers.Application.UseCases.CreateExcel
                         worksheet.Cells["G1"].Style.Font.Bold = true;
                         worksheet.Cells["H1"].Value = "PREÇO UNITÁRIO";
                         worksheet.Cells["H1"].Style.Font.Bold = true;
-                        worksheet.Cells["I1"].Value = "QUANTIDADE";
+                        worksheet.Cells["I1"].Value = "PREÇO DE COMPRA";
                         worksheet.Cells["I1"].Style.Font.Bold = true;
-                        worksheet.Cells["J1"].Value = "VALOR TOTAL";
+                        worksheet.Cells["J1"].Value = "QUANTIDADE";
                         worksheet.Cells["J1"].Style.Font.Bold = true;
-                        worksheet.Cells["K1"].Value = "COMPRADO EM";
+                        worksheet.Cells["K1"].Value = "VALOR TOTAL";
                         worksheet.Cells["K1"].Style.Font.Bold = true;
+                        worksheet.Cells["L1"].Value = "LUCRO";
+                        worksheet.Cells["L1"].Style.Font.Bold = true;
+                        worksheet.Cells["M1"].Value = "COMPRADO EM";
+                        worksheet.Cells["M1"].Style.Font.Bold = true;
+                        worksheet.Cells["N1"].Value = "COMPRADO POR";
+                        worksheet.Cells["N1"].Style.Font.Bold = true;
 
                         worksheet.SetValue(index, 7, buy.Name);
                         worksheet.SetValue(index, 8, buy.Price);
-                        worksheet.SetValue(index, 9, buy.Quantity);
-                        worksheet.SetValue(index, 10, buy.Total);
-                        worksheet.SetValue(index, 11, buy.DateCreated.ToString());
+
+                        var product = await _productRepository.GetByName(buy.Name);                        
+                        worksheet.SetValue(index, 9, product[0].BasePrice);
+                                                
+                        worksheet.SetValue(index, 10, buy.Quantity);
+                        worksheet.SetValue(index, 11, buy.Total);
+
+                        worksheet.SetValue(index, 12, ((buy.Price - product[0].BasePrice) * buy.Quantity));
+                        
+                        worksheet.SetValue(index, 13, buy.DateCreated.ToString());
+                        worksheet.SetValue(index, 14, buy.UpdatedBy);
 
                         index++;
                         buyIndex++;
@@ -89,16 +104,19 @@ namespace Customers.Application.UseCases.CreateExcel
 
                         worksheet.SetValue(index, 6, "PAGAMENTO");
 
-                        worksheet.Cells["L1"].Value = "VALOR DO PRODUTO";
-                        worksheet.Cells["L1"].Style.Font.Bold = true;
-                        worksheet.Cells["M1"].Value = "PAGO EM";
-                        worksheet.Cells["M1"].Style.Font.Bold = true;
-                        worksheet.Cells["N1"].Value = "ID PAGAMENTO";
-                        worksheet.Cells["N1"].Style.Font.Bold = true;
+                        worksheet.Cells["O1"].Value = "VALOR DO PRODUTO";
+                        worksheet.Cells["O1"].Style.Font.Bold = true;
+                        worksheet.Cells["P1"].Value = "PAGO EM";
+                        worksheet.Cells["P1"].Style.Font.Bold = true;
+                        worksheet.Cells["Q1"].Value = "ID PAGAMENTO";
+                        worksheet.Cells["Q1"].Style.Font.Bold = true;
+                        worksheet.Cells["R1"].Value = "FEITO POR";
+                        worksheet.Cells["R1"].Style.Font.Bold = true;
 
-                        worksheet.SetValue(index, 12, payment.Value);
-                        worksheet.SetValue(index, 13, payment.DateCreated.ToString());
-                        worksheet.SetValue(index, 14, payment.Id);
+                        worksheet.SetValue(index, 15, payment.Value);
+                        worksheet.SetValue(index, 16, payment.DateCreated.ToString());
+                        worksheet.SetValue(index, 17, payment.Id);
+                        worksheet.SetValue(index, 18, payment.UpdatedBy);
 
                         index++;
                         paymentIndex++;
@@ -115,7 +133,7 @@ namespace Customers.Application.UseCases.CreateExcel
 
             await package.SaveAsync();
 
-            throw new NotImplementedException();
+            return "";
         }
     }
 }

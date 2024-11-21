@@ -2,390 +2,171 @@
   {
     "name": "Ana Clara",
     "payments": [],
-    "buys": [
-      {
-        "price": 3.5,
-        "quantity": 1,
-        "name": "refrigerantes lata"
-      },
-      {
-        "price": 8.0,
-        "quantity": 5,
-        "name": "bombom garoto"
-      }
-    ]
+    "buys": []
   },
   {
     "name": "Ana Maria",
     "payments": [],
-    "buys": [
-      {
-        "price": 2.1,
-        "quantity": 2,
-        "name": "refrigerantes lata"
-      }
-    ]
+    "buys": []
   },
   {
     "name": "Beatriz Souza",
     "payments": [],
-    "buys": [
-      {
-        "price": 9.4,
-        "quantity": 4,
-        "name": "mousse"
-      }
-    ]
+    "buys": []
   },
   {
     "name": "Carolina Lima",
     "payments": [],
-    "buys": [
-      {
-        "price": 5.3,
-        "quantity": 3,
-        "name": "refrigerantes de 1 litro"
-      }
-    ]
+    "buys": []
   },
   {
     "name": "Daniel Alves",
     "payments": [],
-    "buys": [
-      {
-        "price": 10.0,
-        "quantity": 7,
-        "name": "bombom garoto"
-      }
-    ]
+    "buys": []
   },
   {
     "name": "Eduardo Santos",
     "payments": [],
-    "buys": [
-      {
-        "price": 6.4,
-        "quantity": 2,
-        "name": "refrigerantes lata"
-      },
-      {
-        "price": 3.1,
-        "quantity": 1,
-        "name": "mousse"
-      }
-    ]
+    "buys": []
   },
   {
     "name": "Felipe Silva",
     "payments": [],
-    "buys": [
-      {
-        "price": 1.0,
-        "quantity": 1,
-        "name": "mousse"
-      }
-    ]
+    "buys": []
   },
   {
     "name": "Gabriel Martins",
     "payments": [],
-    "buys": [
-      {
-        "price": 2.3,
-        "quantity": 6,
-        "name": "refrigerantes de 1 litro"
-      },
-      {
-        "price": 8.1,
-        "quantity": 3,
-        "name": "bombom garoto"
-      }
-    ]
+    "buys": []
   },
   {
     "name": "Helena Costa",
     "payments": [],
-    "buys": [
-      {
-        "price": 4.9,
-        "quantity": 5,
-        "name": "refrigerantes de 1 litro"
-      }
-    ]
+    "buys": []
   },
   {
     "name": "Isabela Rocha",
     "payments": [],
-    "buys": [
-      {
-        "price": 7.8,
-        "quantity": 2,
-        "name": "bombom garoto"
-      }
-    ]
+    "buys": []
   },
   {
     "name": "João Pedro",
     "payments": [],
-    "buys": [
-      {
-        "price": 9.9,
-        "quantity": 3,
-        "name": "refrigerantes de 1 litro"
-      }
-    ]
+    "buys": []
   },
   {
     "name": "Laura Almeida",
     "payments": [],
-    "buys": [
-      {
-        "price": 8.7,
-        "quantity": 4,
-        "name": "bombom garoto"
-      }
-    ]
+    "buys": []
   },
   {
     "name": "Lucas Ferreira",
     "payments": [],
-    "buys": [
-      {
-        "price": 5.5,
-        "quantity": 1,
-        "name": "mousse"
-      }
-    ]
+    "buys": []
   },
   {
     "name": "Mariana Duarte",
     "payments": [],
-    "buys": [
-      {
-        "price": 6.0,
-        "quantity": 2,
-        "name": "refrigerantes de 1 litro"
-      }
-    ]
+    "buys": []
   },
   {
     "name": "Matheus Pereira",
     "payments": [],
-    "buys": [
-      {
-        "price": 3.7,
-        "quantity": 2,
-        "name": "refrigerantes lata"
-      }
-    ]
+    "buys": []
   },
   {
     "name": "Miguel Oliveira",
     "payments": [],
-    "buys": [
-      {
-        "price": 10.0,
-        "quantity": 6,
-        "name": "bombom garoto"
-      }
-    ]
+    "buys": []
   },
   {
     "name": "Pedro Henrique",
     "payments": [],
-    "buys": [
-      {
-        "price": 4.3,
-        "quantity": 3,
-        "name": "refrigerantes de 1 litro"
-      }
-    ]
+    "buys": []
   },
   {
     "name": "Rafael Barbosa",
     "payments": [],
-    "buys": [
-      {
-        "price": 7.9,
-        "quantity": 5,
-        "name": "refrigerantes lata"
-      }
-    ]
+    "buys": []
   },
   {
     "name": "Sophia Fernandes",
     "payments": [],
-    "buys": [
-      {
-        "price": 3.2,
-        "quantity": 2,
-        "name": "mousse"
-      }
-    ]
+    "buys": []
   },
   {
     "name": "Thiago Ribeiro",
     "payments": [],
-    "buys": [
-      {
-        "price": 8.5,
-        "quantity": 4,
-        "name": "bombom garoto"
-      }
-    ]
+    "buys": []
   },
   {
     "name": "Vitória Monteiro",
     "payments": [],
-    "buys": [
-      {
-        "price": 7.1,
-        "quantity": 5,
-        "name": "refrigerantes lata"
-      }
-    ]
+    "buys": []
   },
   {
     "name": "Alice Mendes",
     "payments": [],
-    "buys": [
-      {
-        "price": 2.5,
-        "quantity": 1,
-        "name": "mousse"
-      }
-    ]
+    "buys": []
   },
   {
     "name": "Bruno Oliveira",
     "payments": [],
-    "buys": [
-      {
-        "price": 9.0,
-        "quantity": 3,
-        "name": "bombom garoto"
-      }
-    ]
+    "buys": []
   },
   {
     "name": "Camila Lopes",
     "payments": [],
-    "buys": [
-      {
-        "price": 4.2,
-        "quantity": 2,
-        "name": "refrigerantes de 1 litro"
-      }
-    ]
+    "buys": []
   },
   {
     "name": "Diego Silva",
     "payments": [],
-    "buys": [
-      {
-        "price": 6.5,
-        "quantity": 5,
-        "name": "refrigerantes lata"
-      }
-    ]
+    "buys": []
   },
   {
     "name": "Elisa Cardoso",
     "payments": [],
-    "buys": [
-      {
-        "price": 3.9,
-        "quantity": 4,
-        "name": "mousse"
-      }
-    ]
+    "buys": []
   },
   {
     "name": "Fernanda Correia",
     "payments": [],
-    "buys": [
-      {
-        "price": 2.3,
-        "quantity": 6,
-        "name": "refrigerantes lata"
-      }
-    ]
+    "buys": []
   },
   {
     "name": "Gustavo Santos",
     "payments": [],
-    "buys": [
-      {
-        "price": 7.3,
-        "quantity": 2,
-        "name": "refrigerantes de 1 litro"
-      }
-    ]
+    "buys": []
   },
   {
     "name": "Hugo Teixeira",
     "payments": [],
-    "buys": [
-      {
-        "price": 9.4,
-        "quantity": 1,
-        "name": "bombom garoto"
-      }
-    ]
+    "buys": []
   },
   {
     "name": "Juliana Machado",
     "payments": [],
-    "buys": [
-      {
-        "price": 5.5,
-        "quantity": 3,
-        "name": "refrigerantes de 1 litro"
-      }
-    ]
+    "buys": []
   },
   {
     "name": "Leonardo Almeida",
     "payments": [],
-    "buys": [
-      {
-        "price": 3.1,
-        "quantity": 2,
-        "name": "mousse"
-      }
-    ]
+    "buys": []
   },
   {
     "name": "Lívia Nogueira",
     "payments": [],
-    "buys": [
-      {
-        "price": 6.8,
-        "quantity": 4,
-        "name": "refrigerantes de 1 litro"
-      }
-    ]
+    "buys": []
   },
   {
     "name": "Manuela Freitas",
     "payments": [],
-    "buys": [
-      {
-        "price": 2.7,
-        "quantity": 3,
-        "name": "refrigerantes lata"
-      }
-    ]
+    "buys": []
   },
   {
     "name": "Nathan Araújo",
     "payments": [],
-    "buys": [
-      {
-        "price": 2.7,
-        "quantity": 5,
-        "name": "refrigerantes lata"
-      }
-    ]
+    "buys": []
   }
 ]

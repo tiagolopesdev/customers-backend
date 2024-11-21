@@ -9,5 +9,6 @@ namespace Customers.Application.Shared.DTO
         public int Quantity { get; set; }
         public double Total { get; set; }
         public DateTime? DateCreated { get; set; }
+        public string UpdatedBy { get; set; }
     }
 }

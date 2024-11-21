@@ -6,5 +6,6 @@ namespace Customers.Application.Shared.DTO
         public Guid Id { get; set; }
         public double Value { get; set; }
         public DateTime? DateCreated { get; set; }
+        public string UpdatedBy { get; set; }
     }
 }

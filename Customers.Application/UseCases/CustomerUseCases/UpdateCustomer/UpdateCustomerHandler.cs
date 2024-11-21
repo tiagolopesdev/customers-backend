@@ -2,7 +2,6 @@
 using Customers.Application.Shared.Helpers;
 using Customers.Application.Shared.Model;
 using Customers.Application.UseCases.ProductUseCases.UpdateStockProduct;
-using Customers.Domain.AggregatesModel.Buy;
 using Customers.Domain.AggregatesModel.CustomerAggregate;
 using Customers.Domain.Interfaces;
 using Customers.Domain.SeedWork;
