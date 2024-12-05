@@ -27,7 +27,9 @@ namespace Customers.Application.UseCases.CustomerUseCases.GetByNameCustomer
 
             result = CustomerHelper.AssignAmountToPayList(result);
 
-            var customer = _mapper.Map<List<CustomerDTO>>(result);
+            List<Customer> dataToReturn = [.. CustomerHelper.ApplyingFilters(result, request.Owing, request.UsersSales)];
+
+            var customer = _mapper.Map<List<CustomerDTO>>(dataToReturn);
 
             return customer;
         }

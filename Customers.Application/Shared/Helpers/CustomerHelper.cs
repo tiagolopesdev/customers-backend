@@ -5,6 +5,43 @@ namespace Customers.Application.Shared.Helpers
 {
     public static class CustomerHelper
     {
+        public static List<Customer> ApplyingFilters(List<Customer> data, bool owing, string? usersSales)
+        {
+            List<Customer> dataToReturn = new List<Customer>();
+
+            if (!string.IsNullOrEmpty(usersSales) && owing)
+            {
+                data.ForEach(element =>
+                {
+                    var existsBuys = element.Buys.Exists(filter => filter.UpdatedBy == usersSales);
+
+                    if (existsBuys && element.AmountToPay > 0) dataToReturn.Add(element);
+                });
+            }
+            else if (!string.IsNullOrEmpty(usersSales))
+            {
+                data.ForEach(element =>
+                {
+                    var existsBuys = element.Buys.Exists(filter => filter.UpdatedBy == usersSales);
+
+                    if (existsBuys) dataToReturn.Add(element);
+                });
+            }
+            else if (owing)
+            {
+                data.ForEach(element =>
+                {
+                    if (element.AmountToPay > 0) dataToReturn.Add(element);
+                });
+            }
+            else
+            {
+                dataToReturn.AddRange(data);
+            }
+
+            return dataToReturn;
+        }
+
         public static Customer AssignAmountToPay(Customer customer)
         {
             if (customer.Payments != null && customer.Payments.Count > 0)

@@ -98,11 +98,11 @@ namespace Customers.Api.Controllers
         [Produces("application/json")]
         [ProducesResponseType((int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
-        public async Task<ActionResult<List<CustomerDTO>>> GetByNameCustomer([FromQuery] string Name)
+        public async Task<ActionResult<List<CustomerDTO>>> GetByNameCustomer([FromQuery] GetByNameCustomerRequest request)
         {
             try
             {
-                var response = await _mediator.Send(new GetByNameCustomerRequest(Name));
+                var response = await _mediator.Send(request);
 
                 return Ok(response);
             }

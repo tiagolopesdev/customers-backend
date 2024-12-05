@@ -3,7 +3,7 @@ using MediatR;
 
 namespace Customers.Application.UseCases.CustomerUseCases.GetByNameCustomer
 {
-    public sealed record class GetByNameCustomerRequest(string Name) : IRequest<List<CustomerDTO>>
+    public sealed record class GetByNameCustomerRequest(string Name, string? UsersSales, bool Owing) : IRequest<List<CustomerDTO>>
     {
     }
 }
