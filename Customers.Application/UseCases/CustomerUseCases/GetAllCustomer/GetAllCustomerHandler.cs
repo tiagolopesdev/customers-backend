@@ -22,11 +22,33 @@ namespace Customers.Application.UseCases.CustomerUseCases.GetAllCustomer
         {
             List<Customer> result = await _customerRepository.GetAll();
 
-            result = CustomerHelper.FilterPropertyListNotDeleted(result);
+            List<Customer> dataToReturn = new List<Customer>();
 
-            result = CustomerHelper.AssignAmountToPayList(result);
+            if (!string.IsNullOrEmpty(request.UsersSales))
+            {
+                result.ForEach(element =>
+                {
+                    var existsBuys = element.Buys.Exists(filter => filter.UpdatedBy == request.UsersSales);
 
-            var customer = _mapper.Map<List<CustomerDTO>>(result);
+                    if (existsBuys) dataToReturn.Add(element);
+                });
+            }
+            else if (request.Owing)
+            {
+                result.ForEach(element =>
+                {
+                    if (element.AmountToPay > 0) dataToReturn.Add(element);
+                });
+            } else
+            {
+                dataToReturn.AddRange(result);
+            }
+
+            dataToReturn = CustomerHelper.FilterPropertyListNotDeleted(dataToReturn);
+
+            dataToReturn = CustomerHelper.AssignAmountToPayList(dataToReturn);
+
+            var customer = _mapper.Map<List<CustomerDTO>>(dataToReturn);
 
             return customer;
         }

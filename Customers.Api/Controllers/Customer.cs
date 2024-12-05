@@ -80,11 +80,11 @@ namespace Customers.Api.Controllers
         [Produces("application/json")]
         [ProducesResponseType((int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
-        public async Task<ActionResult<Guid>> GetAllCustomer()
+        public async Task<ActionResult<Guid>> GetAllCustomer([FromQuery] GetAllCustomerRequest request)
         {
             try
             {
-                var response = await _mediator.Send(new GetAllCustomerRequest());
+                var response = await _mediator.Send(request);
 
                 return Ok(response);
             }
