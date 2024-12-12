@@ -26,38 +26,8 @@ namespace Customers.Application.UseCases.CustomerUseCases.GetAllCustomer
 
             result = CustomerHelper.AssignAmountToPayList(result);
 
-            List<Customer> dataToReturn = [.. CustomerHelper.ApplyingFilters(result, request.Owing, request.UsersSales)];
-
-            //if (!string.IsNullOrEmpty(request.UsersSales) && request.Owing)
-            //{
-            //    result.ForEach(element =>
-            //    {
-            //        var existsBuys = element.Buys.Exists(filter => filter.UpdatedBy == request.UsersSales);
-
-            //        if (existsBuys && element.AmountToPay > 0) dataToReturn.Add(element);
-            //    });
-            //}
-            //else if (!string.IsNullOrEmpty(request.UsersSales))
-            //{
-            //    result.ForEach(element =>
-            //    {
-            //        var existsBuys = element.Buys.Exists(filter => filter.UpdatedBy == request.UsersSales);
-
-            //        if (existsBuys) dataToReturn.Add(element);
-            //    });
-            //}
-            //else if (request.Owing)
-            //{
-            //    result.ForEach(element =>
-            //    {
-            //        if (element.AmountToPay > 0) dataToReturn.Add(element);
-            //    });
-            //}
-            //else
-            //{
-            //    dataToReturn.AddRange(result);
-            //}            
-
+            List<Customer> dataToReturn = [.. CustomerHelper.ApplyingFilters(result, request.Owing, request.UsersSales, request.DateUsersSales)];
+        
             var customer = _mapper.Map<List<CustomerDTO>>(dataToReturn);
 
             return customer;

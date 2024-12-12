@@ -1,30 +1,41 @@
 ﻿
 using Customers.Domain.AggregatesModel.CustomerAggregate;
+using Customers.Domain.AggregatesModel.Payment;
 
 namespace Customers.Application.Shared.Helpers
 {
     public static class CustomerHelper
     {
-        public static List<Customer> ApplyingFilters(List<Customer> data, bool owing, string? usersSales)
+        public static List<Customer> ApplyingFilters(List<Customer> data, bool owing, string? usersSales, DateTime? date)
         {
             List<Customer> dataToReturn = new List<Customer>();
 
-            if (!string.IsNullOrEmpty(usersSales) && owing)
+            if (!string.IsNullOrEmpty(usersSales) && !string.IsNullOrEmpty(date.ToString()))
             {
                 data.ForEach(element =>
                 {
-                    var existsBuys = element.Buys.Exists(filter => filter.UpdatedBy == usersSales);
 
-                    if (existsBuys && element.AmountToPay > 0) dataToReturn.Add(element);
-                });
-            }
-            else if (!string.IsNullOrEmpty(usersSales))
-            {
-                data.ForEach(element =>
-                {
-                    var existsBuys = element.Buys.Exists(filter => filter.UpdatedBy == usersSales);
+                    bool existsBuys = element.Buys.Exists(filter => filter.UpdatedBy == usersSales);
+                    bool existsPayment = element.Payments.Exists(filter => filter.UpdatedBy == usersSales);
 
-                    if (existsBuys) dataToReturn.Add(element);
+                    if (existsBuys || existsPayment)
+                    {
+                        List<PaymentEntity> payments = new();
+
+                        element.Payments.ForEach(buy =>
+                        {
+                            if (buy.DateCreated.Value.Date.CompareTo(date) == 0 || (buy.DateUpdated != null && buy.DateUpdated.Value.Date.CompareTo(date) == 0))
+                            {
+                                payments.Add(buy);
+                            }
+                        });
+
+                        if (payments.Count > 0)
+                        {
+                            element.Payments = payments;
+                            dataToReturn.Add(element);
+                        }
+                    }
                 });
             }
             else if (owing)
@@ -66,7 +77,7 @@ namespace Customers.Application.Shared.Helpers
             {
                 customer.Buys.ForEach(item =>
                 {
-                    item.Price = Utilities.CalculatePrecision(item.Price); 
+                    item.Price = Utilities.CalculatePrecision(item.Price);
                     item.Total = Utilities.CalculatePrecision(item.Total);
                 });
             }
