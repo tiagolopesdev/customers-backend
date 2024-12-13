@@ -1,4 +1,5 @@
-﻿using MediatR;
+﻿using Customers.Domain.AggregatesModel.Payment;
+using MediatR;
 
 namespace Customers.Application.UseCases.CustomerUseCases.CreateCustomer
 {
@@ -12,10 +13,13 @@ namespace Customers.Application.UseCases.CustomerUseCases.CreateCustomer
         public string Name { get; set; }
         public double Price { get; set; }
         public int Quantity { get; set; }
+        public string UpdatedBy { get; set; }
     }
 
     public sealed class CreatePaymentRequest
     {
         public double Value { get; set; }
+        public PaymentMethod PaymentMethod { get; set; }
+        public string UpdatedBy { get; set; }
     }
 }

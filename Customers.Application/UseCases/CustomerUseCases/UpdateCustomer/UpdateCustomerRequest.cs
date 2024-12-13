@@ -1,4 +1,5 @@
-﻿using MediatR;
+﻿using Customers.Domain.AggregatesModel.Payment;
+using MediatR;
 
 namespace Customers.Application.UseCases.CustomerUseCases.UpdateCustomer
 {
@@ -28,5 +29,6 @@ namespace Customers.Application.UseCases.CustomerUseCases.UpdateCustomer
     public sealed class UpdatePaymentRequest : CustomerActionsResponse
     {
         public double Value { get; set; }
+        public PaymentMethod PaymentMethod { get; set; }
     }
 }

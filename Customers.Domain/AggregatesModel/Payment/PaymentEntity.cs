@@ -5,6 +5,7 @@ namespace Customers.Domain.AggregatesModel.Payment
     public class PaymentEntity : Entity
     {
         public double Value { get; set; }
+        public PaymentMethod PaymentMethod { get; set; }
 
         public PaymentEntity(double value)
         {
