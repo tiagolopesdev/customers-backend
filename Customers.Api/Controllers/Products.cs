@@ -1,4 +1,5 @@
 ﻿using Customers.Application.UseCases.ProductUseCases.CreateProduct;
+using Customers.Application.UseCases.ProductUseCases.CreateProductsByExcel;
 using Customers.Application.UseCases.ProductUseCases.GetByNameProduct;
 using Customers.Application.UseCases.ProductUseCases.HasStockProduct;
 using MediatR;
@@ -54,11 +55,29 @@ namespace Customers.Api.Controllers
             }
         }
 
+        [HttpPost("CreateProductByExcel")]
+        [Produces("multipart/form-data", "application/json")]
+        [ProducesResponseType((int)HttpStatusCode.OK)]
+        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
+        public async Task<ActionResult<Guid>> CreateProductByExcel(CreateProductsByExcelRequest request)
+        {
+            try
+            {
+                var response = await _mediator.Send(request);
+
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
         [HttpPost("CreateProduct")]
         [Produces("application/json")]
         [ProducesResponseType((int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
-        public async Task<ActionResult<Guid>> CreateCustomer(CreateProductRequest request)
+        public async Task<ActionResult<Guid>> CreateProduct(CreateProductRequest request)
         {
             try
             {

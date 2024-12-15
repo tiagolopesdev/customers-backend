@@ -10,10 +10,18 @@ namespace Customers.Domain.AggregatesModel.Products
         public double BasePrice { get; set; }
         public int Quantity { get; set; }
 
-        public static Product NewEntity(Product product)
+        public static Product NewEntity(string name, string description, double value, double basePrice, int quantity)
         {
-            product.Id = Guid.NewGuid();
-            product.DateCreated = DateTime.Now;
+            Product product = new()
+            {
+                Id = Guid.NewGuid(),
+                DateCreated = DateTime.Now,
+                Name = name,
+                Description = description,
+                Value = value,
+                BasePrice = basePrice,
+                Quantity = quantity
+            };
 
             return product;
         }

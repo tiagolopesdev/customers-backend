@@ -22,7 +22,7 @@ namespace Customers.Application.UseCases.ProductUseCases.CreateProduct
 
             var product = _mapper.Map<Product>(request);
 
-            product = Product.NewEntity(product);
+            product = Product.NewEntity(product.Name, product.Description, product.Value, product.BasePrice, product.Quantity);
 
             _productRepository.Create(product);
 
