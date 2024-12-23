@@ -9,6 +9,7 @@ namespace Customers.Domain.AggregatesModel.Products
         public double Value { get; set; }
         public double BasePrice { get; set; }
         public int Quantity { get; set; }
+        public int QuantitySold { get; set; }
 
         public static Product NewEntity(string name, string description, double value, double basePrice, int quantity)
         {
@@ -20,7 +21,8 @@ namespace Customers.Domain.AggregatesModel.Products
                 Description = description,
                 Value = value,
                 BasePrice = basePrice,
-                Quantity = quantity
+                Quantity = quantity,
+                QuantitySold = 0
             };
 
             return product;

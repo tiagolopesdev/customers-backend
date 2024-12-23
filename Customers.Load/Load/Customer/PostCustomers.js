@@ -20,7 +20,8 @@ export default function () {
 
   console.log(`Indice da interação atual: ${indexCurrent} || Cenário: ${execution.scenario.name}`)
 
-  const url = 'https://minimarket-customer-backend-latest.onrender.com/api/Customer/CreateCustomer';
+  const url = 'http://localhost:5048/api/Customer/CreateCustomer';
+  // const url = 'https://minimarket-customer-backend-latest.onrender.com/api/Customer/CreateCustomer';
 
   const payload = JSON.stringify(data[indexCurrent]);
 

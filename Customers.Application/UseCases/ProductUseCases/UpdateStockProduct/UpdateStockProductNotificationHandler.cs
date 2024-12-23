@@ -21,6 +21,7 @@ namespace Customers.Application.UseCases.ProductUseCases.UpdateStockProduct
                 if (result == null) continue;
 
                 result.Quantity -= product.Quantity;
+                result.QuantitySold += product.Quantity;
 
                 await _productRepository.Update(result);
             }
