@@ -8,5 +8,6 @@
         public double Value { get; set; }
         public int Quantity { get; set; }
         public DateTime DateCreated { get; set; }
+        public double BasePrice { get; set; }
     }
 }
