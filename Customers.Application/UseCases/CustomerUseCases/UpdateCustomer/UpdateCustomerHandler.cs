@@ -73,16 +73,6 @@ namespace Customers.Application.UseCases.CustomerUseCases.UpdateCustomer
             customerToSave.Id = customerFounded.Id;
             customerToSave.DateCreated = customerFounded.DateCreated;
 
-            customerToSave.SetAmountPaid();
-            customerToSave.SetAmountToPay();
-
-            customerToSave.DateUpdated = DateTime.Now;
-
-            customerToSave = CustomerHelper.PrecisionDecimalValues(customerToSave);
-
-            customerToSave.AmountPaid = Utilities.CalculatePrecision(customerToSave.AmountPaid);
-            customerToSave.AmountToPay = Utilities.CalculatePrecision(customerToSave.AmountToPay);
-
             foreach (var item in customerFounded.Buys)
             {
                 var result = customerToSave.Buys.Find(searchElement => searchElement.Id == item.Id);
@@ -92,7 +82,7 @@ namespace Customers.Application.UseCases.CustomerUseCases.UpdateCustomer
                     customerToSave.Buys.Add(item);
                 }
             }
-            
+
             foreach (var item in customerFounded.Payments)
             {
                 var result = customerToSave.Payments.Find(searchElement => searchElement.Id == item.Id);
@@ -101,6 +91,21 @@ namespace Customers.Application.UseCases.CustomerUseCases.UpdateCustomer
                 {
                     customerToSave.Payments.Add(item);
                 }
+            }
+
+            customerToSave.SetAmountPaid();
+            customerToSave.SetAmountToPay();
+
+            customerToSave.DateUpdated = DateTime.Now;
+
+            customerToSave = CustomerHelper.PrecisionDecimalValues(customerToSave);
+
+            customerToSave.AmountPaid = Utilities.CalculatePrecision(customerToSave.AmountPaid);
+            customerToSave.AmountToPay = Utilities.CalculatePrecision(customerToSave.AmountToPay);
+            
+            if (customerToSave.AmountPaid > customerToSave.AmountToPay)
+            {
+                throw new Exception("Valor maior que saldo a pagar");
             }
 
             await _customerRepository.UpdateCustomer(customerToSave);
