@@ -37,9 +37,9 @@ namespace Customers.Application.UseCases.ProductUseCases.CreateProductsByExcel
                 Product product = Product.NewEntity(
                     worksheet.Cells[row, 1].Text,
                     worksheet.Cells[row, 2].Text,
-                    (double)worksheet.Cells[row, 4].Value,
                     (double)worksheet.Cells[row, 6].Value,
-                    Convert.ToInt32(worksheet.Cells[row, 5].Value)
+                    (double)worksheet.Cells[row, 5].Value,
+                    Convert.ToInt32(worksheet.Cells[row, 4].Value)
                     );
 
                 List<Product> existsProduct = await _productRepository.GetByName(product.Name);
