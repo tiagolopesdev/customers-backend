@@ -6,16 +6,10 @@ namespace Customers.Infrastructure.Repositories
 {
     public class BaseRepository<T> : IBaseRepository<T> where T : Entity
     {
-        private readonly MongoClient _client;
         private readonly IMongoCollection<T> _collection;
-        private IConfiguration _configuration;
-        private string ConnectionString { get { return _configuration.GetConnectionString("MONGODB_URI");  } }
-
         public BaseRepository(IConfiguration configuration, string collection)
         {
-            _configuration = configuration;
-            _client = new MongoClient(ConnectionString);
-            _collection = _client.GetDatabase("mini-market-database").GetCollection<T>(collection);
+            _collection = new ConnectionDatabase<T>(configuration, collection).InstanceConnection();
         }
 
         public void Create(T entity)

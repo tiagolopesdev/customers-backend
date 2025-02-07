@@ -5,12 +5,12 @@ import execution from 'k6/execution';
 
 
 const data = new SharedArray("Read Json file", () => {
-  return JSON.parse(open('./data.json'))
+  return JSON.parse(open('./servos-copy.json'))
 })
 
 export const options = {
   vus: 1,
-  duration: '2m',
+  duration: '20m',
   iterations: data.length
 };
 
@@ -23,7 +23,11 @@ export default function () {
   // const url = 'http://localhost:5048/api/Customer/CreateCustomer';
   const url = 'https://minimarket-customer-backend-latest.onrender.com/api/Customer/CreateCustomer';
 
-  const payload = JSON.stringify(data[indexCurrent]);
+  const payload = JSON.stringify({
+    "name": data[indexCurrent],
+    "payments": [],
+    "buys": []
+  });
 
   const params = {
     headers: {
@@ -32,6 +36,9 @@ export default function () {
     },
   };
 
-  http.post(url, payload, params);
+  const result = http.post(url, payload, params);
+
+  console.log(`>>> ${indexCurrent} - Result: `, result.status)
+
   sleep(1);
 }

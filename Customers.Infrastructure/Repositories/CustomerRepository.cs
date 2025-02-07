@@ -8,16 +8,11 @@ namespace Customers.Infrastructure.Repositories
 {
     public class CustomerRepository : BaseRepository<Customer>, ICustomerRepository
     {
-        private readonly MongoClient _client;
         private readonly IMongoCollection<Customer> _collection;
-        private IConfiguration _configuration;
-        private string ConnectionString { get { return _configuration.GetConnectionString("MONGODB_URI"); } }
 
         public CustomerRepository(IConfiguration configuration) : base(configuration, "customers")
         {
-            _configuration = configuration;
-            _client = new MongoClient(ConnectionString);
-            _collection = _client.GetDatabase("mini-market-database").GetCollection<Customer>("customers");
+            _collection = new ConnectionDatabase<Customer>(configuration, "customers").InstanceConnection();
         }
 
         public async Task<List<Customer>> GetByName(string name)

@@ -29,9 +29,8 @@ namespace Customers.Application.UseCases.ProductUseCases.CreateProductsByExcel
 
             var worksheet = package.Workbook.Worksheets[0];
 
-            int length = Convert.ToInt32(worksheet.LastValueCell.Address.Replace("F", ""));
 
-            for (int row = 2; row <= length; row++)
+            for (int row = 2; row <= worksheet.Cells.Last().End.Row; row++)
             {
 
                 Product product = Product.NewEntity(

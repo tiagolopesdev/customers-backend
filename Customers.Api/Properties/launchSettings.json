@@ -1,5 +1,14 @@
 {
   "profiles": {
+    "production": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Production"
+      },
+      "dotnetRunMessages": true,
+      "applicationUrl": "http://localhost:5048"
+    },
     "http": {
       "commandName": "Project",
       "launchBrowser": true,
