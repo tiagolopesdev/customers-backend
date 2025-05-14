@@ -1,0 +1,25 @@
+using BlockDomain.SeedWork;
+using Microsoft.Extensions.Configuration;
+using MongoDB.Driver;
+
+namespace BlockInfrastructure;
+
+public class DatabaseConnectionFactory<T> where T : Entity
+{
+  private readonly MongoClient _client;
+  private readonly IMongoCollection<T> _collection;
+  private readonly IConfiguration _configuration;
+  private string ConnectionString { get { return _configuration.GetConnectionString("MONGODB_URI"); } }
+
+  public DatabaseConnectionFactory(IConfiguration configuration, string collection)
+  {
+    _configuration = configuration;
+    _client = new MongoClient(ConnectionString);
+    _collection = _client.GetDatabase("mini-market-database").GetCollection<T>(collection);
+  }
+
+  public IMongoCollection<T> InstanceConnection()
+  {
+    return _collection;
+  }
+}
