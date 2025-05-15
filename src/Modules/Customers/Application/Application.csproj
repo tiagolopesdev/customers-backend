@@ -6,4 +6,16 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+	<ItemGroup>
+    <Folder Include="UseCases\GetAll\" />
+    <Folder Include="UseCases\GetById\" />
+    <Folder Include="UseCases\GetByName\" />
+    <Folder Include="UseCases\Update\" />
+  </ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\..\..\BuildingBlocks\Application\BlockApplication.csproj" />
+	  <ProjectReference Include="..\Domain\Domain.csproj" />
+	</ItemGroup>
+
 </Project>

@@ -1,5 +1,5 @@
 
-using Domain;
+using Domain.Customers;
 
 namespace Application.Services;
 

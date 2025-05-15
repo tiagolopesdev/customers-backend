@@ -1,5 +1,5 @@
 using BlockApplication.Helpers;
-using Domain;
+using Domain.Customers;
 
 namespace Application.Services;
 
