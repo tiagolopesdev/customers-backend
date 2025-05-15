@@ -1,6 +1,6 @@
 using BlockDomain.SeedWork;
 
-namespace Domain;
+namespace Domain.Customers;
 
 public class Buy : Entity
 {

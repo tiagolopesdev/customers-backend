@@ -1,6 +1,7 @@
-﻿using BlockDomain.SeedWork;
 
-namespace Domain;
+using BlockDomain.SeedWork;
+
+namespace Domain.Customers;
 
 public class Customer : Entity, IAggregateRoot
 {
@@ -45,9 +46,9 @@ public class Customer : Entity, IAggregateRoot
       }
     }
   }
-  public Customer UpdateAmountToPay(Customer customer) 
+  public Customer UpdateAmountToPay(Customer customer)
   {
-    if (customer.Payments != null && customer.Payments.Count > 0) 
+    if (customer.Payments != null && customer.Payments.Count > 0)
     {
       customer.AmountToPay -= customer.Payments.Sum(payment => payment.Value);
     }
@@ -62,5 +63,4 @@ public class Customer : Entity, IAggregateRoot
 
     return customer;
   }
-
 }
