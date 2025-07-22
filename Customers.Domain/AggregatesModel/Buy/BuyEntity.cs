@@ -20,7 +20,7 @@ namespace Customers.Domain.AggregatesModel.Buy
         public static BuyEntity NewEntity(BuyEntity buy)
         {
             buy.Id = Guid.NewGuid();
-            buy.DateCreated = DateTime.Now;
+            buy.DateCreated = TimeZoneInfo.ConvertTime(DateTime.Now, TimeZoneInfo.FindSystemTimeZoneById("Central Brazilian Standard Time"));
 
             return buy;
         }

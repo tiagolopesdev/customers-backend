@@ -13,10 +13,10 @@ namespace Customers.Domain.AggregatesModel.Products
 
         public static Product NewEntity(string name, string description, double value, double basePrice, int quantity)
         {
-            Product product = new()
+            return new()
             {
                 Id = Guid.NewGuid(),
-                DateCreated = DateTime.Now,
+                DateCreated = TimeZoneInfo.ConvertTime(DateTime.Now, TimeZoneInfo.FindSystemTimeZoneById("Central Brazilian Standard Time")),
                 Name = name,
                 Description = description,
                 Value = value,
@@ -24,8 +24,6 @@ namespace Customers.Domain.AggregatesModel.Products
                 Quantity = quantity,
                 QuantitySold = 0
             };
-
-            return product;
         }
     }
 }

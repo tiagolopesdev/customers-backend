@@ -23,6 +23,30 @@ namespace Customers.Api.Controllers
             _mediator = mediator;
         }
 
+        //[HttpGet("TestDate")]
+        //[Produces("application/json")]
+        //[ProducesResponseType((int)HttpStatusCode.OK)]
+        //[ProducesResponseType((int)HttpStatusCode.BadRequest)]
+        //public async Task<ActionResult<Guid>> TestDate()
+        //{
+        //    try
+        //    {
+        //        var date = DateTime.Now;
+
+        //        object dates = new
+        //        {
+        //            brasil = TimeZoneInfo.ConvertTime(DateTime.Now, TimeZoneInfo.FindSystemTimeZoneById("Central Brazilian Standard Time")),
+        //            eua = TimeZoneInfo.ConvertTime(DateTime.Now, TimeZoneInfo.FindSystemTimeZoneById("W. Australia Standard Time")),
+        //        };
+
+        //        return Ok(dates);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return BadRequest(ex.Message);
+        //    }
+        //}
+        
         [HttpPut("UpdateCustomer")]
         [Produces("application/json")]
         [ProducesResponseType((int)HttpStatusCode.OK)]

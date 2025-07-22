@@ -15,7 +15,7 @@ namespace Customers.Domain.AggregatesModel.Payment
         public static PaymentEntity NewEntity(PaymentEntity payment)
         {
             payment.Id = Guid.NewGuid();
-            payment.DateCreated = DateTime.Now;
+            payment.DateCreated = TimeZoneInfo.ConvertTime(DateTime.Now, TimeZoneInfo.FindSystemTimeZoneById("Central Brazilian Standard Time"));
 
             return payment;
         }

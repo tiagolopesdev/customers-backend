@@ -1,5 +1,6 @@
 ﻿
 using AutoMapper;
+using Customers.Application.Shared.Helpers;
 using Customers.Domain.AggregatesModel.Products;
 using Customers.Domain.Interfaces;
 using MediatR;
@@ -27,7 +28,7 @@ namespace Customers.Application.UseCases.ProductUseCases.UpdateProduct
 
             if (request.IsEnable)
             {
-                productToSave.DateDeleted = DateTime.Now;
+                productToSave.DateDeleted = Utilities.DateTimeForBrazil();
             }
 
             productToSave.DateCreated = productExists.DateCreated;

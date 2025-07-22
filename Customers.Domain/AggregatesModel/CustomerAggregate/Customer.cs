@@ -21,7 +21,7 @@ namespace Customers.Domain.AggregatesModel.CustomerAggregate
         public static Customer NewEntity(Customer customer)
         {
             customer.Id = Guid.NewGuid();
-            customer.DateCreated = DateTime.Now;
+            customer.DateCreated = TimeZoneInfo.ConvertTime(DateTime.Now, TimeZoneInfo.FindSystemTimeZoneById("Central Brazilian Standard Time"));
             
             return customer;
         }

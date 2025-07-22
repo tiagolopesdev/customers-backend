@@ -4,6 +4,10 @@ namespace Customers.Application.Shared.Helpers
 {
     public static class Utilities
     {
+        public static DateTime DateTimeForBrazil()
+        {
+            return TimeZoneInfo.ConvertTime(DateTime.Now, TimeZoneInfo.FindSystemTimeZoneById("Central Brazilian Standard Time"));
+        }
         public static List<T>? FilterNotDeleteEntity<T>(List<T> entity) where T : Entity
         {
             return entity.Where(filter => filter.DateDeleted == null).ToList();
