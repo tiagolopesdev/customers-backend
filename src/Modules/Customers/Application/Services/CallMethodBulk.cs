@@ -4,11 +4,11 @@ namespace Application.Services;
 
 public class CallMethodBulk
 {
-  public static List<Customer> AssignAmountToPayList(List<Customer> customers)
+  public static List<CustomerAggregateRoot> AssignAmountToPayList(List<CustomerAggregateRoot> customers)
   {
     customers.ForEach(item =>
     {
-      item = Customer.AssignAmountToPay(item);
+      item = CustomerAggregateRoot.AssignAmountToPay(item);
     });
     return customers;
   }

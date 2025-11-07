@@ -1,26 +1,42 @@
+
+using Api.Controllers;
+using Customer.Infrastructure.Configuration;
+using Microsoft.AspNetCore.Mvc.ApplicationParts;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddRazorPages();
+
+builder.Services.AddSwaggerGen();
+builder.Services.AddEndpointsApiExplorer();
+
+
+CustomerStartup.LoadCustomerModule(builder.Services);
+
+builder.Services.AddControllers()
+    .ConfigureApplicationPartManager(manager =>
+    {
+        manager.ApplicationParts.Add(
+            new AssemblyPart(typeof(CustomerController).Assembly)
+            );
+    });
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (!app.Environment.IsDevelopment())
+app.UseSwagger();
+app.UseSwaggerUI(option =>
 {
-    app.UseExceptionHandler("/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-    app.UseHsts();
-}
+    option.RoutePrefix = string.Empty;
+    option.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
+});
 
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection();
 
 app.UseRouting();
 
-app.UseAuthorization();
+//app.UseAuthorization();
 
-app.MapStaticAssets();
-app.MapRazorPages()
-   .WithStaticAssets();
+app.MapControllers();
 
 app.Run();

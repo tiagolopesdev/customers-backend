@@ -1,10 +1,11 @@
 using Application.Contracts.Mapper;
 using Application.Shared.Dtos;
+using AutoMapper;
 using Domain.Customers;
 
 namespace Application.Shared.Mapper;
 
-public class CustomerMapper : MapperProfile
+public class CustomerMapper : Profile
 {
   public CustomerMapper()
   {
@@ -12,7 +13,7 @@ public class CustomerMapper : MapperProfile
 
     CreateMap<Payment, PaymentDto>();
 
-    CreateMap<Customer, CustomerDto>()
+    CreateMap<CustomerAggregateRoot, CustomerDto>()
         .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id))
         .ForMember(dest => dest.AmountPaid, opt => opt.MapFrom(src => src.AmountPaid))
         .ForMember(dest => dest.AmountToPay, opt => opt.MapFrom(src => src.AmountToPay))

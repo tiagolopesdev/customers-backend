@@ -5,7 +5,7 @@ namespace Application.Services;
 
 public static class PrecisionValues
 {
-  public static Customer PrecisionDecimalValues(Customer customer)
+  public static CustomerAggregateRoot PrecisionDecimalValues(CustomerAggregateRoot customer)
   {
     if (customer.Buys != null && customer.Buys.Count > 0)
     {

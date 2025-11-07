@@ -6,63 +6,63 @@ namespace BlockInfrastructure.Persistence.Repositories;
 
 public class BaseRepository<T> : IBaseRepository<T> where T : Entity
 {
-  private readonly IMongoCollection<T> _collection;
-  public BaseRepository(IConfiguration configuration, string collection)
-  {
-    _collection = new DatabaseConnectionFactory<T>(configuration, collection).InstanceConnection();
-  }
-
-  public void Create(T entity)
-  {
-    _collection.InsertOne(entity);
-  }
-
-  public Task<Guid> Delete(T entity)
-  {
-    throw new NotImplementedException();
-  }
-
-  public async Task<List<T>> GetAll()
-  {
-    try
+    private readonly IMongoCollection<T> _collection;
+    public BaseRepository(IConfiguration configuration, string collection, string module)
     {
-      var result = await _collection.FindSync(filter => filter.DateDeleted == null).ToListAsync();
-
-      return result;
+        _collection = new DatabaseConnectionFactory<T>(configuration, collection, module).InstanceConnection();
     }
-    catch (Exception ex)
+
+    public void Create(T entity)
     {
-      throw new Exception(ex.Message);
+        _collection.InsertOne(entity);
     }
-  }
 
-  public async Task<T> GetById(Guid id)
-  {
-    try
+    public Task<Guid> Delete(T entity)
     {
-      var result = await _collection.FindSync(filter => filter.Id == id).ToListAsync();
-
-      return result.First();
+        throw new NotImplementedException();
     }
-    catch (Exception ex)
+
+    public async Task<List<T>> GetAll()
     {
-      throw new Exception(ex.Message);
-    }
-  }
+        try
+        {
+            var result = await _collection.FindSync(filter => filter.DateDeleted == null).ToListAsync();
 
-  public async Task<Guid> Update(T entity)
-  {
-    try
+            return result;
+        }
+        catch (Exception ex)
+        {
+            throw new Exception(ex.Message);
+        }
+    }
+
+    public async Task<T> GetById(Guid id)
     {
-      await _collection.DeleteOneAsync(element => element.Id == entity.Id);
+        try
+        {
+            var result = await _collection.FindSync(filter => filter.Id == id).ToListAsync();
 
-      await _collection.InsertOneAsync(entity);
-
-      return entity.Id;
+            return result.First();
+        }
+        catch (Exception ex)
+        {
+            throw new Exception(ex.Message);
+        }
     }
-    catch (Exception ex)
+
+    public async Task<Guid> Update(T entity)
     {
-      throw new Exception(ex.Message);
+        try
+        {
+            await _collection.DeleteOneAsync(element => element.Id == entity.Id);
+
+            await _collection.InsertOneAsync(entity);
+
+            return entity.Id;
+        }
+        catch (Exception ex)
+        {
+            throw new Exception(ex.Message);
+        }
     }
-  }
 }

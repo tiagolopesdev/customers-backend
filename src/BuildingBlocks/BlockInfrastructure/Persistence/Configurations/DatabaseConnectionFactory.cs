@@ -6,20 +6,22 @@ namespace BlockInfrastructure;
 
 public class DatabaseConnectionFactory<T> where T : Entity
 {
-  private readonly MongoClient _client;
-  private readonly IMongoCollection<T> _collection;
-  private readonly IConfiguration _configuration;
-  private string ConnectionString { get { return _configuration.GetConnectionString("MONGODB_URI"); } }
+    private readonly MongoClient _client;
+    private readonly IMongoCollection<T> _collection;
+    private readonly IConfiguration _configuration;
 
-  public DatabaseConnectionFactory(IConfiguration configuration, string collection)
-  {
-    _configuration = configuration;
-    _client = new MongoClient(ConnectionString);
-    _collection = _client.GetDatabase("mini-market-database").GetCollection<T>(collection);
-  }
+    public DatabaseConnectionFactory(IConfiguration configuration, string collection, string module)
+    {        
+        _configuration = configuration;
 
-  public IMongoCollection<T> InstanceConnection()
-  {
-    return _collection;
-  }
+        var section = _configuration.GetSection(module).GetChildren().ToArray();
+
+        _client = new MongoClient(section[0].Value);
+        _collection = _client.GetDatabase(section[1].Value).GetCollection<T>(collection);        
+    }
+
+    public IMongoCollection<T> InstanceConnection()
+    {
+        return _collection;
+    }
 }

@@ -5,9 +5,9 @@ namespace Application.Services;
 
 public static class Filters
 {
-  public static List<Customer> ApplyingFilters(List<Customer> data, bool owing, string? usersSales, DateTime? date)
+  public static List<CustomerAggregateRoot> ApplyingFilters(List<CustomerAggregateRoot> data, bool owing, string? usersSales, DateTime? date)
   {
-    List<Customer> dataToReturn = new List<Customer>();
+    List<CustomerAggregateRoot> dataToReturn = new List<CustomerAggregateRoot>();
 
     if (!string.IsNullOrEmpty(usersSales) && !string.IsNullOrEmpty(date.ToString()))
     {

@@ -1,53 +1,53 @@
 
-using Application.Contracts;
 using Application.Services;
+using AutoMapper;
 using BlockApplication.Helpers;
-using BlockApplication.Mapper;
 using Domain.Customers;
+using MediatR;
 
 namespace Application.UseCases.Create;
 
-public sealed class CreateCustomerHandler : ICommandHandler<CreateCustomerCommand, Guid>
+public sealed class CreateCustomerHandler : IRequestHandler<CreateCustomerCommand, Guid>
 {
-  private readonly ICustomerRepository _customerRepository;
-  private readonly IAutoMapper _mapper;
+    private readonly ICustomerRepository _customerRepository;
+    private readonly IMapper _mapper;
 
-  public CreateCustomerHandler(IAutoMapper mapper, ICustomerRepository customerRepository)
-  {
-    _customerRepository = customerRepository;
-    _mapper = mapper;
-  }
+    public CreateCustomerHandler(IMapper mapper, ICustomerRepository customerRepository)
+    {
+        _customerRepository = customerRepository;
+        _mapper = mapper;
+    }
 
-  public async Task<Guid> Handle(CreateCustomerCommand request, CancellationToken cancellationToken)
-  {
-    var customer = _mapper.Map<Customer>(request);
+    public async Task<Guid> Handle(CreateCustomerCommand request, CancellationToken cancellationToken)
+    {
+        var customer = _mapper.Map<CustomerAggregateRoot>(request);
 
-    customer = Customer.NewEntity(customer);
+        customer = CustomerAggregateRoot.NewEntity(customer);
 
-    customer = EntityNew.DefinePaymentEqualsNew(customer);
-    customer = EntityNew.DefineBuyEqualsNew(customer);
+        customer = EntityInitializer.DefinePaymentEqualsNew(customer);
+        customer = EntityInitializer.DefineBuyEqualsNew(customer);
 
-    customer.SetAmountToPay();
-    customer.SetAmountPaid();
+        customer.SetAmountToPay();
+        customer.SetAmountPaid();
 
-    customer = PrecisionValues.PrecisionDecimalValues(customer);
+        customer = PrecisionValues.PrecisionDecimalValues(customer);
 
-    customer.AmountPaid = CommonHelpers.CalculatePrecision(customer.AmountPaid);
-    customer.AmountToPay = CommonHelpers.CalculatePrecision(customer.AmountToPay);
+        customer.AmountPaid = CommonHelpers.CalculatePrecision(customer.AmountPaid);
+        customer.AmountToPay = CommonHelpers.CalculatePrecision(customer.AmountToPay);
 
-    _customerRepository.Create(customer);
+        _customerRepository.Create(customer);
 
-    // _mediator.Publish(
-    //     new UpdateStockProductNotification(
-    //             request.Buys.Select(element => new UpdateStockProductModel(
-    //                 element.ProductId,
-    //                 element.Quantity
-    //                 )
-    //             )
-    //             .ToList()
-    //         )
-    //     );
+        // _mediator.Publish(
+        //     new UpdateStockProductNotification(
+        //             request.Buys.Select(element => new UpdateStockProductModel(
+        //                 element.ProductId,
+        //                 element.Quantity
+        //                 )
+        //             )
+        //             .ToList()
+        //         )
+        //     );
 
-    return customer.Id;
-  }
+        return customer.Id;
+    }
 }

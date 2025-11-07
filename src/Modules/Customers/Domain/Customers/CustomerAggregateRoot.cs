@@ -3,7 +3,7 @@ using BlockDomain.SeedWork;
 
 namespace Domain.Customers;
 
-public class Customer : Entity, IAggregateRoot
+public class CustomerAggregateRoot : Entity, IAggregateRoot
 {
   public string Name { get; set; }
   public List<Payment>? Payments { get; set; }
@@ -11,11 +11,11 @@ public class Customer : Entity, IAggregateRoot
   public double AmountPaid { get; set; }
   public double AmountToPay { get; set; }
 
-  public Customer()
+  public CustomerAggregateRoot()
   {
   }
 
-  public static Customer NewEntity(Customer customer)
+  public static CustomerAggregateRoot NewEntity(CustomerAggregateRoot customer)
   {
     customer.Id = Guid.NewGuid();
     customer.DateCreated = TimeZoneInfo.ConvertTime(DateTime.Now, TimeZoneInfo.FindSystemTimeZoneById("Central Brazilian Standard Time"));
@@ -46,7 +46,7 @@ public class Customer : Entity, IAggregateRoot
       }
     }
   }
-  public Customer UpdateAmountToPay(Customer customer)
+  public CustomerAggregateRoot UpdateAmountToPay(CustomerAggregateRoot customer)
   {
     if (customer.Payments != null && customer.Payments.Count > 0)
     {
@@ -54,7 +54,7 @@ public class Customer : Entity, IAggregateRoot
     }
     return customer;
   }
-  public static Customer AssignAmountToPay(Customer customer)
+  public static CustomerAggregateRoot AssignAmountToPay(CustomerAggregateRoot customer)
   {
     if (customer.Payments != null && customer.Payments.Count > 0)
     {

@@ -6,9 +6,9 @@ namespace Application.Services;
 
 public static class EntityDeleted
 {
-  public static List<Customer> FilterPropertyListNotDeleted(List<Customer> customer)
+  public static List<CustomerAggregateRoot> FilterPropertyListNotDeleted(List<CustomerAggregateRoot> customer)
   {
-    List<Customer> customerList = new();
+    List<CustomerAggregateRoot> customerList = new();
 
     foreach (var customerItem in customer)
     {
@@ -17,7 +17,7 @@ public static class EntityDeleted
     return customerList;
   }
 
-  public static Customer FilterPropertyNotDeleted(Customer customer)
+  public static CustomerAggregateRoot FilterPropertyNotDeleted(CustomerAggregateRoot customer)
   {
     if (customer.Payments != null && customer.Payments.Count > 0)
     {
