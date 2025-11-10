@@ -1,6 +1,7 @@
 
 using Api.Controllers;
 using Customer.Infrastructure.Configuration;
+using Infrastructure.Configuration;
 using Microsoft.AspNetCore.Mvc.ApplicationParts;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,14 +13,9 @@ builder.Services.AddEndpointsApiExplorer();
 
 
 CustomerStartup.LoadCustomerModule(builder.Services);
+ProductStartup.LoadProductModule(builder.Services);
 
-builder.Services.AddControllers()
-    .ConfigureApplicationPartManager(manager =>
-    {
-        manager.ApplicationParts.Add(
-            new AssemblyPart(typeof(CustomerController).Assembly)
-            );
-    });
+builder.Services.AddControllers();
 
 var app = builder.Build();
 

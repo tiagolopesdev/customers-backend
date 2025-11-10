@@ -15,6 +15,8 @@
     <ProjectReference Include="..\Modules\Customers\Application\Customer.Application.csproj" />
     <ProjectReference Include="..\Modules\Customers\Customer.Api\Customer.Api.csproj" />
     <ProjectReference Include="..\Modules\Customers\Infrastructure\Customer.Infrastructure.csproj" />
+    <ProjectReference Include="..\Modules\Products\Infrastructure\Product.Infrastructure.csproj" />
+    <ProjectReference Include="..\Modules\Products\Product.Api\Product.Api.csproj" />
   </ItemGroup>
 
 </Project>

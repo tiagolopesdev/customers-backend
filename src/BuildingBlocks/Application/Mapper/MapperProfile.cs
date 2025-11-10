@@ -1,6 +1,6 @@
 using AutoMapper;
 
-namespace Application.Contracts.Mapper;
+namespace BlockApplication.Mapper;
 
 public abstract class MapperProfile : Profile
 {

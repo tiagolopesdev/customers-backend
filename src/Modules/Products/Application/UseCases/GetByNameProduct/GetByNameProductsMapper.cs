@@ -1,13 +1,13 @@
-using Application.Contracts.Mapper;
 using Application.Shared.Dtos;
+using AutoMapper;
 using Domain.Product;
 
 namespace Application.UseCases.GetByNameProduct;
 
-public sealed class GetByNameProductsMapper : MapperProfile
+public sealed class GetByNameProductsMapper : Profile
 {
-  public GetByNameProductsMapper()
-  {
-    CreateMap<Product, ProductDto>();
-  }
+    public GetByNameProductsMapper()
+    {
+        CreateMap<Product, ProductDto>();
+    }
 }

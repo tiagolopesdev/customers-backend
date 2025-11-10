@@ -1,5 +1,4 @@
-﻿using Application.Shared.Behavior;
-using Customer.Application.Configuration;
+﻿using Customer.Application.Configuration;
 using Domain.Customers;
 using FluentValidation;
 using Infrastructure.Persistence.Repositories;
@@ -19,7 +18,7 @@ namespace Customer.Infrastructure.Configuration
 
             services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
 
-            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));                        
+            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(BlockApplication.Behavior.ValidationBehavior<,>));                        
         }        
     }
 }

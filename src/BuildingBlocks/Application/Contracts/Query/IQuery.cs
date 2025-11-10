@@ -1,6 +1,6 @@
 using MediatR;
 
-namespace Application.Contracts.Query;
+namespace BlockApplication.Contracts.Query;
 
 public interface IQuery<TResult> : IRequest<TResult>
 {

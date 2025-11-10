@@ -1,5 +1,4 @@
-
-namespace Application.Contracts;
+namespace BlockApplication.Contracts.Command;
 
 public interface IExecuteCommand
 {

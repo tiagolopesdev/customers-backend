@@ -1,5 +1,4 @@
-
-namespace Application.Contracts.Query;
+namespace BlockApplication.Contracts.Query;
 
 public interface IExecuteQuery
 {

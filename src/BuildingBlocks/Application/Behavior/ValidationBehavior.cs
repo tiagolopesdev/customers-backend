@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
 using MediatR;
 
-namespace Application.Shared.Behavior
+namespace BlockApplication.Behavior
 {
     public sealed class ValidationBehavior<TRequest, TResponse> :
         IPipelineBehavior<TRequest, TResponse>

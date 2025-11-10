@@ -1,4 +1,3 @@
-using Application.Contracts.Mapper;
 using Application.Shared.Dtos;
 using AutoMapper;
 using Domain.Customers;

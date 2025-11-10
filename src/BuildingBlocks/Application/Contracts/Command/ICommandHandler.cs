@@ -1,7 +1,6 @@
-
 using MediatR;
 
-namespace Application.Contracts;
+namespace BlockApplication.Contracts.Command;
 
 public interface ICommandHandler<TCommand> : IRequestHandler<TCommand>
   where TCommand : ICommand

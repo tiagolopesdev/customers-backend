@@ -1,5 +1,5 @@
+using AutoMapper;
 using BlockApplication.Helpers;
-using BlockApplication.Mapper;
 using Domain.Product;
 using MediatR;
 
@@ -7,9 +7,9 @@ namespace Application.UseCases.UpdateProduct;
 
 public class UpdateProductHandler : IRequestHandler<UpdateProductCommand, Guid>
 {
-    private readonly IAutoMapper _mapper;
+    private readonly IMapper _mapper;
     private readonly IProductRepository _productRepository;
-    public UpdateProductHandler(IProductRepository productRepository, IAutoMapper mapper)
+    public UpdateProductHandler(IProductRepository productRepository, IMapper mapper)
     {
         _mapper = mapper;
         _productRepository = productRepository;

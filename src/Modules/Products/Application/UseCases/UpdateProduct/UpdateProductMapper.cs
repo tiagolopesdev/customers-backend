@@ -1,9 +1,9 @@
-using Application.Contracts.Mapper;
+using AutoMapper;
 using Domain.Product;
 
 namespace Application.UseCases.UpdateProduct;
 
-public class UpdateProductMapper : MapperProfile
+public class UpdateProductMapper : Profile
 {
   public UpdateProductMapper()
   {
