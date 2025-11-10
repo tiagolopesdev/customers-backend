@@ -1,11 +1,10 @@
-
-using Application.Contracts;
 using Domain.Product;
+using MediatR;
 using OfficeOpenXml;
 
 namespace Application.UseCases.CreateProductByExcel;
 
-public class CreateProductsByExcelHandler : ICommandHandler<CreateProductsByExcelCommand, Guid>
+public class CreateProductsByExcelHandler : IRequestHandler<CreateProductsByExcelCommand, Guid>
 {
     private readonly IProductRepository _productRepository;
 

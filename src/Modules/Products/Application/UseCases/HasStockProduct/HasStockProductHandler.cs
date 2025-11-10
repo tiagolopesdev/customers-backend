@@ -1,10 +1,10 @@
-using Application.Contracts.Query;
 using BlockApplication.Mapper;
 using Domain.Product;
+using MediatR;
 
 namespace Application.UseCases.HasStockProduct;
 
-public class HasStockProductHandler : IQueryHandler<HasStockProductQuery, HasStockDto>
+public class HasStockProductHandler : IRequestHandler<HasStockProductQuery, HasStockDto>
 {
     private readonly IProductRepository _productRepository;
     private readonly IAutoMapper _mapper;

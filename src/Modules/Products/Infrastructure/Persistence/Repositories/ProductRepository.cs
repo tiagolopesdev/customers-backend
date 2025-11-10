@@ -10,9 +10,9 @@ namespace Infrastructure.Persistence.Repositories
     public class ProductRepository : BaseRepository<Product>, IProductRepository
     {
         private readonly IMongoCollection<Product> _collection;
-        public ProductRepository(IConfiguration configuration) : base(configuration, "product")
+        public ProductRepository(IConfiguration configuration) : base(configuration, "product", "Product")
         {
-            _collection = new DatabaseConnectionFactory<Product>(configuration, "product").InstanceConnection();
+            _collection = new DatabaseConnectionFactory<Product>(configuration, "product", "Product").InstanceConnection();
         }
         public async Task<List<Product>> GetByName(string name)
         {

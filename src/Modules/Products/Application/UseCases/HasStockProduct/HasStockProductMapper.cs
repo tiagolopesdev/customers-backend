@@ -1,4 +1,5 @@
 using Application.Contracts.Mapper;
+using Domain.Product;
 
 namespace Application.UseCases.HasStockProduct;
 

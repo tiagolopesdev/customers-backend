@@ -1,5 +1,4 @@
-
-using Application.Contracts;
+using MediatR;
 
 namespace Application.UseCases.UpdateProduct;
 
@@ -11,6 +10,7 @@ public sealed record class UpdateProductCommand(
     double BasePrice,
     int Quantity,
     bool IsEnable,
-    string UpdatedBy) : ICommand<Guid>
+    string UpdatedBy
+    ) : IRequest<Guid>
 {
 }
