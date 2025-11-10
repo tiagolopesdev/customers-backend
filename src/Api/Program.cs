@@ -1,5 +1,6 @@
 
 using Api.Controllers;
+using CloudNative.ServiceDefaults;
 using Customer.Infrastructure.Configuration;
 using Infrastructure.Configuration;
 using Microsoft.AspNetCore.Mvc.ApplicationParts;
@@ -16,6 +17,8 @@ CustomerStartup.LoadCustomerModule(builder.Services);
 ProductStartup.LoadProductModule(builder.Services);
 
 builder.Services.AddControllers();
+
+builder.AddServiceDefaults();
 
 var app = builder.Build();
 

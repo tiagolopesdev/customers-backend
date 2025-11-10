@@ -12,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CloudNative\AspireApp1\AspireApp1.ServiceDefaults\CloudNative.ServiceDefaults.csproj" />
     <ProjectReference Include="..\Modules\Customers\Application\Customer.Application.csproj" />
     <ProjectReference Include="..\Modules\Customers\Customer.Api\Customer.Api.csproj" />
     <ProjectReference Include="..\Modules\Customers\Infrastructure\Customer.Infrastructure.csproj" />
