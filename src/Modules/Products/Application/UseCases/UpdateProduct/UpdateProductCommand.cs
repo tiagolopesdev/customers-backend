@@ -1,4 +1,4 @@
-using MediatR;
+using BlockApplication.Contracts.CommandQuery;
 
 namespace Application.UseCases.UpdateProduct;
 
@@ -11,6 +11,6 @@ public sealed record class UpdateProductCommand(
     int Quantity,
     bool IsEnable,
     string UpdatedBy
-    ) : IRequest<Guid>
+    ) : ICommand<Guid>
 {
 }

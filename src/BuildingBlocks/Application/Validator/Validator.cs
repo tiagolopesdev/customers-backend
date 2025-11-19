@@ -1,8 +1,8 @@
-using BlockApplication.Contracts.Command;
+using BlockApplication.Contracts.CommandQuery;
 using FluentValidation;
 
 namespace BlockApplication.Validator;
 
-public class Validator<TRequest> : AbstractValidator<TRequest> where TRequest: ICommand
+public class Validator<TRequest> : AbstractValidator<TRequest> where TRequest: ICommand<TRequest>
 {
 }

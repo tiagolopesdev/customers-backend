@@ -1,13 +1,13 @@
 
 using Application.Services;
 using AutoMapper;
+using BlockApplication.Contracts.CommandQuery;
 using BlockApplication.Helpers;
 using Domain.Customers;
-using MediatR;
 
 namespace Application.UseCases.Create;
 
-public sealed class CreateCustomerHandler : IRequestHandler<CreateCustomerCommand, Guid>
+public sealed class CreateCustomerHandler : IHandler<CreateCustomerCommand, Guid>
 {
     private readonly ICustomerRepository _customerRepository;
     private readonly IMapper _mapper;

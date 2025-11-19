@@ -1,11 +1,11 @@
 using AutoMapper;
+using BlockApplication.Contracts.CommandQuery;
 using Domain.Product;
-using MediatR;
 
 
 namespace Application.UseCases.Create;
 
-public class CreateProductHandler : IRequestHandler<CreateProductCommand, Guid>
+public class CreateProductHandler : IHandler<CreateProductCommand, Guid>
 {
   private readonly IMapper _mapper;
   private readonly IProductRepository _productRepository;

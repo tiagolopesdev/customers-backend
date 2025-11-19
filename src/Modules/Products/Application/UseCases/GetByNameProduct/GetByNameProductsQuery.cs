@@ -1,9 +1,9 @@
 using Application.Shared.Dtos;
-using MediatR;
+using BlockApplication.Contracts.CommandQuery;
 
 namespace Application.UseCases.GetByNameProduct;
 
-public sealed record class GetByNameProductsQuery(string Name) : IRequest<List<ProductDto>>
+public sealed record class GetByNameProductsQuery(string Name) : IQuery<List<ProductDto>>
 {
 
 }

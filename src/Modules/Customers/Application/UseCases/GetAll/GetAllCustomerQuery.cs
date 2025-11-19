@@ -1,11 +1,10 @@
 
 using Application.Shared.Dtos;
-using MediatR;
+using BlockApplication.Contracts.CommandQuery;
 
 namespace Application.UseCases.GetAll;
 
-//public class GetAllCustomerQuery : IQuery<List<CustomerDto>>
-public class GetAllCustomerQuery : IRequest<List<CustomerDto>>
+public class GetAllCustomerQuery : IQuery<List<CustomerDto>>
 {
     public string? UsersSales { get; set; }
     public DateTime? DateUsersSales { get; set; }

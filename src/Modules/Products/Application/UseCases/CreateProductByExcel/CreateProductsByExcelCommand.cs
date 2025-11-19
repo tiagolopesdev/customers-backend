@@ -1,9 +1,9 @@
-using MediatR;
+using BlockApplication.Contracts.CommandQuery;
 using Microsoft.AspNetCore.Http;
 
 namespace Application.UseCases.CreateProductByExcel;
 
-public sealed record class CreateProductsByExcelCommand (IFormFile ExcelFile) : IRequest<Guid>
+public sealed record class CreateProductsByExcelCommand (IFormFile ExcelFile) : ICommand<Guid>
 {
   public Guid Id { get; set; }
 }

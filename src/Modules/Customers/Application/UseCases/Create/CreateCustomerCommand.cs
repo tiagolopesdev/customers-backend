@@ -1,5 +1,5 @@
 
-using MediatR;
+using BlockApplication.Contracts.CommandQuery;
 
 namespace Application.UseCases.Create;
 
@@ -7,7 +7,7 @@ public sealed record class CreateCustomerCommand(
   string Name,
   List<CreatePaymentCommand> Payments,
   List<CreateBuyCommand> Buys
-  ) : IRequest<Guid>
+  ) : ICommand<Guid>
 {
   public Guid Id { get; set; }
 }

@@ -1,12 +1,12 @@
 using Application.Services;
 using Application.Shared.Dtos;
 using AutoMapper;
+using BlockApplication.Contracts.CommandQuery;
 using Domain.Customers;
-using MediatR;
 
 namespace Application.UseCases.GetById;
 
-public class GetByIdCustomerHandler : IRequestHandler<GetByIdCustomerQuery, CustomerDto>
+public class GetByIdCustomerHandler : IHandler<GetByIdCustomerQuery, CustomerDto>
 {
     private readonly ICustomerRepository _customerRepository;
     private readonly IMapper _mapper;

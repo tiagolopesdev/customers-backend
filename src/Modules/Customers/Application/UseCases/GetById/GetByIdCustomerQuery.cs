@@ -1,8 +1,8 @@
 using Application.Shared.Dtos;
-using MediatR;
+using BlockApplication.Contracts.CommandQuery;
 
 namespace Application.UseCases.GetById;
 
-public sealed record class GetByIdCustomerQuery(Guid Id) : IRequest<CustomerDto>
+public sealed record class GetByIdCustomerQuery(Guid Id) : IQuery<CustomerDto>
 {
 }

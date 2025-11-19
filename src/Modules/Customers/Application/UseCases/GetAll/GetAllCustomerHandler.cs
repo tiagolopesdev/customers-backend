@@ -1,12 +1,12 @@
 using Application.Services;
 using Application.Shared.Dtos;
 using AutoMapper;
+using BlockApplication.Contracts.CommandQuery;
 using Domain.Customers;
-using MediatR;
 
 namespace Application.UseCases.GetAll;
 
-public class GetAllCustomerHandler : IRequestHandler<GetAllCustomerQuery, List<CustomerDto>>
+public class GetAllCustomerHandler : IHandler<GetAllCustomerQuery, List<CustomerDto>>
 {
     private readonly ICustomerRepository _customerRepository;
     private readonly IMapper _mapper;

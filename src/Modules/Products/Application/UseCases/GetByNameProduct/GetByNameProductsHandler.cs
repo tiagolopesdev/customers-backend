@@ -1,12 +1,12 @@
 using Application.Shared.Dtos;
 using AutoMapper;
+using BlockApplication.Contracts.CommandQuery;
 using BlockApplication.Helpers;
 using Domain.Product;
-using MediatR;
 
 namespace Application.UseCases.GetByNameProduct;
 
-public class GetByNameProductsHandler : IRequestHandler<GetByNameProductsQuery, List<ProductDto>>
+public class GetByNameProductsHandler : IHandler<GetByNameProductsQuery, List<ProductDto>>
 {
     private readonly IProductRepository _productRepository;
     private readonly IMapper _mapper;
