@@ -1,9 +1,9 @@
 using BlockDomain.SeedWork;
 
-namespace Domain.Product;
+namespace Product.Domain.Product;
 
-public interface IProductRepository : IBaseRepository<Product>
+public interface IProductRepository : IBaseRepository<ProductAggregateRoot>
 {
-  Task<Guid> UpdateProduct(Product product);
-  Task<List<Product>> GetByName(string name);
+  Task<Guid> UpdateProduct(ProductAggregateRoot product);
+  Task<List<ProductAggregateRoot>> GetByName(string name);
 }

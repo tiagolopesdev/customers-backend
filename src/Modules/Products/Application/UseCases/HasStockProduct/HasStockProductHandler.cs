@@ -1,8 +1,8 @@
 using AutoMapper;
 using BlockApplication.Contracts.CommandQuery;
-using Domain.Product;
+using Product.Domain.Product;
 
-namespace Application.UseCases.HasStockProduct;
+namespace Product.Application.UseCases.HasStockProduct;
 
 public class HasStockProductHandler : IHandler<HasStockProductQuery, HasStockDto>
 {
@@ -17,7 +17,7 @@ public class HasStockProductHandler : IHandler<HasStockProductQuery, HasStockDto
 
     public async Task<HasStockDto> Handle(HasStockProductQuery request, CancellationToken cancellationToken)
     {
-        Product result = await _productRepository.GetById(request.Id);
+        ProductAggregateRoot result = await _productRepository.GetById(request.Id);
 
         HasStockDto response = _mapper.Map<HasStockDto>(result);
 

@@ -1,7 +1,6 @@
-
 using Domain.Customers;
 
-namespace Application.Services;
+namespace Customer.Application.Services;
 
 public static class Filters
 {
@@ -23,7 +22,7 @@ public static class Filters
 
           element.Payments.ForEach(buy =>
                     {
-                      if (buy.DateCreated.Value.Date.CompareTo(date) == 0 || (buy.DateUpdated != null && buy.DateUpdated.Value.Date.CompareTo(date) == 0))
+                      if (buy.DateCreated.Value.Date.CompareTo(date) == 0 || buy.DateUpdated != null && buy.DateUpdated.Value.Date.CompareTo(date) == 0)
                       {
                         payments.Add(buy);
                       }

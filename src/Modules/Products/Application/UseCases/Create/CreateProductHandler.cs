@@ -1,9 +1,9 @@
 using AutoMapper;
 using BlockApplication.Contracts.CommandQuery;
-using Domain.Product;
+using Product.Domain.Product;
 
 
-namespace Application.UseCases.Create;
+namespace Product.Application.UseCases.Create;
 
 public class CreateProductHandler : IHandler<CreateProductCommand, Guid>
 {
@@ -18,9 +18,9 @@ public class CreateProductHandler : IHandler<CreateProductCommand, Guid>
 
   public Task<Guid> Handle(CreateProductCommand request, CancellationToken cancellationToken)
   {
-    var product = _mapper.Map<Product>(request);
+    var product = _mapper.Map<ProductAggregateRoot>(request);
 
-    product = Product.NewEntity(product.Name, product.Description, product.Value, product.BasePrice, product.Quantity);
+    product = ProductAggregateRoot.NewEntity(product.Name, product.Description, product.Value, product.BasePrice, product.Quantity);
 
     _productRepository.Create(product);
 

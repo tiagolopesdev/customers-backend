@@ -1,6 +1,6 @@
 using System;
 
-namespace Application.UseCases.Update;
+namespace Customer.Application.UseCases.Update;
 
 public class UpdateBuyRequest : CustomerActionsResponse
 {

@@ -1,4 +1,5 @@
 using BlockDomain.SeedWork;
+using BlockInfrastructure.Persistence.Configurations;
 using Microsoft.Extensions.Configuration;
 using MongoDB.Driver;
 

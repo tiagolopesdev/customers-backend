@@ -1,6 +1,6 @@
 using Domain.Customers;
 
-namespace Application.UseCases.Update;
+namespace Customer.Application.UseCases.Update;
 
 public class UpdatePaymentRequest : CustomerActionsResponse
 {

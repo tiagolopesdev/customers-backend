@@ -1,10 +1,10 @@
-﻿using Application.UseCases.Create;
-using Application.UseCases.CreateProductByExcel;
-using Application.UseCases.GetByNameProduct;
-using Application.UseCases.HasStockProduct;
-using Application.UseCases.UpdateProduct;
-using MediatR;
+﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Product.Application.UseCases.Create;
+using Product.Application.UseCases.CreateProductByExcel;
+using Product.Application.UseCases.GetByNameProduct;
+using Product.Application.UseCases.HasStockProduct;
+using Product.Application.UseCases.UpdateProduct;
 using System.Net;
 
 namespace Api.Controllers

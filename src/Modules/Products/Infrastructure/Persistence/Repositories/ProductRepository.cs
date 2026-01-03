@@ -1,20 +1,19 @@
-﻿
-using BlockInfrastructure;
+﻿using BlockInfrastructure.Persistence.Configurations;
 using BlockInfrastructure.Persistence.Repositories;
-using Domain.Product;
 using Microsoft.Extensions.Configuration;
 using MongoDB.Driver;
+using Product.Domain.Product;
 
-namespace Infrastructure.Persistence.Repositories
+namespace Product.Infrastructure.Persistence.Repositories
 {
-    public class ProductRepository : BaseRepository<Product>, IProductRepository
+    public class ProductRepository : BaseRepository<ProductAggregateRoot>, IProductRepository
     {
-        private readonly IMongoCollection<Product> _collection;
+        private readonly IMongoCollection<ProductAggregateRoot> _collection;
         public ProductRepository(IConfiguration configuration) : base(configuration, "product", "Product")
         {
-            _collection = new DatabaseConnectionFactory<Product>(configuration, "product", "Product").InstanceConnection();
+            _collection = new DatabaseConnectionFactory<ProductAggregateRoot>(configuration, "product", "Product").InstanceConnection();
         }
-        public async Task<List<Product>> GetByName(string name)
+        public async Task<List<ProductAggregateRoot>> GetByName(string name)
         {
             try
             {
@@ -28,13 +27,13 @@ namespace Infrastructure.Persistence.Repositories
             }
         }
 
-        public async Task<Guid> UpdateProduct(Product product)
+        public async Task<Guid> UpdateProduct(ProductAggregateRoot product)
         {
             try
             {
-                var filter = Builders<Product>.Filter.Eq(entity => entity.Id, product.Id);
+                var filter = Builders<ProductAggregateRoot>.Filter.Eq(entity => entity.Id, product.Id);
 
-                var update = Builders<Product>.Update
+                var update = Builders<ProductAggregateRoot>.Update
                     .Set(entity => entity.Quantity, product.Quantity)
                     .Set(entity => entity.Name, product.Name)
                     .Set(entity => entity.Value, product.Value)

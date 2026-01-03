@@ -2,7 +2,7 @@ using BlockDomain.SeedWork;
 using Microsoft.Extensions.Configuration;
 using MongoDB.Driver;
 
-namespace BlockInfrastructure;
+namespace BlockInfrastructure.Persistence.Configurations;
 
 public class DatabaseConnectionFactory<T> where T : Entity
 {

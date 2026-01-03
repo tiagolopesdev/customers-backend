@@ -1,13 +1,13 @@
 using AutoMapper;
-using Domain.Product;
+using Product.Domain.Product;
 
-namespace Application.UseCases.HasStockProduct;
+namespace Product.Application.UseCases.HasStockProduct;
 
 public sealed class HasStockProductMapper : Profile
 {
     public HasStockProductMapper()
     {
-        CreateMap<Product, HasStockDto>()
+        CreateMap<ProductAggregateRoot, HasStockDto>()
             .ForMember(dest => dest.QuantityAvailable, opt => opt.MapFrom(src => src.Quantity));
     }
 }

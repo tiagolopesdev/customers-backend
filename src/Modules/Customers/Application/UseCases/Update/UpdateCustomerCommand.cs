@@ -1,8 +1,9 @@
-using MediatR;
 
-namespace Application.UseCases.Update;
+using BlockApplication.Contracts.CommandQuery;
 
-public sealed record class UpdateCustomerCommand() : IRequest<Guid>
+namespace Customer.Application.UseCases.Update;
+
+public sealed record class UpdateCustomerCommand() : ICommand<Guid>
 {
     public Guid Id { get; set; }
     public string Name { get; set; }

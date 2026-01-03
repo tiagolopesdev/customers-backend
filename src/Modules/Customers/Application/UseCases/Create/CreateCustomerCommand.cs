@@ -1,7 +1,6 @@
-
 using BlockApplication.Contracts.CommandQuery;
 
-namespace Application.UseCases.Create;
+namespace Customer.Application.UseCases.Create;
 
 public sealed record class CreateCustomerCommand(
   string Name,

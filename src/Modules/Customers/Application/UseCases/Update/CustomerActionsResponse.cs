@@ -1,5 +1,4 @@
-
-namespace Application.UseCases.Update;
+namespace Customer.Application.UseCases.Update;
 
 public abstract class CustomerActionsResponse
 {

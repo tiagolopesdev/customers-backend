@@ -1,4 +1,5 @@
-﻿using Customer.Application.Configuration;
+﻿using BlockInfrastructure.Startup;
+using Customer.Application.Configuration;
 using Domain.Customers;
 using FluentValidation;
 using Infrastructure.Persistence.Repositories;
@@ -13,6 +14,8 @@ namespace Customer.Infrastructure.Configuration
         public static void LoadCustomerModule(IServiceCollection services)
         {
             services.AddScoped<ICustomerRepository, CustomerRepository>();
+
+            BuildingBlockStartup.LoadBuildingBlock(services);
 
             DependencyInjection.AddCustomerApplication(services);
 

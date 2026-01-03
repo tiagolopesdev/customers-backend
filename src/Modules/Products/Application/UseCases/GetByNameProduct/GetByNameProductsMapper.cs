@@ -1,13 +1,13 @@
-using Application.Shared.Dtos;
 using AutoMapper;
-using Domain.Product;
+using Product.Application.Shared.Dtos;
+using Product.Domain.Product;
 
-namespace Application.UseCases.GetByNameProduct;
+namespace Product.Application.UseCases.GetByNameProduct;
 
 public sealed class GetByNameProductsMapper : Profile
 {
     public GetByNameProductsMapper()
     {
-        CreateMap<Product, ProductDto>();
+        CreateMap<ProductAggregateRoot, ProductDto>();
     }
 }

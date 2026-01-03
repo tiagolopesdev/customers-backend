@@ -1,21 +1,25 @@
-using Application.Services;
 using AutoMapper;
+using BlockApplication.Contracts.CommandQuery;
+using BlockApplication.Contracts.Notification;
 using BlockApplication.Helpers;
 using BlockDomain.SeedWork;
+using Customer.Application.Services;
+using Customer.Application.UseCases.UpdateStockProduct;
 using Domain.Customers;
-using MediatR;
 
-namespace Application.UseCases.Update;
+namespace Customer.Application.UseCases.Update;
 
-public class UpdateCustomerHandler : IRequestHandler<UpdateCustomerCommand, Guid>
+public class UpdateCustomerHandler : IHandler<UpdateCustomerCommand, Guid>
 {
     private readonly ICustomerRepository _customerRepository;
     private readonly IMapper _mapper;
+    private readonly ISendNotification _sendNotification;
 
-    public UpdateCustomerHandler(ICustomerRepository customerRepository, IMapper mapper)
+    public UpdateCustomerHandler(ICustomerRepository customerRepository, IMapper mapper, ISendNotification sendNotification)
     {
         _customerRepository = customerRepository;
         _mapper = mapper;
+        _sendNotification = sendNotification;
     }
 
     public async Task<Guid> Handle(UpdateCustomerCommand request, CancellationToken cancellationToken)
@@ -72,24 +76,19 @@ public class UpdateCustomerHandler : IRequestHandler<UpdateCustomerCommand, Guid
             throw new Exception("Valor maior que saldo a pagar");
         }
 
-        var test = new UpdateStockProductNotification(request.Buys);
-
         //await _customerRepository.UpdateQuantityEvent();  
 
         await _customerRepository.UpdateCustomer(customerToSave);
 
-        //var products = request.Buys.Where(filter => filter.ProductId != Guid.Empty);
+        var products = request.Buys.Where(filter => filter.ProductId != Guid.Empty);
 
-        //_notificationEvent.Publish(
-        //    new UpdateStockProductNotification(
-        //        products.Select(element => new UpdateStockItemModel(
-        //                element.ProductId,
-        //                element.Quantity
-        //                )
-        //            )
-        //            .ToList()
-        //        )
-        //    );
+        _ = _sendNotification.Publish(new UpdateStockProductNotification(
+            products.Select(element =>
+                new UpdatedStockModel(
+                    element.ProductId,
+                    element.Quantity
+                    )
+                ).ToList()), cancellationToken);
 
         return customerFounded.Id;
     }

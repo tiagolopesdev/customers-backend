@@ -1,13 +1,12 @@
-﻿
-using Application.UseCases.Create;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using System.Net;
-using Application.UseCases.Update;
-using Application.UseCases.GetAll;
-using Application.UseCases.GetByName;
-using Application.Shared.Dtos;
-using Application.UseCases.GetById;
 using MediatR;
+using Customer.Application.Shared.Dtos;
+using Customer.Application.UseCases.Create;
+using Customer.Application.UseCases.GetByName;
+using Customer.Application.UseCases.GetAll;
+using Customer.Application.UseCases.Update;
+using Customer.Application.UseCases.GetById;
 
 namespace Api.Controllers
 {

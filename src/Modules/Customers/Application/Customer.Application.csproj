@@ -8,6 +8,8 @@
 
 	<ItemGroup>
 		<ProjectReference Include="..\..\..\BuildingBlocks\Application\BlockApplication.csproj" />
+		<ProjectReference Include="..\..\..\BuildingBlocks\BlockInfrastructure\BlockInfrastructure.csproj" />
+		<ProjectReference Include="..\Customer.IntegrationEvent\Customer.IntegrationEvent.csproj" />
 		<ProjectReference Include="..\Domain\Customer.Domain.csproj" />
 	</ItemGroup>
 

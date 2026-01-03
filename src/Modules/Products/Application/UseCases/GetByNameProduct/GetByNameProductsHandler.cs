@@ -1,10 +1,10 @@
-using Application.Shared.Dtos;
 using AutoMapper;
 using BlockApplication.Contracts.CommandQuery;
 using BlockApplication.Helpers;
-using Domain.Product;
+using Product.Application.Shared.Dtos;
+using Product.Domain.Product;
 
-namespace Application.UseCases.GetByNameProduct;
+namespace Product.Application.UseCases.GetByNameProduct;
 
 public class GetByNameProductsHandler : IHandler<GetByNameProductsQuery, List<ProductDto>>
 {
@@ -18,7 +18,7 @@ public class GetByNameProductsHandler : IHandler<GetByNameProductsQuery, List<Pr
     }
     public async Task<List<ProductDto>> Handle(GetByNameProductsQuery request, CancellationToken cancellationToken)
     {
-        List<Product> products = string.IsNullOrEmpty(request.Name) ?
+        List<ProductAggregateRoot> products = string.IsNullOrEmpty(request.Name) ?
                     await _productRepository.GetAll() :
                     await _productRepository.GetByName(request.Name);
 

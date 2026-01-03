@@ -1,9 +1,8 @@
-
 using BlockApplication.Helpers;
 using BlockDomain.SeedWork;
 using Domain.Customers;
 
-namespace Application.Services;
+namespace Customer.Application.Services;
 
 public class EntityInitializer
 {

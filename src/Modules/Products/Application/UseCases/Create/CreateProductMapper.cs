@@ -1,12 +1,12 @@
 using AutoMapper;
-using Domain.Product;
+using Product.Domain.Product;
 
-namespace Application.UseCases.Create;
+namespace Product.Application.UseCases.Create;
 
 public class CreateProductMapper : Profile
 {
   public CreateProductMapper()
   {
-    CreateMap<CreateProductCommand, Product>();
+    CreateMap<CreateProductCommand, ProductAggregateRoot>();
   }
 }

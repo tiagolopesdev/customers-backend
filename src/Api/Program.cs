@@ -2,8 +2,8 @@
 using Api.Controllers;
 using CloudNative.ServiceDefaults;
 using Customer.Infrastructure.Configuration;
-using Infrastructure.Configuration;
 using Microsoft.AspNetCore.Mvc.ApplicationParts;
+using Product.Infrastructure.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 

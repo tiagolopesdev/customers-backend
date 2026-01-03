@@ -13,7 +13,7 @@ namespace BlockInfrastructure.EventBus
         private string QueueName { get; set; }
         private EventingBasicConsumer consumer;
 
-        public EventBusClient(string queueName)
+        public EventBusClient()
         {
             connectionFactory = new ConnectionFactory()
             {
@@ -23,41 +23,48 @@ namespace BlockInfrastructure.EventBus
                 HostName = "localhost",
                 Port = AmqpTcpEndpoint.UseDefaultPort
             };
-            QueueName = queueName;
+            //QueueName = "queue-test";
             var connection = connectionFactory.CreateConnection();
             _channel = connection.CreateModel();
-            _channel.QueueDeclare(
-                queue: QueueName,
-                durable: false,
-                exclusive: false,
-                autoDelete: false,
-                arguments: null
-                );
         }
 
-        public void Publish<T>(T objectPublish) where T : IntegrationEvent
+        public void Publish<T>(T objectPublish, string queueName) where T : IntegrationEvent
         {
-            var bodyMessage = Encoding.UTF8.GetBytes(objectPublish.ToString());
-            _channel.BasicPublish(exchange: "", routingKey: QueueName, body: bodyMessage);
+            try
+            {
+                var bodyMessage = Encoding.UTF8.GetBytes(objectPublish.ToString());
+                _channel.QueueDeclare(
+                    queue: queueName,
+                    durable: true,
+                    exclusive: false,
+                    autoDelete: false,
+                    arguments: null
+                    );
+                _channel.BasicPublish(exchange: "", routingKey: queueName, body: bodyMessage);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error publishing message", ex);
+            }
         }
 
-        public void Subscribe<T>(T objectSubscribe) where T : IntegrationEvent
+        //public void Subscribe<T>(T objectSubscribe) where T : IntegrationEvent
+        public void Subscribe()
         {
             consumer = new EventingBasicConsumer(_channel);
 
-            //T objectReturn = { };
-
             consumer.Received += (model, ea) =>
             {
-                byte[] body = ea.Body.ToArray();
-                var stringMessage = Encoding.UTF8.GetString(body);
-                T foundedObject = JsonSerializer.Deserialize<T>(stringMessage);
+                Console.WriteLine($"Nova mensagem recebida: {DateTime.Now}");
+
+                var stringMessage = Encoding.UTF8.GetString(ea.Body.ToArray());
+                //var test = JsonSerializer.Deserialize<dynamic>(stringMessage);
             };
         }
 
-        public void StartConsuming()
+        public void StartConsuming(string queueName)
         {
-            _channel.BasicConsume(QueueName, autoAck: true, consumer);
+            _channel.BasicConsume(queueName, autoAck: true, consumer);
         }
     }
 }

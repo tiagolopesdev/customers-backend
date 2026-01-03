@@ -1,7 +1,7 @@
 using System;
 using Domain.Customers;
 
-namespace Application.Shared.Dtos;
+namespace Customer.Application.Shared.Dtos;
 
 public class PaymentDto
 {

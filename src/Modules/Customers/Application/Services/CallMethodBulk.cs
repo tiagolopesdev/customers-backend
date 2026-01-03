@@ -1,6 +1,6 @@
 using Domain.Customers;
 
-namespace Application.Services;
+namespace Customer.Application.Services;
 
 public class CallMethodBulk
 {

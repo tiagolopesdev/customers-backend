@@ -1,6 +1,6 @@
 using BlockApplication.Contracts.CommandQuery;
 
-namespace Application.UseCases.UpdateProduct;
+namespace Product.Application.UseCases.UpdateProduct;
 
 public sealed record class UpdateProductCommand(
     Guid Id,

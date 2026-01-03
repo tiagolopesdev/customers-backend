@@ -1,10 +1,10 @@
-using Application.Services;
-using Application.Shared.Dtos;
 using AutoMapper;
 using BlockApplication.Contracts.CommandQuery;
+using Customer.Application.Services;
+using Customer.Application.Shared.Dtos;
 using Domain.Customers;
 
-namespace Application.UseCases.GetAll;
+namespace Customer.Application.UseCases.GetAll;
 
 public class GetAllCustomerHandler : IHandler<GetAllCustomerQuery, List<CustomerDto>>
 {

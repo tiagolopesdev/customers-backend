@@ -1,5 +1,4 @@
-
-namespace Application.UseCases.Create;
+namespace Customer.Application.UseCases.Create;
 
 public class CreatePaymentCommand
 {

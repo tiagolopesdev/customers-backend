@@ -1,8 +1,7 @@
-
-using Application.Shared.Dtos;
 using BlockApplication.Contracts.CommandQuery;
+using Customer.Application.Shared.Dtos;
 
-namespace Application.UseCases.GetAll;
+namespace Customer.Application.UseCases.GetAll;
 
 public class GetAllCustomerQuery : IQuery<List<CustomerDto>>
 {

@@ -43,6 +43,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudNative.AppHost", "src\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudNative.ServiceDefaults", "src\CloudNative\AspireApp1\AspireApp1.ServiceDefaults\CloudNative.ServiceDefaults.csproj", "{43E55078-0745-1D5C-B32D-387DD5283EFD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Customer.IntegrationEvent", "src\Modules\Customers\Customer.IntegrationEvent\Customer.IntegrationEvent.csproj", "{D5655954-33B1-4C6B-AB6C-F1DC9A9CD91B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -221,6 +223,18 @@ Global
 		{43E55078-0745-1D5C-B32D-387DD5283EFD}.Release|x64.Build.0 = Release|Any CPU
 		{43E55078-0745-1D5C-B32D-387DD5283EFD}.Release|x86.ActiveCfg = Release|Any CPU
 		{43E55078-0745-1D5C-B32D-387DD5283EFD}.Release|x86.Build.0 = Release|Any CPU
+		{D5655954-33B1-4C6B-AB6C-F1DC9A9CD91B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5655954-33B1-4C6B-AB6C-F1DC9A9CD91B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5655954-33B1-4C6B-AB6C-F1DC9A9CD91B}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{D5655954-33B1-4C6B-AB6C-F1DC9A9CD91B}.Debug|x64.Build.0 = Debug|Any CPU
+		{D5655954-33B1-4C6B-AB6C-F1DC9A9CD91B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D5655954-33B1-4C6B-AB6C-F1DC9A9CD91B}.Debug|x86.Build.0 = Debug|Any CPU
+		{D5655954-33B1-4C6B-AB6C-F1DC9A9CD91B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5655954-33B1-4C6B-AB6C-F1DC9A9CD91B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5655954-33B1-4C6B-AB6C-F1DC9A9CD91B}.Release|x64.ActiveCfg = Release|Any CPU
+		{D5655954-33B1-4C6B-AB6C-F1DC9A9CD91B}.Release|x64.Build.0 = Release|Any CPU
+		{D5655954-33B1-4C6B-AB6C-F1DC9A9CD91B}.Release|x86.ActiveCfg = Release|Any CPU
+		{D5655954-33B1-4C6B-AB6C-F1DC9A9CD91B}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -245,6 +259,7 @@ Global
 		{1C1ABF7F-81EE-4111-8F20-F3C552332B89} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
 		{F28B92D5-EE7E-4AD2-8743-B01DD26B34BA} = {1C1ABF7F-81EE-4111-8F20-F3C552332B89}
 		{43E55078-0745-1D5C-B32D-387DD5283EFD} = {1C1ABF7F-81EE-4111-8F20-F3C552332B89}
+		{D5655954-33B1-4C6B-AB6C-F1DC9A9CD91B} = {7AD5252A-36DB-2D73-68F8-483A9FC97FCA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DB56E164-0479-4745-86F3-1395837FF4F1}

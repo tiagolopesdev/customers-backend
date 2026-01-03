@@ -1,8 +1,8 @@
 using BlockApplication.Contracts.CommandQuery;
-using Domain.Product;
 using OfficeOpenXml;
+using Product.Domain.Product;
 
-namespace Application.UseCases.CreateProductByExcel;
+namespace Product.Application.UseCases.CreateProductByExcel;
 
 public class CreateProductsByExcelHandler : IHandler<CreateProductsByExcelCommand, Guid>
 {
@@ -29,7 +29,7 @@ public class CreateProductsByExcelHandler : IHandler<CreateProductsByExcelComman
         for (int row = 2; row <= worksheet.Cells.Last().End.Row; row++)
         {
 
-            Product product = Product.NewEntity(
+            ProductAggregateRoot product = ProductAggregateRoot.NewEntity(
                 worksheet.Cells[row, 1].Text,
                 worksheet.Cells[row, 2].Text,
                 (double)worksheet.Cells[row, 6].Value,
@@ -37,7 +37,7 @@ public class CreateProductsByExcelHandler : IHandler<CreateProductsByExcelComman
                 Convert.ToInt32(worksheet.Cells[row, 4].Value)
                 );
 
-            List<Product> existsProduct = await _productRepository.GetByName(product.Name);
+            List<ProductAggregateRoot> existsProduct = await _productRepository.GetByName(product.Name);
 
             if (existsProduct.Count > 0)
             {

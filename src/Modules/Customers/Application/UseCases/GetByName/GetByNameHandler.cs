@@ -1,10 +1,10 @@
-using Application.Services;
-using Application.Shared.Dtos;
 using AutoMapper;
 using BlockApplication.Contracts.CommandQuery;
+using Customer.Application.Services;
+using Customer.Application.Shared.Dtos;
 using Domain.Customers;
 
-namespace Application.UseCases.GetByName;
+namespace Customer.Application.UseCases.GetByName;
 
 public class GetByNameHandler : IHandler<GetByNameQuery, List<CustomerDto>>
 {

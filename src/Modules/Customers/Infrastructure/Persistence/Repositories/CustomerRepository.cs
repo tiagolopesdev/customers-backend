@@ -3,7 +3,7 @@ using Microsoft.Extensions.Configuration;
 using BlockInfrastructure.Persistence.Repositories;
 using MongoDB.Driver;
 using Domain.Customers;
-using BlockInfrastructure;
+using BlockInfrastructure.Persistence.Configurations;
 
 namespace Infrastructure.Persistence.Repositories;
 

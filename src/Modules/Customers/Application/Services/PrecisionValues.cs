@@ -1,7 +1,7 @@
 using BlockApplication.Helpers;
 using Domain.Customers;
 
-namespace Application.Services;
+namespace Customer.Application.Services;
 
 public static class PrecisionValues
 {

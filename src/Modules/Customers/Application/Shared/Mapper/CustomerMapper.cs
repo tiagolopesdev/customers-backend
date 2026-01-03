@@ -1,8 +1,8 @@
-using Application.Shared.Dtos;
 using AutoMapper;
+using Customer.Application.Shared.Dtos;
 using Domain.Customers;
 
-namespace Application.Shared.Mapper;
+namespace Customer.Application.Shared.Mapper;
 
 public class CustomerMapper : Profile
 {
