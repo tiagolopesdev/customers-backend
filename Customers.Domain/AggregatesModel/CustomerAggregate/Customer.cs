@@ -1,5 +1,4 @@
 ﻿
-
 using Customers.Domain.AggregatesModel.Buy;
 using Customers.Domain.AggregatesModel.Payment;
 using Customers.Domain.SeedWork;
@@ -20,8 +19,7 @@ namespace Customers.Domain.AggregatesModel.CustomerAggregate
 
         public static Customer NewEntity(Customer customer)
         {
-            customer.Id = Guid.NewGuid();
-            customer.DateCreated = DateTime.Now;
+            customer.SetDateCreated();
             
             return customer;
         }

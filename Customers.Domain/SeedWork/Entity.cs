@@ -2,7 +2,7 @@
 
 namespace Customers.Domain.SeedWork
 {
-    public abstract class Entity
+    public abstract class   Entity
     {
         public Guid Id { get; set; }
         public DateTime? DateCreated { get; set; }
@@ -12,15 +12,24 @@ namespace Customers.Domain.SeedWork
 
         public void SetDateCreated()
         {
-            DateCreated = DateTime.Now;
+            Id = Guid.NewGuid();
+            DateCreated = SouthAmericaZone();
         }
         public void SetDateUpdated()
         {
-            DateUpdated = DateTime.Now;
+            DateUpdated = SouthAmericaZone();
         }
         public void SetDateDeleted()
         {
-            DateDeleted = DateTime.Now;
+            DateDeleted = SouthAmericaZone();
+        }
+
+        public static DateTime SouthAmericaZone()
+        {
+            return TimeZoneInfo.ConvertTimeFromUtc(
+                DateTime.UtcNow,
+                TimeZoneInfo.FindSystemTimeZoneById("E. South America Standard Time")
+                );
         }
     }
 }

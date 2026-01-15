@@ -13,15 +13,13 @@ namespace Customers.Application.UseCases.CustomerUseCases.UpdateCustomer
     {
         private readonly IMediator _mediator;
         private readonly ICustomerRepository _customerRepository;
-        private readonly IProductRepository _productRepository;
         private readonly IMapper _mapper;
 
-        public UpdateCustomerHandler(ICustomerRepository customerRepository, IMapper mapper, IMediator mediator, IProductRepository productRepository)
+        public UpdateCustomerHandler(ICustomerRepository customerRepository, IMapper mapper, IMediator mediator)
         {
             _mediator = mediator;
             _customerRepository = customerRepository;
             _mapper = mapper;
-            _productRepository = productRepository;
         }
 
         public async Task<Guid> Handle(UpdateCustomerRequest request, CancellationToken cancellationToken)
@@ -43,11 +41,11 @@ namespace Customers.Application.UseCases.CustomerUseCases.UpdateCustomer
                 if (item.Id == null || item.Id == Guid.Empty)
                 {
                     item.Id = Guid.NewGuid();
-                    item.DateCreated = DateTime.Now;
+                    item.DateCreated = Entity.SouthAmericaZone();
                 }
                 else
                 {
-                    item.DateUpdated = DateTime.Now;
+                    item.DateUpdated = Entity.SouthAmericaZone();
                 }
             });
 
@@ -62,11 +60,11 @@ namespace Customers.Application.UseCases.CustomerUseCases.UpdateCustomer
                 if (item.Id == null || item.Id == Guid.Empty)
                 {
                     item.Id = Guid.NewGuid();
-                    item.DateCreated = DateTime.Now;
+                    item.DateCreated = Entity.SouthAmericaZone();
                 }
                 else
                 {
-                    item.DateUpdated = DateTime.Now;
+                    item.DateUpdated = Entity.SouthAmericaZone();
                 }
             });
 
@@ -96,7 +94,7 @@ namespace Customers.Application.UseCases.CustomerUseCases.UpdateCustomer
             customerToSave.SetAmountPaid();
             customerToSave.SetAmountToPay();
 
-            customerToSave.DateUpdated = DateTime.Now;
+            customerToSave.SetDateUpdated();    
 
             customerToSave = CustomerHelper.PrecisionDecimalValues(customerToSave);
 
@@ -145,9 +143,9 @@ namespace Customers.Application.UseCases.CustomerUseCases.UpdateCustomer
 
                 if (item.IsEnable is true && customer != null && customer.Count > 0)
                 {
-                    LogicFindEntity(customer, (Guid)item.Id).DateDeleted = DateTime.Now;
+                    LogicFindEntity(customer, (Guid)item.Id).DateDeleted = Entity.SouthAmericaZone();
                 }
-                LogicFindEntity(customer, (Guid)item.Id).DateUpdated = DateTime.Now;
+                LogicFindEntity(customer, (Guid)item.Id).DateUpdated = Entity.SouthAmericaZone();
             }
             return customer;
         }
