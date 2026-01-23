@@ -15,7 +15,7 @@ namespace Customers.Infrastructure.Repositories
         {
             _configuration = configuration;
             _client = new MongoClient(ConnectionString);
-            _collection = _client.GetDatabase("mini-market-database").GetCollection<T>(collection);
+            _collection = _client.GetDatabase("mini-market-database-26").GetCollection<T>(collection);
         }
 
         public IMongoCollection<T> InstanceConnection()
