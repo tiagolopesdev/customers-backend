@@ -1,0 +1,982 @@
+[
+  {
+    "name": "Livro",
+    "description": "CAMINHO VERDADE E VIDA TEXTO E COMENTARIO DO EVAN",
+    "value": 25.0,
+    "basePrice": 19.0,
+    "quantity": 8
+  },
+  {
+    "name": "Livro",
+    "description": "NOS PASSOS DE STA TERESINHA DO MENINO JESUS",
+    "value": 30.0,
+    "basePrice": 25.99,
+    "quantity": 1
+  },
+  {
+    "name": "Livro",
+    "description": "SANTA TERESINHA DO MENINO JESUS UM CONVITE AO COMB",
+    "value": 35.0,
+    "basePrice": 29.99,
+    "quantity": 1
+  },
+  {
+    "name": "Livro",
+    "description": "LIVRO O PRIVILEGIO DE SER MULHER (ECCLESIAE)",
+    "value": 70.0,
+    "basePrice": 53.99,
+    "quantity": 1
+  },
+  {
+    "name": "Livro",
+    "description": "POR QUE SOU CATOLICO? (CLEOFAS)",
+    "value": 55.0,
+    "basePrice": 42.99,
+    "quantity": 1
+  },
+  {
+    "name": "Livro",
+    "description": "LIVRO BUSCAI AS COISAS DO ALTO",
+    "value": 35.0,
+    "basePrice": 29.99,
+    "quantity": 1
+  },
+  {
+    "name": "Livro",
+    "description": "LIVRO CLUBE DO JONAS EM=CARLO ACUTIS-O APOSTOLO DA INTERNET",
+    "value": 45.0,
+    "basePrice": 39.99,
+    "quantity": 1
+  },
+  {
+    "name": "Livro",
+    "description": "NAO EU MAS DEUS BIOGRAFIA ESPIRITUAL DE CARLO ACUT",
+    "value": 45.0,
+    "basePrice": 35.99,
+    "quantity": 1
+  },
+  {
+    "name": "Livro",
+    "description": "DA INFORMATICA AO CEU - 2. EDICAO",
+    "value": 60.0,
+    "basePrice": 49.99,
+    "quantity": 1
+  },
+  {
+    "name": "Livro",
+    "description": "LIVRO FICA LIVRE DO TEU MAL",
+    "value": 55.0,
+    "basePrice": 44.99,
+    "quantity": 1
+  },
+  {
+    "name": "Livro",
+    "description": "LIVRO QUANDO SO DEUS E A RESPOSTA (NOVA CAPA)",
+    "value": 40.0,
+    "basePrice": 34.99,
+    "quantity": 1
+  },
+  {
+    "name": "Livro",
+    "description": "LIVRO UMA LUZ NA ESCURIDAO",
+    "value": 30.0,
+    "basePrice": 24.99,
+    "quantity": 1
+  },
+  {
+    "name": "Livro",
+    "description": "CAFE COM OS SANTOS UM GUIA PRATICO PARA A VIDA EM",
+    "value": 75.0,
+    "basePrice": 65.0,
+    "quantity": 1
+  },
+  {
+    "name": "Livro",
+    "description": "HISTORIA DE UMA ALMA",
+    "value": 75.0,
+    "basePrice": 54.99,
+    "quantity": 1
+  },
+  {
+    "name": "Terço",
+    "description": "CARD DE ORAÇÃO TERÇO MARIANO ME",
+    "value": 10.0,
+    "basePrice": 7.99,
+    "quantity": 15
+  },
+  {
+    "name": "Livro",
+    "description": "LIVRO NOVENA DOS NAMORADOS",
+    "value": 30.0,
+    "basePrice": 24.99,
+    "quantity": 2
+  },
+  {
+    "name": "Livro",
+    "description": "LIVRO 30 MINUTOS PARA MUDAR O SEU DIA",
+    "value": 18.0,
+    "basePrice": 14.99,
+    "quantity": 1
+  },
+  {
+    "name": "Livro",
+    "description": "TRATADO DA VERDADEIRA DEVOCAO A SANTISSIMA VIRGEM",
+    "value": 35.0,
+    "basePrice": 25.99,
+    "quantity": 2
+  },
+  {
+    "name": "Livro",
+    "description": "NOVENA A CARLO ACUTIS O CIBERAPOSTOLO DA EUCARISTI",
+    "value": 15.0,
+    "basePrice": 12.99,
+    "quantity": 2
+  },
+  {
+    "name": "Livro",
+    "description": "LIVRO ADORACAO AO SANTISSIMO SACRAMENTO",
+    "value": 14.0,
+    "basePrice": 9.99,
+    "quantity": 4
+  },
+  {
+    "name": "Livro",
+    "description": "CAMINHO TRADICIONAL POCKET JME",
+    "value": 55.0,
+    "basePrice": 49.99,
+    "quantity": 1
+  },
+  {
+    "name": "Livro",
+    "description": "LIVRO IMITACAO DE CRISTO",
+    "value": 30.0,
+    "basePrice": 24.99,
+    "quantity": 1
+  },
+  {
+    "name": "Livro",
+    "description": "IMITACAO DE CRISTO BOLSO SIMPLES",
+    "value": 30.0,
+    "basePrice": 24.99,
+    "quantity": 1
+  },
+  {
+    "name": "Livro",
+    "description": "LIVRO ORACOES SELECIONADAS-ESPIRAL",
+    "value": 45.0,
+    "basePrice": 39.99,
+    "quantity": 2
+  },
+  {
+    "name": "Chaveiro",
+    "description": "CHAVEIRO EMBORRACHADO DIVERSOS",
+    "value": 7.0,
+    "basePrice": 4.99,
+    "quantity": 30
+  },
+  {
+    "name": "Chaveiro",
+    "description": "CHAVEIRO DOURADO N S DAS GRACAS RESINADA MARIANA ATACADO",
+    "value": 15.0,
+    "basePrice": 12.99,
+    "quantity": 3
+  },
+  {
+    "name": "Chaveiro",
+    "description": "CHAVEIRO DOURADO SIMPLES APARECIDA PLB",
+    "value": 15.0,
+    "basePrice": 12.99,
+    "quantity": 3
+  },
+  {
+    "name": "Chaveiro",
+    "description": "CHAVEIRO METAL SAO BENTO DOURADO",
+    "value": 15.0,
+    "basePrice": 12.99,
+    "quantity": 3
+  },
+  {
+    "name": "Chaveiro",
+    "description": "CHAVEIRO DOURADO REDONDO ESPIRITO SANTO",
+    "value": 15.0,
+    "basePrice": 12.99,
+    "quantity": 3
+  },
+  {
+    "name": "Chaveiro",
+    "description": "CHAVEIRO METAL DOURADO JESUS MISERICORDIOSO INFANTIL",
+    "value": 15.0,
+    "basePrice": 12.99,
+    "quantity": 3
+  },
+  {
+    "name": "Chaveiro",
+    "description": "012 CHAVEIRO MEDALHA SAO BENTO 12CM",
+    "value": 20.0,
+    "basePrice": 14.99,
+    "quantity": 2
+  },
+  {
+    "name": "Chaveiro",
+    "description": "012 CHAVEIRO MAE RAINHA (PERPÉTUO SOCORRO) 10CM",
+    "value": 22.0,
+    "basePrice": 19.99,
+    "quantity": 2
+  },
+  {
+    "name": "Chaveiro",
+    "description": "012 CHAVEIRO N SRA DAS GRACAS 12CM",
+    "value": 22.0,
+    "basePrice": 19.99,
+    "quantity": 2
+  },
+  {
+    "name": "Chaveiro",
+    "description": "012 CHAVEIRO N SRA. DO CARMO (PERPÉTUO SOCORRO) 12 CM",
+    "value": 15.0,
+    "basePrice": 12.99,
+    "quantity": 3
+  },
+  {
+    "name": "Chaveiro",
+    "description": "CHAVEIRO MEDALHA DE SAO BENTO 9CM",
+    "value": 15.0,
+    "basePrice": 9.99,
+    "quantity": 3
+  },
+  {
+    "name": "Chaveiro",
+    "description": "CHAVEIRO N SRA DAS GRACAS 9CM",
+    "value": 15.0,
+    "basePrice": 9.99,
+    "quantity": 3
+  },
+  {
+    "name": "Chaveiro",
+    "description": "CHAVEIRO EMBORRACHADO DEZENA C/ MOSQUETÃO",
+    "value": 12.0,
+    "basePrice": 9.99,
+    "quantity": 1
+  },
+  {
+    "name": "Chaveiro",
+    "description": "CHAVEIRO APARECIDA ROSA E AZUL DEZENA EMBORRACHADO",
+    "value": 12.0,
+    "basePrice": 9.99,
+    "quantity": 5
+  },
+  {
+    "name": "Terço",
+    "description": "TERÇO SÃO BENTO/APARECIDA/GRAÇAS CONTAS ROSAS ATACADO",
+    "value": 25.0,
+    "basePrice": 19.99,
+    "quantity": 10
+  },
+  {
+    "name": "Terço",
+    "description": "014 TERCO 10MM 50CM ROSA NEON",
+    "value": 25.0,
+    "basePrice": 19.9,
+    "quantity": 1
+  },
+  {
+    "name": "Terço",
+    "description": "014 TERCO 10MM 50CM",
+    "value": 25.0,
+    "basePrice": 19.99,
+    "quantity": 1
+  },
+  {
+    "name": "Terço",
+    "description": "014 TERCO 10 MM 50CM ROXO NEON",
+    "value": 25.0,
+    "basePrice": 19.99,
+    "quantity": 1
+  },
+  {
+    "name": "Terço",
+    "description": "014 TERCO 10MM 50CM PEROLA AMARELO",
+    "value": 25.0,
+    "basePrice": 19.99,
+    "quantity": 1
+  },
+  {
+    "name": "Terço",
+    "description": "014 TERCO 10MM 50CM LARANJA NEON",
+    "value": 25.0,
+    "basePrice": 19.99,
+    "quantity": 1
+  },
+  {
+    "name": "Terço",
+    "description": "014 TERCO 10MM 50CM PEROLA AZUL",
+    "value": 25.0,
+    "basePrice": 19.99,
+    "quantity": 1
+  },
+  {
+    "name": "Terço",
+    "description": "014 TERCO 10MM 50CM PEROLA VERMELHO",
+    "value": 25.0,
+    "basePrice": 19.99,
+    "quantity": 1
+  },
+  {
+    "name": "Terço",
+    "description": "014 TERCO 10MM 50CM PEROLA VERDE",
+    "value": 25.0,
+    "basePrice": 19.99,
+    "quantity": 1
+  },
+  {
+    "name": "Terço",
+    "description": "014 TERCO 10MM 50CM",
+    "value": 25.0,
+    "basePrice": 19.99,
+    "quantity": 1
+  },
+  {
+    "name": "Terço",
+    "description": "TERÇO PEROLAS CORES NOSSA SENHORA DAS GRAÇAS RESINADA PRATEADO",
+    "value": 25.0,
+    "basePrice": 19.99,
+    "quantity": 3
+  },
+  {
+    "name": "Terço",
+    "description": "TERCO MAD PRETA CORDAO 10MM C/MISTERIOS ONIX",
+    "value": 75.0,
+    "basePrice": 69.99,
+    "quantity": 1
+  },
+  {
+    "name": "Terço",
+    "description": "TERCO MAD IMBUIA CORDAO 8MM COMPLETO SAO BENTO CRUZ QUATRO 7899347280922",
+    "value": 52.0,
+    "basePrice": 44.99,
+    "quantity": 1
+  },
+  {
+    "name": "Terço",
+    "description": "TERCO MAD VERMELHO CORDAO 8MM COMPLETO RED S TERESINHA (IMG DIV) 7899347274280",
+    "value": 45.0,
+    "basePrice": 39.99,
+    "quantity": 1
+  },
+  {
+    "name": "Terço",
+    "description": "TERCO MAD VERMELHO CORDAO 8MM COMPLETO RED S TERESINHA (IMG DIV) 7899347274280",
+    "value": 45.0,
+    "basePrice": 39.99,
+    "quantity": 1
+  },
+  {
+    "name": "Terço",
+    "description": "TERCO PEROLA 8MM CORDAO PN MAD 8MM VERMELHO EU REZO PELOS MEUS FILHO! 7899347277571",
+    "value": 35.0,
+    "basePrice": 29.99,
+    "quantity": 1
+  },
+  {
+    "name": "Terço",
+    "description": "TERCO MAD ROSA CORDAO 8MM COMPLETO RED N SRA FATIMA/ROSAS",
+    "value": 45.0,
+    "basePrice": 39.99,
+    "quantity": 1
+  },
+  {
+    "name": "Terço",
+    "description": "TERCO MAD IMBUIA CORDAO 8MM TRI MAD RED RES PE PIO VERSO FRASE 7899347279315",
+    "value": 35.0,
+    "basePrice": 29.99,
+    "quantity": 1
+  },
+  {
+    "name": "Terço",
+    "description": "TERCO MAD IMBUIA CORDAO 8MM TRI MAD RED RES SAO JOSE (2-624/2-625)",
+    "value": 35.0,
+    "basePrice": 29.99,
+    "quantity": 1
+  },
+  {
+    "name": "Terço",
+    "description": "TERCO MAD IMBUIA CORDAO 8MM TRI MAD RED RES N SRA FATIMA",
+    "value": 35.0,
+    "basePrice": 29.99,
+    "quantity": 1
+  },
+  {
+    "name": "Terço",
+    "description": "MR TERCO MAD IMBUIA CORDAO 10MM C/MISTERIOS RESINADOS C/TRI RED GDE RES F/V OV",
+    "value": 60.0,
+    "basePrice": 54.9,
+    "quantity": 1
+  },
+  {
+    "name": "Terço",
+    "description": "TERÇO PULSEIRA APARECIDA PÉROLA CORES ATACADO",
+    "value": 16.0,
+    "basePrice": 12.99,
+    "quantity": 6
+  },
+  {
+    "name": "Terço",
+    "description": "TERÇO PULSEIRA HEMATITA SÃO BENTO ATACADO",
+    "value": 16.0,
+    "basePrice": 11.99,
+    "quantity": 6
+  },
+  {
+    "name": "Pulseira",
+    "description": "PULSEIRA MIÇANGA CRISTAL CRAVEJADA NOSSA SENHORA DAS GRAÇAS RESINADA ATACADO",
+    "value": 15.0,
+    "basePrice": 12.99,
+    "quantity": 5
+  },
+  {
+    "name": "Pulseira",
+    "description": "PULSEIRA CRISTAIS APARECIDA COROA",
+    "value": 15.0,
+    "basePrice": 12.99,
+    "quantity": 1
+  },
+  {
+    "name": "Pulseira",
+    "description": "PULSEIRA HEMATITA APARECIDA COM MEDALHA",
+    "value": 16.0,
+    "basePrice": 12.99,
+    "quantity": 5
+  },
+  {
+    "name": "Pulseira",
+    "description": "PULSEIRA SAO BENTO COM MEDALHAS NAS CONTAS",
+    "value": 15.0,
+    "basePrice": 11.99,
+    "quantity": 5
+  },
+  {
+    "name": "Imagem",
+    "description": "PULSEIRA COM MEDALHAS NOSSA SENHORA DAS GRAÇAS E IMAGEM RESINADA",
+    "value": 15.0,
+    "basePrice": 12.99,
+    "quantity": 5
+  },
+  {
+    "name": "Pulseira",
+    "description": "PULSEIRA DOURADA APARECIDA AJUSTAVEL",
+    "value": 20.0,
+    "basePrice": 14.99,
+    "quantity": 6
+  },
+  {
+    "name": "Pulseira",
+    "description": "PULSEIRA MED SAO BENTO CRISTAL BOLAS CORES",
+    "value": 18.0,
+    "basePrice": 13.99,
+    "quantity": 5
+  },
+  {
+    "name": "Pulseira",
+    "description": "PULSEIRA DEZENA MAD IMBUIA 6/8MM",
+    "value": 12.0,
+    "basePrice": 9.99,
+    "quantity": 5
+  },
+  {
+    "name": "Pulseira",
+    "description": "PULSEIRA DEZENA MAD PRETA 6/8MM 7899347269637",
+    "value": 12.0,
+    "basePrice": 9.99,
+    "quantity": 5
+  },
+  {
+    "name": "Pulseira",
+    "description": "PULSEIRA AMOR DE MARIA OG BRANCA C/MED CORACAO 7899347200784",
+    "value": 16.0,
+    "basePrice": 13.99,
+    "quantity": 5
+  },
+  {
+    "name": "Pulseira",
+    "description": "PULSEIRA HOMEM DE FE HEMATITA 6MM SAO BENTO PV 7899347269354",
+    "value": 22.0,
+    "basePrice": 19.99,
+    "quantity": 5
+  },
+  {
+    "name": "Pulseira",
+    "description": "PULSEIRA CADEADO NOSSA SENHORA DE GUADALUPE NA CARTELA (3 UNIDADES)",
+    "value": 30.0,
+    "basePrice": 24.99,
+    "quantity": 1
+  },
+  {
+    "name": "Pulseira",
+    "description": "PULSEIRA CADEADO NOSSA SENHORA DE FATIMA NA CARTELA (3 UNIDADES)",
+    "value": 30.0,
+    "basePrice": 24.99,
+    "quantity": 1
+  },
+  {
+    "name": "Pulseira",
+    "description": "PULSEIRA CADEADO SAO JOSE NA CARTELA (3 UNIDADES)",
+    "value": 30.0,
+    "basePrice": 24.99,
+    "quantity": 1
+  },
+  {
+    "name": "Pulseira",
+    "description": "PULSEIRA CADEADO NOSSA SENHORA DAS GRACAS NA CARTELA (3 UNIDADES)",
+    "value": 30.0,
+    "basePrice": 24.99,
+    "quantity": 1
+  },
+  {
+    "name": "Mini",
+    "description": "MINI OSTENSÓRIO/ESPIRITO SANTO P DUPLA FACE P CARRO DOURADO/PRATEADO",
+    "value": 15.0,
+    "basePrice": 12.99,
+    "quantity": 12
+  },
+  {
+    "name": "Aparecida",
+    "description": "APARECIDA P CARRO PLASTICO",
+    "value": 15.0,
+    "basePrice": 11.99,
+    "quantity": 12
+  },
+  {
+    "name": "Ostensório",
+    "description": "OSTENSÓRIO MÉDIO DUPLA FACE CARRO DOURADO/PRATEADO",
+    "value": 25.0,
+    "basePrice": 19.99,
+    "quantity": 12
+  },
+  {
+    "name": "Enfeite",
+    "description": "ENFEITE SAO MIGUEL P CARRO METAL DOURADO/PRATEADO ATACADO",
+    "value": 25.0,
+    "basePrice": 19.99,
+    "quantity": 12
+  },
+  {
+    "name": "Terço",
+    "description": "TERÇO NO VIDRINHO PÉROLA OU MIÇANGA SÃO BENTO OU APARECIDA ATACADO",
+    "value": 15.0,
+    "basePrice": 9.99,
+    "quantity": 12
+  },
+  {
+    "name": "Chaveiro",
+    "description": "CHAVEIRO CARLO ACUTIS/OSTENSORIO 7899999064024",
+    "value": 28.0,
+    "basePrice": 24.99,
+    "quantity": 5
+  },
+  {
+    "name": "Crucifixo",
+    "description": "ENFEITE CRUZ DOURADA P CARRO",
+    "value": 25.0,
+    "basePrice": 19.99,
+    "quantity": 12
+  },
+  {
+    "name": "Um",
+    "description": "UM VERSICULO PARA CADA DIA DO ANO - 2026",
+    "value": 12.0,
+    "basePrice": 10.0,
+    "quantity": 10
+  },
+  {
+    "name": "Marca",
+    "description": "Marca página z&l",
+    "value": 2.0,
+    "basePrice": 2.0,
+    "quantity": 80
+  },
+  {
+    "name": "Marcador",
+    "description": "MARCADOR DE PÁGINAS MAGNÉTICO DUPLO",
+    "value": 7.0,
+    "basePrice": 4.99,
+    "quantity": 15
+  },
+  {
+    "name": "Agenda",
+    "description": "AGENDA PEQUENO PRINCIPE - 2026",
+    "value": 75.0,
+    "basePrice": 63.0,
+    "quantity": 2
+  },
+  {
+    "name": "Crucifixo",
+    "description": "CRUCIFIXO MAD CILINDRICA 17CM MESA OV (FOI POR VOCE!)",
+    "value": 70.0,
+    "basePrice": 59.99,
+    "quantity": 2
+  },
+  {
+    "name": "Crucifixo",
+    "description": "CRUCIFIXO MAD TRAD 17CM MESA OV",
+    "value": 50.0,
+    "basePrice": 44.99,
+    "quantity": 2
+  },
+  {
+    "name": "Crucifixo",
+    "description": "CRUCIFIXO MAD TRAD 12CM MESA OV C/SAO BENTO",
+    "value": 45.0,
+    "basePrice": 34.99,
+    "quantity": 1
+  },
+  {
+    "name": "Crucifixo",
+    "description": "CRUCIFIXO MAD TRAD 12CM MESA ONIX",
+    "value": 35.0,
+    "basePrice": 29.99,
+    "quantity": 1
+  },
+  {
+    "name": "Crucifixo",
+    "description": "CRUCIFIXO MAD TRAD 07CM MESA ONIX",
+    "value": 18.0,
+    "basePrice": 14.99,
+    "quantity": 4
+  },
+  {
+    "name": "Crucifixo",
+    "description": "CRUZ LIVRAI-NOS DO MAL 17CM",
+    "value": 90.0,
+    "basePrice": 69.99,
+    "quantity": 1
+  },
+  {
+    "name": "Crucifixo",
+    "description": "CRUZ DE MAO LIVRAI-NOS DO MAL 10CM",
+    "value": 35.0,
+    "basePrice": 24.99,
+    "quantity": 2
+  },
+  {
+    "name": "Escapulario",
+    "description": "ESCAPULARIO METAL PV RES COLOR C/FOLHETO",
+    "value": 30.0,
+    "basePrice": 24.99,
+    "quantity": 2
+  },
+  {
+    "name": "Escapulario",
+    "description": "ESCAPULARIO TECIDO GDE C/FOLHETO",
+    "value": 40.0,
+    "basePrice": 34.99,
+    "quantity": 2
+  },
+  {
+    "name": "Santissimo",
+    "description": "SANTISSIMO COLANTE",
+    "value": 15.0,
+    "basePrice": 6.5,
+    "quantity": 30
+  },
+  {
+    "name": "Terço",
+    "description": "TERÇO APARECIDA - CAIXINHA REDONDA",
+    "value": 15.0,
+    "basePrice": 8.5,
+    "quantity": 6
+  },
+  {
+    "name": "Bolsa",
+    "description": "BOLSA PORTA MOEDA",
+    "value": 8.0,
+    "basePrice": 5.0,
+    "quantity": 3
+  },
+  {
+    "name": "Capelinha",
+    "description": "CAPELINHA COM IMAGENS",
+    "value": 15.0,
+    "basePrice": 7.3,
+    "quantity": 4
+  },
+  {
+    "name": "Icones",
+    "description": "ICONES GRANDES",
+    "value": 20.0,
+    "basePrice": 6.0,
+    "quantity": 2
+  },
+  {
+    "name": "Chaveiro",
+    "description": "CHAVEIROS SILICONE - BORRACHA",
+    "value": 7.0,
+    "basePrice": 2.5,
+    "quantity": 39
+  },
+  {
+    "name": "Chaveiro",
+    "description": "CHAVEIROS DIVERSOS DE FERRO",
+    "value": 15.0,
+    "basePrice": 6.5,
+    "quantity": 19
+  },
+  {
+    "name": "Aparecida",
+    "description": "APARECIDA COLANTE",
+    "value": 15.0,
+    "basePrice": 8.5,
+    "quantity": 5
+  },
+  {
+    "name": "Pulseira",
+    "description": "PULSEIRA DIVERSAS",
+    "value": 12.0,
+    "basePrice": 6.5,
+    "quantity": 3
+  },
+  {
+    "name": "Pulseira",
+    "description": "PULSEIRAS DE SILICONE COM FECHO",
+    "value": 5.0,
+    "basePrice": 3.3,
+    "quantity": 9
+  },
+  {
+    "name": "Chaveiro",
+    "description": "CHAVEIRO DEZENA SILICONE N S APARECIDA",
+    "value": 12.0,
+    "basePrice": 4.5,
+    "quantity": 6
+  },
+  {
+    "name": "Dezena",
+    "description": "DEZENA CARRO APARECIDA",
+    "value": 15.0,
+    "basePrice": 10.5,
+    "quantity": 5
+  },
+  {
+    "name": "Pulseira",
+    "description": "PULSEIRA SILICONE S BENTO E APARECID",
+    "value": 5.0,
+    "basePrice": 2.5,
+    "quantity": 7
+  },
+  {
+    "name": "Terço",
+    "description": "TERÇO PONTINHO CRUZ",
+    "value": 12.0,
+    "basePrice": 5.5,
+    "quantity": 8
+  },
+  {
+    "name": "Sao",
+    "description": "SAO BENTO COLANTE",
+    "value": 15.0,
+    "basePrice": 10.5,
+    "quantity": 1
+  },
+  {
+    "name": "Relicario",
+    "description": "RELICARIO",
+    "value": 25.0,
+    "basePrice": 12.5,
+    "quantity": 1
+  },
+  {
+    "name": "Escapulario",
+    "description": "ESCAPULARIO COLORIDO",
+    "value": 15.0,
+    "basePrice": 6.5,
+    "quantity": 4
+  },
+  {
+    "name": "Colar",
+    "description": "COLAR PAI NOSSO",
+    "value": 15.0,
+    "basePrice": 6.5,
+    "quantity": 3
+  },
+  {
+    "name": "Escapulario",
+    "description": "ESCAPULARIO AÇO",
+    "value": 15.0,
+    "basePrice": 6.0,
+    "quantity": 4
+  },
+  {
+    "name": "Terço",
+    "description": "TERÇO N S DAS GRAÇAS",
+    "value": 30.0,
+    "basePrice": 10.5,
+    "quantity": 2
+  },
+  {
+    "name": "Terço",
+    "description": "TERÇO ROSAS GRANDES",
+    "value": 25.0,
+    "basePrice": 9.5,
+    "quantity": 1
+  },
+  {
+    "name": "Terço",
+    "description": "TERÇO DE PULSO",
+    "value": 16.0,
+    "basePrice": 0.0,
+    "quantity": 60
+  },
+  {
+    "name": "Pulseira",
+    "description": "PULSEIRAS",
+    "value": 12.0,
+    "basePrice": 0.0,
+    "quantity": 70
+  },
+  {
+    "name": "Terço",
+    "description": "TERÇO COM FOLHETO",
+    "value": 22.0,
+    "basePrice": 0.0,
+    "quantity": 20
+  },
+  {
+    "name": "Terço",
+    "description": "TERÇOS VARIADOS",
+    "value": 25.0,
+    "basePrice": 0.0,
+    "quantity": 75
+  },
+  {
+    "name": "Livro",
+    "description": "NOVENA DA MEDALHA",
+    "value": 5.0,
+    "basePrice": 0.0,
+    "quantity": 35
+  },
+  {
+    "name": "Capelas",
+    "description": "CAPELAS VARIADAS",
+    "value": 8.0,
+    "basePrice": 0.0,
+    "quantity": 50
+  },
+  {
+    "name": "Escapulário",
+    "description": "ESCAPULÁRIO INOX",
+    "value": 18.0,
+    "basePrice": 0.0,
+    "quantity": 20
+  },
+  {
+    "name": "Canecas",
+    "description": "CANECAS VARIADAS",
+    "value": 38.0,
+    "basePrice": 0.0,
+    "quantity": 15
+  },
+  {
+    "name": "Imagens",
+    "description": "IMAGENS COM PEDESTAL",
+    "value": 18.0,
+    "basePrice": 0.0,
+    "quantity": 20
+  },
+  {
+    "name": "Naninhas",
+    "description": "NANINHAS SATINHOZ",
+    "value": 40.0,
+    "basePrice": 0.0,
+    "quantity": 20
+  },
+  {
+    "name": "Café",
+    "description": "CAFÉ C/ SANTOS",
+    "value": 75.0,
+    "basePrice": 0.0,
+    "quantity": 1
+  },
+  {
+    "name": "Discernir",
+    "description": "DISCERNIR O CHAMADO",
+    "value": 60.0,
+    "basePrice": 0.0,
+    "quantity": 1
+  },
+  {
+    "name": "História",
+    "description": "HISTÓRIA DE UMA ALMA",
+    "value": 30.0,
+    "basePrice": 0.0,
+    "quantity": 2
+  },
+  {
+    "name": "O",
+    "description": "O SEGREDO DO MEU FILHO",
+    "value": 60.0,
+    "basePrice": 0.0,
+    "quantity": 1
+  },
+  {
+    "name": "Orações",
+    "description": "ORAÇÕES VOCACIONAIS",
+    "value": 20.0,
+    "basePrice": 0.0,
+    "quantity": 2
+  },
+  {
+    "name": "Salmos",
+    "description": "SALMOS",
+    "value": 20.0,
+    "basePrice": 0.0,
+    "quantity": 2
+  },
+  {
+    "name": "Livro",
+    "description": "NOVENAS, DEVOCIONÁRIOS, ADORAÇÃO",
+    "value": 14.0,
+    "basePrice": 0.0,
+    "quantity": 21
+  },
+  {
+    "name": "9",
+    "description": "9 MESES COM MARIA",
+    "value": 45.0,
+    "basePrice": 0.0,
+    "quantity": 2
+  },
+  {
+    "name": "Consagração",
+    "description": "CONSAGRAÇÃO A SÃO JOSÉ",
+    "value": 25.0,
+    "basePrice": 0.0,
+    "quantity": 2
+  },
+  {
+    "name": "Chaveiro",
+    "description": "CHAVEIRO BORRACHA",
+    "value": 7.0,
+    "basePrice": 0.0,
+    "quantity": 145
+  },
+  {
+    "name": "Colares",
+    "description": "COLARES",
+    "value": 8.0,
+    "basePrice": 0.0,
+    "quantity": 19
+  },
+  {
+    "name": "Chaveiro",
+    "description": "CHAVEIRO METAL",
+    "value": 15.0,
+    "basePrice": 0.0,
+    "quantity": 12
+  },
+  {
+    "name": "Medalha",
+    "description": "MEDALHA SÃO BENTO E OSTENSÓRIOS METAL",
+    "value": 25.0,
+    "basePrice": 0.0,
+    "quantity": 12
+  }
+]
