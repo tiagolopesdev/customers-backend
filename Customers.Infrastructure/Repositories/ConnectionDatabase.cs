@@ -10,12 +10,13 @@ namespace Customers.Infrastructure.Repositories
         private readonly IMongoCollection<T> _collection;
         private readonly IConfiguration _configuration;
         private string ConnectionString { get { return _configuration.GetConnectionString("MONGODB_URI"); } }
+        private string Database { get { return _configuration.GetConnectionString("MONGODB_DATABASE"); } }
 
         public ConnectionDatabase(IConfiguration configuration, string collection)
         {
             _configuration = configuration;
             _client = new MongoClient(ConnectionString);
-            _collection = _client.GetDatabase("mini-market-database-26").GetCollection<T>(collection);
+            _collection = _client.GetDatabase(Database).GetCollection<T>(collection);
         }
 
         public IMongoCollection<T> InstanceConnection()
