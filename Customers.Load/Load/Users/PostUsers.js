@@ -5,13 +5,12 @@ import execution from 'k6/execution';
 
 
 const data = new SharedArray("Read Json file", () => {
-  return JSON.parse(open('./produtos.json'))
-  // return JSON.parse(open('./data.json'))
+  return JSON.parse(open('./data.json'))
 })
 
 export const options = {
   vus: 1,
-  duration: '30m',
+  duration: '2m',
   iterations: data.length
 };
 
@@ -21,7 +20,7 @@ export default function () {
 
   console.log(`Indice da interação atual: ${indexCurrent} || Cenário: ${execution.scenario.name}`)
 
-  const url = 'https://minimarket-customer-backend-latest.onrender.com/api/Products/CreateProduct';
+  const url = 'https://mini-market-authentication.onrender.com/api/Users';
   // const url = 'http://localhost:5048/api/Products/CreateProduct';
 
   const payload = JSON.stringify(data[indexCurrent]);

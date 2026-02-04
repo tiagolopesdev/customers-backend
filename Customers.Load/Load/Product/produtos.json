@@ -1,5 +1,75 @@
 [
   {
+    "name": "Coca cola 1,5L",
+    "description": "Coca cola de 1,5L",
+    "value": 10,
+    "basePrice": 7.5,
+    "quantity": 12
+  },
+  {
+    "name": "Nescau",
+    "description": "Nescau de 1,5L",
+    "value": 4,
+    "basePrice": 2.75,
+    "quantity": 12
+  },
+  {
+    "name": "Bolo no pote",
+    "description": "Bolo no pote",
+    "value": 10,
+    "basePrice": 6.5,
+    "quantity": 10
+  },
+  {
+    "name": "Misto quente",
+    "description": "Queijo e presunto",
+    "value": 5,
+    "basePrice": 3.50,
+    "quantity": 10
+  },
+  {
+    "name": "Latinha refri",
+    "description": "Coca cola e Guarana",
+    "value": 5,
+    "basePrice": 3.50,
+    "quantity": 20
+  },
+  {
+    "name": "Agua mineral 500ml",
+    "description": "Uma é 3 e 2 por 5",
+    "value": 3,
+    "basePrice": 1.50,
+    "quantity": 20
+  },
+  {
+    "name": "Trufa",
+    "description": "Uma é 3 e 2 por 5",
+    "value": 3,
+    "basePrice": 1.50,
+    "quantity": 20
+  },
+    {
+    "name": "Dindin",
+    "description": "Uma é 3 e 2 por 5",
+    "value": 5,
+    "basePrice": 1.50,
+    "quantity": 20
+  },
+  {
+    "name": "Guarana de 1L",
+    "description": "Guarana de 1L",
+    "value": 6,
+    "basePrice": 4.50,
+    "quantity": 20
+  },
+  {
+    "name": "Pithula",
+    "description": "Pithula de 200ml",
+    "value": 3,
+    "basePrice": 1.50,
+    "quantity": 20
+  },
+  {
     "name": "Livro",
     "description": "CAMINHO VERDADE E VIDA TEXTO E COMENTARIO DO EVAN",
     "value": 25.0,
