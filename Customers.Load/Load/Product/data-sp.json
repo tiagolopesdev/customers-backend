@@ -1,0 +1,639 @@
+[
+  {
+    "name": "Pulseira diversas",
+    "description": "Juliene",
+    "value": 9.0,
+    "basePrice": 6.5,
+    "quantity": 48
+  },
+  {
+    "name": "Pulseira borracha São Bento",
+    "description": "Juliene",
+    "value": 10.0,
+    "basePrice": 6.3,
+    "quantity": 12
+  },
+  {
+    "name": "Nossa senhora colante P",
+    "description": "Juliene",
+    "value": 8.0,
+    "basePrice": 5.3,
+    "quantity": 24
+  },
+  {
+    "name": "Escapulário inoxidável dourado / prata",
+    "description": "Juliene",
+    "value": 12.0,
+    "basePrice": 6.5,
+    "quantity": 40
+  },
+  {
+    "name": "Terço no pote",
+    "description": "Juliene",
+    "value": 12.0,
+    "basePrice": 5.25,
+    "quantity": 36
+  },
+  {
+    "name": "Enfeite São Bento Silicone",
+    "description": "Juliene",
+    "value": 8.0,
+    "basePrice": 5.25,
+    "quantity": 12
+  },
+  {
+    "name": "Terço aparecida com cheiro de rosas",
+    "description": "Juliene",
+    "value": 10.0,
+    "basePrice": 5.3,
+    "quantity": 23
+  },
+  {
+    "name": "Terço grande São Bento na caixa quadrada",
+    "description": "Juliene",
+    "value": 15.0,
+    "basePrice": 8.5,
+    "quantity": 12
+  },
+  {
+    "name": "Chaveiro de silicone",
+    "description": "Juliene",
+    "value": 4.0,
+    "basePrice": 2.5,
+    "quantity": 72
+  },
+  {
+    "name": "Santíssimo colante",
+    "description": "Juliene",
+    "value": 10.0,
+    "basePrice": 6.5,
+    "quantity": 31
+  },
+  {
+    "name": "Terço pequeno cristal caixa Cruz",
+    "description": "Juliene",
+    "value": 10.0,
+    "basePrice": 5.25,
+    "quantity": 24
+  },
+  {
+    "name": "Terço na caixa de bombom",
+    "description": "Juliene",
+    "value": 10.0,
+    "basePrice": 5.25,
+    "quantity": 24
+  },
+  {
+    "name": "Pulseira dezena de braço",
+    "description": "Juliene",
+    "value": 12.0,
+    "basePrice": 6.5,
+    "quantity": 24
+  },
+  {
+    "name": "Pulseira silicone N Senhora Aparecida",
+    "description": "Juliene",
+    "value": 5.0,
+    "basePrice": 3.3,
+    "quantity": 12
+  },
+  {
+    "name": "Enfeite São Bento colante de ferro",
+    "description": "Juliene",
+    "value": 12.0,
+    "basePrice": 7.25,
+    "quantity": 12
+  },
+  {
+    "name": "Escapulário caixinha São Bento cravejado",
+    "description": "Juliene",
+    "value": 20.0,
+    "basePrice": 11.25,
+    "quantity": 12
+  },
+  {
+    "name": "Nossa senhora colante ferro cravejado",
+    "description": "Juliene",
+    "value": 15.0,
+    "basePrice": 9.25,
+    "quantity": 12
+  },
+  {
+    "name": "Terço pérola nossa senhora AP e SB",
+    "description": "Juliene",
+    "value": 15.0,
+    "basePrice": 9.25,
+    "quantity": 24
+  },
+  {
+    "name": "Broche NS das Graças e Espírito S",
+    "description": "Juliene",
+    "value": 7.0,
+    "basePrice": 5.0,
+    "quantity": 36
+  },
+  {
+    "name": "Chaveiro de ferro diversos",
+    "description": "Juliene",
+    "value": 10.0,
+    "basePrice": 6.5,
+    "quantity": 60
+  },
+  {
+    "name": "Caixa abre / fecha",
+    "description": "Jõ",
+    "value": 10.0,
+    "basePrice": 6.5,
+    "quantity": 10
+  },
+  {
+    "name": "Terços diversos 02",
+    "description": "Jô",
+    "value": 18.0,
+    "basePrice": 15.9,
+    "quantity": 15
+  },
+  {
+    "name": "Terço florescente 03",
+    "description": "Jô",
+    "value": 17.0,
+    "basePrice": 15.0,
+    "quantity": 2
+  },
+  {
+    "name": "Terço vc vermelho 04",
+    "description": "Jõ",
+    "value": 25.0,
+    "basePrice": 22.0,
+    "quantity": 1
+  },
+  {
+    "name": "Terço cristal cx preta 05",
+    "description": "Jô",
+    "value": 25.0,
+    "basePrice": 22.0,
+    "quantity": 3
+  },
+  {
+    "name": "Terço mistérios cx 06",
+    "description": "Jô",
+    "value": 27.0,
+    "basePrice": 25.5,
+    "quantity": 1
+  },
+  {
+    "name": "Terço perfumado 07",
+    "description": "Jô",
+    "value": 20.0,
+    "basePrice": 13.0,
+    "quantity": 4
+  },
+  {
+    "name": "Terço rosa cx 08",
+    "description": "Jõ",
+    "value": 20.0,
+    "basePrice": 16.9,
+    "quantity": 4
+  },
+  {
+    "name": "Terço madeira 09",
+    "description": "Jô",
+    "value": 12.5,
+    "basePrice": 10.0,
+    "quantity": 2
+  },
+  {
+    "name": "Terço madeira 10",
+    "description": "Jõ",
+    "value": 10.0,
+    "basePrice": 8.0,
+    "quantity": 2
+  },
+  {
+    "name": "Terço hematita 11",
+    "description": "Jô",
+    "value": 22.0,
+    "basePrice": 19.5,
+    "quantity": 5
+  },
+  {
+    "name": "Terço casal 12",
+    "description": "Jô",
+    "value": 27.0,
+    "basePrice": 24.5,
+    "quantity": 2
+  },
+  {
+    "name": "Terço simples + MP 13",
+    "description": "Jô",
+    "value": 6.0,
+    "basePrice": 4.25,
+    "quantity": 12
+  },
+  {
+    "name": "Terço divino + MP 14",
+    "description": "Jõ",
+    "value": 6.5,
+    "basePrice": 6.0,
+    "quantity": 4
+  },
+  {
+    "name": "Terço madeira misericórdia 15",
+    "description": "Jô",
+    "value": 13.0,
+    "basePrice": 11.0,
+    "quantity": 2
+  },
+  {
+    "name": "Terço de dedo + MP 16",
+    "description": "Jõ",
+    "value": 8.0,
+    "basePrice": 6.9,
+    "quantity": 5
+  },
+  {
+    "name": "Porta recado biscuit",
+    "description": "Jô",
+    "value": 13.0,
+    "basePrice": 11.0,
+    "quantity": 4
+  },
+  {
+    "name": "Santinho biscuit 18",
+    "description": "Jõ",
+    "value": 20.0,
+    "basePrice": 16.9,
+    "quantity": 15
+  },
+  {
+    "name": "Cortador de unhas 19",
+    "description": "Jõ",
+    "value": 12.0,
+    "basePrice": 8.5,
+    "quantity": 3
+  },
+  {
+    "name": "Caneca São Bento 20",
+    "description": "Jô",
+    "value": 6.5,
+    "basePrice": 4.5,
+    "quantity": 5
+  },
+  {
+    "name": "Sagrada família 21",
+    "description": "Jô",
+    "value": 20.0,
+    "basePrice": 16.2,
+    "quantity": 3
+  },
+  {
+    "name": "Anjo led 22",
+    "description": "Jô",
+    "value": 15.0,
+    "basePrice": 12.0,
+    "quantity": 3
+  },
+  {
+    "name": "Base de carro NSA 23",
+    "description": "Jõ",
+    "value": 15.0,
+    "basePrice": 12.0,
+    "quantity": 4
+  },
+  {
+    "name": "Base de carro ostensório",
+    "description": "Jô",
+    "value": 15.0,
+    "basePrice": 13.0,
+    "quantity": 3
+  },
+  {
+    "name": "Base de carro S. Miguel 25",
+    "description": "Jô",
+    "value": 16.0,
+    "basePrice": 14.0,
+    "quantity": 2
+  },
+  {
+    "name": "Base de carro Cruz SB 26",
+    "description": "Jõ",
+    "value": 16.0,
+    "basePrice": 14.0,
+    "quantity": 1
+  },
+  {
+    "name": "Base de carro OSB 27",
+    "description": "Jô",
+    "value": 15.0,
+    "basePrice": 12.0,
+    "quantity": 1
+  },
+  {
+    "name": "Base de carro S. Cristo 28",
+    "description": "Jô",
+    "value": 14.0,
+    "basePrice": 10.5,
+    "quantity": 3
+  },
+  {
+    "name": "Chaveiro emborrachado 29",
+    "description": "Jô",
+    "value": 6.0,
+    "basePrice": 5.0,
+    "quantity": 8
+  },
+  {
+    "name": "Chaveiro strass santinhos 30",
+    "description": "Jõ",
+    "value": 15.0,
+    "basePrice": 13.0,
+    "quantity": 10
+  },
+  {
+    "name": "Chaveiro diversos strass 31",
+    "description": "Jô",
+    "value": 15.0,
+    "basePrice": 13.0,
+    "quantity": 10
+  },
+  {
+    "name": "Chaveiro divino 32",
+    "description": "Jõ",
+    "value": 19.0,
+    "basePrice": 14.5,
+    "quantity": 3
+  },
+  {
+    "name": "Chaveiro corpinho 33",
+    "description": "Jô",
+    "value": 16.0,
+    "basePrice": 12.0,
+    "quantity": 10
+  },
+  {
+    "name": "Chaveiro EJC nome 34",
+    "description": "Jõ",
+    "value": 6.0,
+    "basePrice": 4.0,
+    "quantity": 12
+  },
+  {
+    "name": "Chaveiro EJC $e+35$",
+    "description": "Jô",
+    "value": 7.0,
+    "basePrice": 5.0,
+    "quantity": 10
+  },
+  {
+    "name": "Chaveiro medalha 36",
+    "description": "Jõ",
+    "value": 18.0,
+    "basePrice": 14.5,
+    "quantity": 3
+  },
+  {
+    "name": "Chaveiro SB medalha 37",
+    "description": "Jô",
+    "value": 15.0,
+    "basePrice": 12.5,
+    "quantity": 3
+  },
+  {
+    "name": "Chaveiro mosquetão 38",
+    "description": "Jõ",
+    "value": 16.0,
+    "basePrice": 13.5,
+    "quantity": 2
+  },
+  {
+    "name": "Chaveiro dez terço 39",
+    "description": "Jô",
+    "value": 14.0,
+    "basePrice": 12.5,
+    "quantity": 3
+  },
+  {
+    "name": "Medalha resinada 40",
+    "description": "Jõ",
+    "value": 6.0,
+    "basePrice": 4.0,
+    "quantity": 10
+  },
+  {
+    "name": "Porta moedas 41",
+    "description": "Jõ",
+    "value": 9.0,
+    "basePrice": 6.0,
+    "quantity": 1
+  },
+  {
+    "name": "Escapulário aço cx 42",
+    "description": "Jô",
+    "value": 19.0,
+    "basePrice": 15.8,
+    "quantity": 2
+  },
+  {
+    "name": "Escapulário aço 43",
+    "description": "Jô",
+    "value": 17.0,
+    "basePrice": 14.5,
+    "quantity": 2
+  },
+  {
+    "name": "Porta terço 44",
+    "description": "Jô",
+    "value": 19.0,
+    "basePrice": 12.5,
+    "quantity": 3
+  },
+  {
+    "name": "Pulseira hematita 45",
+    "description": "Jõ",
+    "value": 18.0,
+    "basePrice": 14.5,
+    "quantity": 10
+  },
+  {
+    "name": "Pulseira cristal terço 46",
+    "description": "Jô",
+    "value": 15.0,
+    "basePrice": 13.5,
+    "quantity": 7
+  },
+  {
+    "name": "Pulseira bola 47",
+    "description": "Jô",
+    "value": 15.0,
+    "basePrice": 13.0,
+    "quantity": 3
+  },
+  {
+    "name": "Pulseira terço madeira 48",
+    "description": "Jõ",
+    "value": 14.0,
+    "basePrice": 12.0,
+    "quantity": 10
+  },
+  {
+    "name": "Pulseira catena 49",
+    "description": "Jô",
+    "value": 25.0,
+    "basePrice": 18.9,
+    "quantity": 7
+  },
+  {
+    "name": "Pulseira diversos 50",
+    "description": "Jô",
+    "value": 15.0,
+    "basePrice": 13.5,
+    "quantity": 8
+  },
+  {
+    "name": "Pulseira cristal 51",
+    "description": "Jô",
+    "value": 18.0,
+    "basePrice": 14.0,
+    "quantity": 8
+  },
+  {
+    "name": "Pulseira santidade 52",
+    "description": "Jõ",
+    "value": 18.0,
+    "basePrice": 16.5,
+    "quantity": 7
+  },
+  {
+    "name": "Pulseira medalha 53",
+    "description": "Jô",
+    "value": 16.5,
+    "basePrice": 14.5,
+    "quantity": 2
+  },
+  {
+    "name": "Pulseira escapulário 54",
+    "description": "Jô",
+    "value": 22.0,
+    "basePrice": 19.9,
+    "quantity": 3
+  },
+  {
+    "name": "Broches diversos 55",
+    "description": "Jô",
+    "value": 12.0,
+    "basePrice": 9.0,
+    "quantity": 7
+  },
+  {
+    "name": "Marca página G 56",
+    "description": "Jõ",
+    "value": 2.0,
+    "basePrice": 1.0,
+    "quantity": 128
+  },
+  {
+    "name": "Marca página P",
+    "description": "Jô",
+    "value": 1.5,
+    "basePrice": 0.7,
+    "quantity": 25
+  },
+  {
+    "name": "coca 1,5L",
+    "description": "Pezão",
+    "value": 12.0,
+    "basePrice": 8.5,
+    "quantity": 70
+  },
+  {
+    "name": "Fanta 1,5L",
+    "description": "Pezão",
+    "value": 12.0,
+    "basePrice": 8.5,
+    "quantity": 25
+  },
+  {
+    "name": "Guaraná 1L",
+    "description": "Pezão",
+    "value": 12.0,
+    "basePrice": 10.0,
+    "quantity": 10
+  },
+  {
+    "name": "Coca lata",
+    "description": "Pezão",
+    "value": 6.0,
+    "basePrice": 3.75,
+    "quantity": 110
+  },
+  {
+    "name": "Fanta lata",
+    "description": "Pezão",
+    "value": 6.0,
+    "basePrice": 3.75,
+    "quantity": 70
+  },
+  {
+    "name": "Cajuína",
+    "description": "Pezão",
+    "value": 10.0,
+    "basePrice": 6.25,
+    "quantity": 40
+  },
+  {
+    "name": "Água",
+    "description": "Pezão",
+    "value": 3.0,
+    "basePrice": 1.25,
+    "quantity": 60
+  },
+  {
+    "name": "Pirulito",
+    "description": "Pacote",
+    "value": 0.5,
+    "basePrice": 0.25,
+    "quantity": 70
+  },
+  {
+    "name": "Bombom",
+    "description": "Diversos",
+    "value": 1.5,
+    "basePrice": 1.0,
+    "quantity": 100
+  },
+  {
+    "name": "Bombom amor / serenata",
+    "description": "Pacote",
+    "value": 2.0,
+    "basePrice": 1.0,
+    "quantity": 150
+  },
+  {
+    "name": "Bis",
+    "description": "Diversos",
+    "value": 0.5,
+    "basePrice": 0.5,
+    "quantity": 100
+  },
+  {
+    "name": "Paçoса",
+    "description": "Pacote",
+    "value": 0.5,
+    "basePrice": 0.25,
+    "quantity": 100
+  },
+  {
+    "name": "Bolo/torta/misto",
+    "description": "Comida",
+    "value": 5.0,
+    "basePrice": 2.5,
+    "quantity": 50
+  },
+  {
+    "name": "Crepe",
+    "description": "Comida",
+    "value": 3.0,
+    "basePrice": 2.0,
+    "quantity": 100
+  }
+]
