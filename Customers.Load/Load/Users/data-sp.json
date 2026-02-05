@@ -1,0 +1,43 @@
+[
+  {
+    "email": "mariaariane852@gmail.com",
+    "nome": "Ariane Maria Oliveira França",
+    "permissions": [
+      "Create",
+      "Update",
+      "Get",
+      "Delete",
+      "Admin"
+    ]
+  },
+  {
+    "email": "franciscohenriquesoares01@gmail.com",
+    "nome": "Francisco Henrique Soares do Nascimento",
+    "permissions": [
+      "Create",
+      "Update",
+      "Get",
+      "Delete"
+    ]
+  },
+  {
+    "email": "joaogabrieljpn@gmail.com",
+    "nome": "João Gabriel Alves de Lima Soares",
+    "permissions": [
+      "Create",
+      "Update",
+      "Get",
+      "Delete"
+    ]
+  },
+  {
+    "email": "williambonfim312@gmail.com",
+    "nome": "William de Sousa Bonfim",
+    "permissions": [
+      "Create",
+      "Update",
+      "Get",
+      "Delete"
+    ]
+  }
+]

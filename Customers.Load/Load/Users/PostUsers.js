@@ -5,7 +5,8 @@ import execution from 'k6/execution';
 
 
 const data = new SharedArray("Read Json file", () => {
-  return JSON.parse(open('./data.json'))
+  return JSON.parse(open('./data-sp.json'))
+  // return JSON.parse(open('./data.json'))
 })
 
 export const options = {
@@ -20,7 +21,7 @@ export default function () {
 
   console.log(`Indice da interação atual: ${indexCurrent} || Cenário: ${execution.scenario.name}`)
 
-  const url = 'https://mini-market-authentication.onrender.com/api/Users';
+  const url = 'https://minimarket-authentication-sp-api-prd.onrender.com/api/Users';
   // const url = 'http://localhost:5048/api/Products/CreateProduct';
 
   const payload = JSON.stringify(data[indexCurrent]);
