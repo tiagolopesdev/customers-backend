@@ -4,11 +4,12 @@ using Customers.Application.Shared.DTO;
 using Customers.Application.Shared.Helpers;
 using Customers.Domain.AggregatesModel.CustomerAggregate;
 using Customers.Domain.Interfaces;
+using Customers.Domain.SeedWork;
 using MediatR;
 
 namespace Customers.Application.UseCases.CustomerUseCases.GetByNameCustomer
 {
-    public class GetByNameCustomerHandler : IRequestHandler<GetByNameCustomerRequest, List<CustomerDTO>>
+    public class GetByNameCustomerHandler : IRequestHandler<GetByNameCustomerRequest, PaginationDto<Customer>>
     {
         private readonly ICustomerRepository _customerRepository;
         private readonly IMapper _mapper;
@@ -19,19 +20,19 @@ namespace Customers.Application.UseCases.CustomerUseCases.GetByNameCustomer
             _mapper = mapper;
         }
 
-        public async Task<List<CustomerDTO>> Handle(GetByNameCustomerRequest request, CancellationToken cancellationToken)
+        public async Task<PaginationDto<Customer>> Handle(GetByNameCustomerRequest request, CancellationToken cancellationToken)
         {
-            List<Customer> result = await _customerRepository.GetByName(request.Name);
+            Pagination<Customer> result = await _customerRepository.GetByName(request.Name, request.PageIndex, request.PageSize);
 
-            result = CustomerHelper.FilterPropertyListNotDeleted(result);
+            result.Data = CustomerHelper.FilterPropertyListNotDeleted(result.Data);
 
-            result = CustomerHelper.AssignAmountToPayList(result);
+            result.Data = CustomerHelper.AssignAmountToPayList(result.Data);
 
-            List<Customer> dataToReturn = [.. CustomerHelper.ApplyingFilters(result, request.Owing, request.UsersSales, request.DateUsersSales)];
+            result.Data = [.. CustomerHelper.ApplyingFilters(result.Data, request.Owing, request.UsersSales, request.DateUsersSales)];
 
-            var customer = _mapper.Map<List<CustomerDTO>>(dataToReturn);
+            var paginatedData = _mapper.Map<PaginationDto<Customer>>(result);
 
-            return customer;
+            return paginatedData;
         }
     }
 }

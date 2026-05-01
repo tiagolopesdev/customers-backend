@@ -7,6 +7,6 @@ namespace Customers.Domain.SeedWork
         Task<Guid> Update(T entity);
         Task<Guid> Delete(T entity);
         Task<T> GetById(Guid id);
-        Task<List<T>> GetAll();
+        Task<Pagination<T>> GetAll(int pageIndex, int pageSize);
     }
 }

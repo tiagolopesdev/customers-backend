@@ -19,15 +19,16 @@ namespace Customers.Application.UseCases.ProductUseCases.GetByNameProduct
 
         public async Task<List<GetByNameProductResponse>> Handle(GetByNameProductRequest request, CancellationToken cancellationToken)
         {
-            List<Product> products = string.IsNullOrEmpty(request.Name) ?
-                await _productRepository.GetAll() :
-                await _productRepository.GetByName(request.Name);
+            //List<Product> products = string.IsNullOrEmpty(request.Name) ?
+            //    await _productRepository.GetAll(request.Pagination.PageIndex, request.Pagination.PageSize) :
+            //    await _productRepository.GetByName(request.Name);
 
-            products = Utilities.FilterNotDeleteEntity(products);
+            //products = Utilities.FilterNotDeleteEntity(products);
 
-            var productsToReturn = _mapper.Map<List<GetByNameProductResponse>>(products);
+            //var productsToReturn = _mapper.Map<List<GetByNameProductResponse>>(products);
 
-            return productsToReturn;
+            //return productsToReturn;
+            throw new NotImplementedException();
         }
     }
 }

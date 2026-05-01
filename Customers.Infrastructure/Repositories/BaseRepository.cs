@@ -22,13 +22,44 @@ namespace Customers.Infrastructure.Repositories
             throw new NotImplementedException();
         }
 
-        public async Task<List<T>> GetAll()
+        public async Task<Pagination<T>> GetAll(int pageIndex, int pageSize)
         {
             try
             {
-                var result = await _collection.FindSync(filter => filter.DateDeleted == null).ToListAsync();
+                var filter = Builders<T>.Filter.Eq(f => f.DateDeleted, null);
 
-                return result;
+                var countFacet = AggregateFacet.Create("count",
+                    PipelineDefinition<T, AggregateCountResult>.Create(
+                            new[]
+                            {
+                                PipelineStageDefinitionBuilder.Count<T>()
+                            }
+                        )
+                    );
+
+                var dataFacet = AggregateFacet.Create("data",
+                    PipelineDefinition<T, T>.Create(
+                            new []
+                            {
+                                PipelineStageDefinitionBuilder.Sort(
+                                    Builders<T>.Sort.Ascending(s => s.DateCreated)
+                                    ),
+                                PipelineStageDefinitionBuilder.Skip<T>((pageIndex - 1) * pageSize),
+                                PipelineStageDefinitionBuilder.Limit<T>(pageSize)
+                            }
+                        )
+                    );
+
+                var resultTest = await _collection.Aggregate()
+                    .Match(filter)
+                    .Facet(countFacet, dataFacet)
+                    .ToListAsync()
+                    ;
+
+                var totalItens = resultTest[0].Facets[0].Output<AggregateCountResult>()[0].Count;
+                var resultData = resultTest[0].Facets[1].Output<T>().ToList();
+
+                return Pagination<T>.NewPagination(totalItens, resultData, pageIndex, pageSize);
             }
             catch (Exception ex)
             {

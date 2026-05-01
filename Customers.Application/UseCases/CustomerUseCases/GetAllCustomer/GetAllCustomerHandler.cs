@@ -3,11 +3,12 @@ using Customers.Application.Shared.DTO;
 using Customers.Application.Shared.Helpers;
 using Customers.Domain.AggregatesModel.CustomerAggregate;
 using Customers.Domain.Interfaces;
+using Customers.Domain.SeedWork;
 using MediatR;
 
 namespace Customers.Application.UseCases.CustomerUseCases.GetAllCustomer
 {
-    public class GetAllCustomerHandler : IRequestHandler<GetAllCustomerRequest, List<CustomerDTO>>
+    public class GetAllCustomerHandler : IRequestHandler<GetAllCustomerRequest, PaginationDto<Customer>>
     {
         private readonly ICustomerRepository _customerRepository;
         private readonly IMapper _mapper;
@@ -18,19 +19,19 @@ namespace Customers.Application.UseCases.CustomerUseCases.GetAllCustomer
             _mapper = mapper;
         }
 
-        public async Task<List<CustomerDTO>> Handle(GetAllCustomerRequest request, CancellationToken cancellationToken)
+        public async Task<PaginationDto<Customer>> Handle(GetAllCustomerRequest request, CancellationToken cancellationToken)
         {
-            List<Customer> result = await _customerRepository.GetAll();
+            Pagination<Customer> result = await _customerRepository.GetAll(request.PageIndex, request.PageSize);
 
-            result = CustomerHelper.FilterPropertyListNotDeleted(result);
+            result.Data = CustomerHelper.FilterPropertyListNotDeleted(result.Data);
 
-            result = CustomerHelper.AssignAmountToPayList(result);
+            result.Data = CustomerHelper.AssignAmountToPayList(result.Data);
 
-            List<Customer> dataToReturn = [.. CustomerHelper.ApplyingFilters(result, request.Owing, request.UsersSales, request.DateUsersSales)];
+            result.Data = [.. CustomerHelper.ApplyingFilters(result.Data, request.Owing, request.UsersSales, request.DateUsersSales)];
         
-            var customer = _mapper.Map<List<CustomerDTO>>(dataToReturn);
+            var paginatedData = _mapper.Map<PaginationDto<Customer>>(result);
 
-            return customer;
+            return paginatedData;
         }
     }
 }

@@ -42,11 +42,11 @@ namespace Customers.Api.Controllers
         [Produces("application/json")]
         [ProducesResponseType((int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
-        public async Task<ActionResult<Guid>> GetByNameProduct([FromQuery] string? name)
+        public async Task<ActionResult<Guid>> GetByNameProduct([FromQuery] GetByNameProductRequest request)
         {
             try
             {
-                var response = await _mediator.Send(new GetByNameProductRequest(name));
+                var response = await _mediator.Send(request);
 
                 return Ok(response);
             }
