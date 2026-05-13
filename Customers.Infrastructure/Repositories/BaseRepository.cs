@@ -1,4 +1,5 @@
 ﻿using Customers.Domain.SeedWork;
+using Customers.Infrastructure.Configuration;
 using Microsoft.Extensions.Configuration;
 using MongoDB.Driver;
 
@@ -26,38 +27,22 @@ namespace Customers.Infrastructure.Repositories
         {
             try
             {
-                var filter = Builders<T>.Filter.Eq(f => f.DateDeleted, null);
-
-                var countFacet = AggregateFacet.Create("count",
-                    PipelineDefinition<T, AggregateCountResult>.Create(
-                            new[]
-                            {
-                                PipelineStageDefinitionBuilder.Count<T>()
-                            }
-                        )
-                    );
-
-                var dataFacet = AggregateFacet.Create("data",
-                    PipelineDefinition<T, T>.Create(
-                            new []
-                            {
-                                PipelineStageDefinitionBuilder.Sort(
-                                    Builders<T>.Sort.Ascending(s => s.DateCreated)
-                                    ),
-                                PipelineStageDefinitionBuilder.Skip<T>((pageIndex - 1) * pageSize),
-                                PipelineStageDefinitionBuilder.Limit<T>(pageSize)
-                            }
-                        )
-                    );
+                var configPagination = ConfigPagination<T>.New(pageIndex, pageSize);
 
                 var resultTest = await _collection.Aggregate()
-                    .Match(filter)
-                    .Facet(countFacet, dataFacet)
+                    .Match(Builders<T>.Filter.And(configPagination.DefaultFilters))
+                    .Facet(configPagination.Count, configPagination.Data)
                     .ToListAsync()
                     ;
 
-                var totalItens = resultTest[0].Facets[0].Output<AggregateCountResult>()[0].Count;
-                var resultData = resultTest[0].Facets[1].Output<T>().ToList();
+                long totalItens = 0;
+                List<T> resultData = [];
+
+                if (resultTest[0].Facets[0].Output<AggregateCountResult>().Count > 0)
+                {
+                    totalItens = resultTest[0].Facets[0].Output<AggregateCountResult>()[0].Count;
+                    resultData = resultTest[0].Facets[1].Output<T>().ToList();
+                }
 
                 return Pagination<T>.NewPagination(totalItens, resultData, pageIndex, pageSize);
             }

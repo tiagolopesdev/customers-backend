@@ -21,7 +21,7 @@ namespace Customers.Application.UseCases.CustomerUseCases.GetAllCustomer
 
         public async Task<PaginationDto<Customer>> Handle(GetAllCustomerRequest request, CancellationToken cancellationToken)
         {
-            Pagination<Customer> result = await _customerRepository.GetAll(request.PageIndex, request.PageSize);
+            Pagination<Customer> result = await _customerRepository.GetAll(request.PageIndex, request.PageSize, request.Owing);
 
             result.Data = CustomerHelper.FilterPropertyListNotDeleted(result.Data);
 

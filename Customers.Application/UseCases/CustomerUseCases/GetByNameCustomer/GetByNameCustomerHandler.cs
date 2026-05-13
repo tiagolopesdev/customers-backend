@@ -22,7 +22,7 @@ namespace Customers.Application.UseCases.CustomerUseCases.GetByNameCustomer
 
         public async Task<PaginationDto<Customer>> Handle(GetByNameCustomerRequest request, CancellationToken cancellationToken)
         {
-            Pagination<Customer> result = await _customerRepository.GetByName(request.Name, request.PageIndex, request.PageSize);
+            Pagination<Customer> result = await _customerRepository.GetByName(request.Name, request.PageIndex, request.PageSize, request.Owing);
 
             result.Data = CustomerHelper.FilterPropertyListNotDeleted(result.Data);
 

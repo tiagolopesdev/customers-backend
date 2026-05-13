@@ -38,13 +38,13 @@ namespace Customers.Application.Shared.Helpers
                     }
                 });
             }
-            else if (owing)
-            {
-                data.ForEach(element =>
-                {
-                    if (element.AmountToPay > 0) dataToReturn.Add(element);
-                });
-            }
+            //else if (owing)
+            //{
+            //    data.ForEach(element =>
+            //    {
+            //        if (element.AmountToPay > 0) dataToReturn.Add(element);
+            //    });
+            //}
             else
             {
                 dataToReturn.AddRange(data);

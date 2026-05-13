@@ -2,6 +2,7 @@
 using Customers.Domain.AggregatesModel.CustomerAggregate;
 using Customers.Domain.Interfaces;
 using Customers.Domain.SeedWork;
+using Customers.Infrastructure.Configuration;
 using Microsoft.Extensions.Configuration;
 using MongoDB.Bson;
 using MongoDB.Driver;
@@ -17,48 +18,79 @@ namespace Customers.Infrastructure.Repositories
             _collection = new ConnectionDatabase<Customer>(configuration, "customers").InstanceConnection();
         }
 
-        public async Task<Pagination<Customer>> GetByName(string name, int pageIndex, int pageSize)
+        public async Task<Pagination<Customer>> GetAll(int pageIndex, int pageSize, bool owing)
         {
             try
             {
-                var filter = Builders<Customer>.Filter.Eq(f => f.DateDeleted, null);
+                var configPagination = ConfigPagination<Customer>.New(pageIndex, pageSize);
 
-                var countFacet = AggregateFacet.Create("count",
-                    PipelineDefinition<Customer, AggregateCountResult>.Create(
-                            new[]
-                            {
-                                PipelineStageDefinitionBuilder.Count<Customer>()
-                            }
-                        )
-                    );
+                if (owing)
+                {
+                    configPagination.DefaultFilters.Add(Builders<Customer>.Filter.Where(f => f.AmountToPay > f.AmountPaid));
+                }
 
-                var dataFacet = AggregateFacet.Create("data",
-                    PipelineDefinition<Customer, Customer>.Create(
-                            new[]
-                            {
-                                PipelineStageDefinitionBuilder.Sort(
-                                    Builders<Customer>.Sort.Ascending(s => s.Name)
-                                    ),
-                                PipelineStageDefinitionBuilder.Skip<Customer>((pageIndex - 1) * pageSize),
-                                PipelineStageDefinitionBuilder.Limit<Customer>(pageSize)
-                            }
-                        )
-                    );
 
                 var resultTest = await _collection.Aggregate()
-                    .Match(filter)
-                    .Match(
-                    Builders<Customer>.Filter.Regex(
-                        r => r.Name,
-                        new BsonRegularExpression(name, "i")
-                        )
-                    )
-                    .Facet(countFacet, dataFacet)
+                    .Match(Builders<Customer>.Filter.And(configPagination.DefaultFilters))
+                    .Facet(configPagination.Count, configPagination.Data)
                     .ToListAsync()
                     ;
 
-                var totalItens = resultTest[0].Facets[0].Output<AggregateCountResult>()[0].Count;
-                var resultData = resultTest[0].Facets[1].Output<Customer>().ToList();
+                long totalItens = 0;
+                List<Customer> resultData = [];
+
+                if (resultTest[0].Facets[0].Output<AggregateCountResult>().Count > 0)
+                {
+                    totalItens = resultTest[0].Facets[0].Output<AggregateCountResult>()[0].Count;
+                    resultData = resultTest[0].Facets[1].Output<Customer>().ToList();
+                }
+
+                return Pagination<Customer>.NewPagination(totalItens, resultData, pageIndex, pageSize);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public async Task<Pagination<Customer>> GetByName(string name, int pageIndex, int pageSize, bool owing)
+        {
+            try
+            {
+                var configPagination = ConfigPagination<Customer>.New(pageIndex, pageSize);
+
+                if (owing)
+                {
+                    configPagination.DefaultFilters.Add(
+                        Builders<Customer>.Filter.Where(f => f.AmountToPay > f.AmountPaid)
+                        );
+                }
+
+                configPagination.Data.Pipeline.Stages.ToList()
+                    .Insert(0, PipelineStageDefinitionBuilder.Sort(
+                        Builders<Customer>.Sort.Ascending(s => s.Name)
+                        )
+                    );
+
+                configPagination.DefaultFilters.Add(
+                    Builders<Customer>.Filter.Regex(r => r.Name, new BsonRegularExpression(name, "i"))
+                    );
+
+
+                var resultTest = await _collection.Aggregate()
+                    .Match(Builders<Customer>.Filter.And(configPagination.DefaultFilters))
+                    .Facet(configPagination.Count, configPagination.Data)
+                    .ToListAsync()
+                    ;
+
+                long totalItens = 0;
+                List<Customer> resultData = [];
+
+                if (resultTest[0].Facets[0].Output<AggregateCountResult>().Count > 0)
+                {
+                    totalItens = resultTest[0].Facets[0].Output<AggregateCountResult>()[0].Count;
+                    resultData = resultTest[0].Facets[1].Output<Customer>().ToList();
+                }
 
                 return Pagination<Customer>.NewPagination(totalItens, resultData, pageIndex, pageSize);
             }

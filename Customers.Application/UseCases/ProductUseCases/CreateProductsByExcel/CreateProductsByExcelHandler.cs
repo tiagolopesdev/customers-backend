@@ -41,7 +41,7 @@ namespace Customers.Application.UseCases.ProductUseCases.CreateProductsByExcel
                     Convert.ToInt32(worksheet.Cells[row, 4].Value)
                     );
 
-                List<Product> existsProduct = await _productRepository.GetByName(product.Name);
+                List<Product> existsProduct = await _productRepository.GetByNameWithoutPagination(product.Name);
 
                 if (existsProduct.Count > 0)
                 {
