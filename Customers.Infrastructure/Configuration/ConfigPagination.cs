@@ -16,7 +16,7 @@ namespace Customers.Infrastructure.Configuration
                     PipelineDefinition<T, AggregateCountResult>.Create(
                             new[]
                             {
-                                PipelineStageDefinitionBuilder.Count<Customer>()
+                                PipelineStageDefinitionBuilder.Count<T>()
                             }
                         )
                     );
